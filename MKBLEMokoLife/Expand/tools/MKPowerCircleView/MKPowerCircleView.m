@@ -202,10 +202,15 @@ static CGFloat const circleLabelViewOffset = 35.f;
 }
 
 #pragma mark - public method
-- (void)updateProgress:(float)progress {
+- (void)updatePowerValues:(CGFloat)powerValue {
+    if (powerValue >= 3600) {
+        powerValue = 3600;
+    }
+    float progress = (powerValue / 3600);
     if (progress >= 1) {
         progress = 1;
     }
+    self.lableView.valueLabel.text = [NSString stringWithFormat:@"%.f",powerValue];
     [self.topCircleLayer removeAnimationForKey:@"mk_progressAnimationKey"];
     [self.topCircleLayer addAnimation:[self circleAnimationWithEndValue:progress] forKey:@"mk_progressAnimationKey"];
 }

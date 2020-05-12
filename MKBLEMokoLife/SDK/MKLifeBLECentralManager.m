@@ -100,6 +100,7 @@ static MKLifeBLECentralManager *manager = nil;
         NSLog(@"+++++++++++++++++接收数据出错");
         return;
     }
+    NSLog(@"+++++++++++++++当前设备返回值:%@",characteristic.value);
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FFB2"]]) {
         //通知
         [self parseFFB2Datas:characteristic];
@@ -292,10 +293,6 @@ static MKLifeBLECentralManager *manager = nil;
     if (![header isEqualToString:@"b4"]) {
         return;
     }
-    NSInteger len = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(6, 2)];
-    if (content.length != 2 * len + 8) {
-        return;
-    }
     NSString *function = [content substringWithRange:NSMakeRange(2, 2)];
     if ([function isEqualToString:@"01"]) {
         //开关状态
@@ -315,7 +312,7 @@ static MKLifeBLECentralManager *manager = nil;
     }
     if ([function isEqualToString:@"03"]) {
         //过载保护
-        NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 2 * len)];
+        NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
         [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveOverloadProtectionValueChangedNotification
                                                             object:nil
                                                           userInfo:@{@"value":value}];
