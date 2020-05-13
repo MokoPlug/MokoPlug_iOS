@@ -12,8 +12,10 @@
 #import "MKSettingButtonCell.h"
 
 #import "MKSettingPageCellModel.h"
+#import "MKSettingDatasModel.h"
 
 #import "MKDeviceInfoController.h"
+#import "MKModifyPowerStatusController.h"
 
 @interface MKSettingController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -25,12 +27,19 @@
 
 @property (nonatomic, strong)NSMutableArray *section2List;
 
+@property (nonatomic, strong)MKSettingDatasModel *dataModel;
+
 @end
 
 @implementation MKSettingController
 
 - (void)dealloc {
     NSLog(@"MKSettingController销毁");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self readDatasFromDevice];
 }
 
 - (void)viewDidLoad {
@@ -46,14 +55,22 @@
 
 - (void)rightButtonMethod {
     MKDeviceInfoController *vc = [[MKDeviceInfoController alloc] init];
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+    [self pushControllerWithHiddenBottom:vc];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            
+        }
+        if (indexPath.row == 1) {
+            MKModifyPowerStatusController *vc = [[MKModifyPowerStatusController alloc] init];
+            [self pushControllerWithHiddenBottom:vc];
+            return;
+        }
+        return;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,6 +147,53 @@
         cell.dataModel = self.section1List[indexPath.row];
     }
     return cell;
+}
+
+#pragma mark - interface
+- (void)readDatasFromDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    WS(weakSelf);
+    [self.dataModel startReadDatasFromDeviceWithSucBlock:^{
+        [[MKHudManager share] hide];
+        __strong typeof(self) sself = weakSelf;
+        [sself reloadTableDatas];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        __strong typeof(self) sself = weakSelf;
+        [sself.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+#pragma mark -
+
+#pragma mark - private method
+- (void)reloadTableDatas {
+    self.defaultTitle = self.dataModel.deviceName;
+    MKSettingPageCellModel *nameModel = self.section0List[0];
+    nameModel.valueMsg = self.dataModel.deviceName;
+    
+    MKSettingPageCellModel *broadcastModel = self.section1List[0];
+    broadcastModel.valueMsg = self.dataModel.advInterval;
+    
+    MKSettingPageCellModel *overloadValueModel = self.section1List[1];
+    overloadValueModel.valueMsg = self.dataModel.overloadValue;
+    
+    MKSettingPageCellModel *reportIntervalModel = self.section1List[2];
+    reportIntervalModel.valueMsg = self.dataModel.powerReInterval;
+    
+    MKSettingPageCellModel *notificationModel = self.section1List[3];
+    notificationModel.valueMsg = self.dataModel.powerChangeNoti;
+    
+    MKSettingPageCellModel *energyModel = self.section1List[4];
+    energyModel.valueMsg = self.dataModel.energyConsumption;
+    
+    [self.tableView reloadData];
+}
+
+- (void)pushControllerWithHiddenBottom:(UIViewController *)vc {
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 #pragma mark - UI
@@ -219,6 +283,13 @@
         _section2List = [NSMutableArray array];
     }
     return _section2List;
+}
+
+- (MKSettingDatasModel *)dataModel {
+    if (!_dataModel) {
+        _dataModel = [[MKSettingDatasModel alloc] init];
+    }
+    return _dataModel;
 }
 
 - (UIView *)footerView {

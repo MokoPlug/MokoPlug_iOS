@@ -155,4 +155,14 @@
                          failureBlock:failedBlock];
 }
 
++ (void)readPulseConstantWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock {
+    [centralManager addTaskWithTaskID:mk_readPulseConstantOperation
+                       characteristic:centralManager.peripheral.readCharacteristic
+                             resetNum:NO
+                          commandData:@"b01300"
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
 @end

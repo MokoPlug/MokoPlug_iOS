@@ -26,6 +26,15 @@
 		0059BCE1246BA05700E969AE /* MKDeviceInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCE0246BA05700E969AE /* MKDeviceInfoController.m */; };
 		0059BCE4246BA79900E969AE /* detailIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCE2246BA79900E969AE /* detailIcon@2x.png */; };
 		0059BCE5246BA79900E969AE /* detailIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCE3246BA79900E969AE /* detailIcon@3x.png */; };
+		0059BCE8246BC52500E969AE /* MKModifyNormalDatasController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCE7246BC52500E969AE /* MKModifyNormalDatasController.m */; };
+		0059BCEB246BCDB300E969AE /* MKModifyPowerStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCEA246BCDB300E969AE /* MKModifyPowerStatusController.m */; };
+		0059BCF1246BCEB500E969AE /* modifyPowerOnSelectedIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCED246BCEB500E969AE /* modifyPowerOnSelectedIcon@3x.png */; };
+		0059BCF2246BCEB500E969AE /* modifyPowerOnSelectedIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCEE246BCEB500E969AE /* modifyPowerOnSelectedIcon@2x.png */; };
+		0059BCF3246BCEB500E969AE /* modifyPowerOnUnselectedIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCEF246BCEB500E969AE /* modifyPowerOnUnselectedIcon@2x.png */; };
+		0059BCF4246BCEB500E969AE /* modifyPowerOnUnselectedIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCF0246BCEB500E969AE /* modifyPowerOnUnselectedIcon@3x.png */; };
+		0059BCF7246BD25A00E969AE /* MKModifyPowerStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCF6246BD25A00E969AE /* MKModifyPowerStatusCell.m */; };
+		0059BCFA246BD44B00E969AE /* MKModifyPowerStatusCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCF9246BD44B00E969AE /* MKModifyPowerStatusCellModel.m */; };
+		0059BCFD246BDD7B00E969AE /* MKSettingDatasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCFC246BDD7B00E969AE /* MKSettingDatasModel.m */; };
 		005A54AD2468DFBA00C8F1D1 /* about_telIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005A54A32468DFBA00C8F1D1 /* about_telIcon@2x.png */; };
 		005A54AE2468DFBA00C8F1D1 /* about_telIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005A54A42468DFBA00C8F1D1 /* about_telIcon@3x.png */; };
 		005A54AF2468DFBA00C8F1D1 /* about_shouceIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005A54A52468DFBA00C8F1D1 /* about_shouceIcon@2x.png */; };
@@ -118,6 +127,20 @@
 		0059BCE0246BA05700E969AE /* MKDeviceInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKDeviceInfoController.m; sourceTree = "<group>"; };
 		0059BCE2246BA79900E969AE /* detailIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detailIcon@2x.png"; sourceTree = "<group>"; };
 		0059BCE3246BA79900E969AE /* detailIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detailIcon@3x.png"; sourceTree = "<group>"; };
+		0059BCE6246BC52500E969AE /* MKModifyNormalDatasController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKModifyNormalDatasController.h; sourceTree = "<group>"; };
+		0059BCE7246BC52500E969AE /* MKModifyNormalDatasController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKModifyNormalDatasController.m; sourceTree = "<group>"; };
+		0059BCE9246BCDB300E969AE /* MKModifyPowerStatusController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKModifyPowerStatusController.h; sourceTree = "<group>"; };
+		0059BCEA246BCDB300E969AE /* MKModifyPowerStatusController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKModifyPowerStatusController.m; sourceTree = "<group>"; };
+		0059BCED246BCEB500E969AE /* modifyPowerOnSelectedIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modifyPowerOnSelectedIcon@3x.png"; sourceTree = "<group>"; };
+		0059BCEE246BCEB500E969AE /* modifyPowerOnSelectedIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modifyPowerOnSelectedIcon@2x.png"; sourceTree = "<group>"; };
+		0059BCEF246BCEB500E969AE /* modifyPowerOnUnselectedIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modifyPowerOnUnselectedIcon@2x.png"; sourceTree = "<group>"; };
+		0059BCF0246BCEB500E969AE /* modifyPowerOnUnselectedIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modifyPowerOnUnselectedIcon@3x.png"; sourceTree = "<group>"; };
+		0059BCF5246BD25A00E969AE /* MKModifyPowerStatusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKModifyPowerStatusCell.h; sourceTree = "<group>"; };
+		0059BCF6246BD25A00E969AE /* MKModifyPowerStatusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKModifyPowerStatusCell.m; sourceTree = "<group>"; };
+		0059BCF8246BD44B00E969AE /* MKModifyPowerStatusCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKModifyPowerStatusCellModel.h; sourceTree = "<group>"; };
+		0059BCF9246BD44B00E969AE /* MKModifyPowerStatusCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKModifyPowerStatusCellModel.m; sourceTree = "<group>"; };
+		0059BCFB246BDD7B00E969AE /* MKSettingDatasModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingDatasModel.h; sourceTree = "<group>"; };
+		0059BCFC246BDD7B00E969AE /* MKSettingDatasModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSettingDatasModel.m; sourceTree = "<group>"; };
 		005A54A32468DFBA00C8F1D1 /* about_telIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_telIcon@2x.png"; sourceTree = "<group>"; };
 		005A54A42468DFBA00C8F1D1 /* about_telIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_telIcon@3x.png"; sourceTree = "<group>"; };
 		005A54A52468DFBA00C8F1D1 /* about_shouceIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_shouceIcon@2x.png"; sourceTree = "<group>"; };
@@ -264,6 +287,7 @@
 		00520BA424624ED3003BF540 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0059BCEC246BCEB500E969AE /* modify */,
 				0059BCE2246BA79900E969AE /* detailIcon@2x.png */,
 				0059BCE3246BA79900E969AE /* detailIcon@3x.png */,
 				0059BCD8246B9DBF00E969AE /* goto_next_button@2x.png */,
@@ -311,6 +335,17 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0059BCEC246BCEB500E969AE /* modify */ = {
+			isa = PBXGroup;
+			children = (
+				0059BCED246BCEB500E969AE /* modifyPowerOnSelectedIcon@3x.png */,
+				0059BCEE246BCEB500E969AE /* modifyPowerOnSelectedIcon@2x.png */,
+				0059BCEF246BCEB500E969AE /* modifyPowerOnUnselectedIcon@2x.png */,
+				0059BCF0246BCEB500E969AE /* modifyPowerOnUnselectedIcon@3x.png */,
+			);
+			path = modify;
 			sourceTree = "<group>";
 		};
 		005A54A22468DFBA00C8F1D1 /* aboutPage */ = {
@@ -411,6 +446,10 @@
 			children = (
 				005A54D42468F1AF00C8F1D1 /* MKSettingController.h */,
 				005A54D52468F1AF00C8F1D1 /* MKSettingController.m */,
+				0059BCE6246BC52500E969AE /* MKModifyNormalDatasController.h */,
+				0059BCE7246BC52500E969AE /* MKModifyNormalDatasController.m */,
+				0059BCE9246BCDB300E969AE /* MKModifyPowerStatusController.h */,
+				0059BCEA246BCDB300E969AE /* MKModifyPowerStatusController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,6 +459,10 @@
 			children = (
 				0059BCD1246B91E900E969AE /* MKSettingPageCellModel.h */,
 				0059BCD2246B91E900E969AE /* MKSettingPageCellModel.m */,
+				0059BCF8246BD44B00E969AE /* MKModifyPowerStatusCellModel.h */,
+				0059BCF9246BD44B00E969AE /* MKModifyPowerStatusCellModel.m */,
+				0059BCFB246BDD7B00E969AE /* MKSettingDatasModel.h */,
+				0059BCFC246BDD7B00E969AE /* MKSettingDatasModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -431,6 +474,8 @@
 				0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */,
 				0059BCD4246B973A00E969AE /* MKSettingButtonCell.h */,
 				0059BCD5246B973A00E969AE /* MKSettingButtonCell.m */,
+				0059BCF5246BD25A00E969AE /* MKModifyPowerStatusCell.h */,
+				0059BCF6246BD25A00E969AE /* MKModifyPowerStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -776,6 +821,7 @@
 				005A54F22468F8F100C8F1D1 /* energyTabBarItemUnselected@2x.png in Resources */,
 				00633C452461645F00D4BCA3 /* sliderMinimumTrackIcon@2x.png in Resources */,
 				005A54B52468DFBA00C8F1D1 /* about_faxIcon@3x.png in Resources */,
+				0059BCF2246BCEB500E969AE /* modifyPowerOnSelectedIcon@2x.png in Resources */,
 				00633C432461645F00D4BCA3 /* sliderMaximumTrackImage@2x.png in Resources */,
 				005A54F12468F8F100C8F1D1 /* powerTabBarItemUnselected@3x.png in Resources */,
 				005A54B22468DFBA00C8F1D1 /* about_shouceIcon@3x.png in Resources */,
@@ -786,6 +832,7 @@
 				00520BAA24624ED3003BF540 /* scanRefresh@3x.png in Resources */,
 				00520BAB24624ED3003BF540 /* scanRightAboutIcon@3x.png in Resources */,
 				00520BA924624ED3003BF540 /* scanRefresh@2x.png in Resources */,
+				0059BCF3246BCEB500E969AE /* modifyPowerOnUnselectedIcon@2x.png in Resources */,
 				005A54B02468DFBA00C8F1D1 /* about_addIcon@3x.png in Resources */,
 				00633C412461645F00D4BCA3 /* sliderThumbIcon@3x.png in Resources */,
 				0059BCDA246B9DBF00E969AE /* goto_next_button@2x.png in Resources */,
@@ -804,6 +851,8 @@
 				005A54B62468DFBA00C8F1D1 /* aboutIcon@3x.png in Resources */,
 				008B6E702466AEB1008FC199 /* clearButtonIcon@2x.png in Resources */,
 				005A54FC2468F8F100C8F1D1 /* timerTabBarItemUnselected@2x.png in Resources */,
+				0059BCF1246BCEB500E969AE /* modifyPowerOnSelectedIcon@3x.png in Resources */,
+				0059BCF4246BCEB500E969AE /* modifyPowerOnUnselectedIcon@3x.png in Resources */,
 				008B6E712466AEB1008FC199 /* clearButtonIcon@3x.png in Resources */,
 				005A54B32468DFBA00C8F1D1 /* aboutIcon@2x.png in Resources */,
 				005A54EE2468F8F100C8F1D1 /* settingTabBarItemUnselected@2x.png in Resources */,
@@ -868,6 +917,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0059BCEB246BCDB300E969AE /* MKModifyPowerStatusController.m in Sources */,
 				005A550E246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m in Sources */,
 				005A54D32468F16F00C8F1D1 /* MKEnergyController.m in Sources */,
 				0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */,
@@ -881,6 +931,7 @@
 				005A54D92468F22C00C8F1D1 /* MKTimerController.m in Sources */,
 				00520BAF246254ED003BF540 /* MKLifeBLEDeviceModel.m in Sources */,
 				0059BCE1246BA05700E969AE /* MKDeviceInfoController.m in Sources */,
+				0059BCFD246BDD7B00E969AE /* MKSettingDatasModel.m in Sources */,
 				0026B29224616E9C00791264 /* MKScanPageController.m in Sources */,
 				008B6E7C2466B570008FC199 /* MKAboutController.m in Sources */,
 				00633C442461645F00D4BCA3 /* MKSlider.m in Sources */,
@@ -888,8 +939,10 @@
 				00633C472461645F00D4BCA3 /* MKContactTrackerTextCell.m in Sources */,
 				0026B28E24616E5E00791264 /* MKScanSearchView.m in Sources */,
 				006246CC244EFA8B00A73CA8 /* AppDelegate.m in Sources */,
+				0059BCE8246BC52500E969AE /* MKModifyNormalDatasController.m in Sources */,
 				005A55072469513A00C8F1D1 /* MKLifeBLEInterface+MKConfig.m in Sources */,
 				00633C4B246164B600D4BCA3 /* MKLifeBLECentralManager.m in Sources */,
+				0059BCFA246BD44B00E969AE /* MKModifyPowerStatusCellModel.m in Sources */,
 				005A5501246923F800C8F1D1 /* MKPowerCircleView.m in Sources */,
 				00633C3F2461645F00D4BCA3 /* MKSlotConfigPickView.m in Sources */,
 				006246DD244EFA8D00A73CA8 /* main.m in Sources */,
@@ -899,6 +952,7 @@
 				005A54BC2468EA5200C8F1D1 /* CBPeripheral+MKLifeBLEAdd.m in Sources */,
 				00520BB824626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m in Sources */,
 				008B6E7E2466B570008FC199 /* MKAboutPageCell.m in Sources */,
+				0059BCF7246BD25A00E969AE /* MKModifyPowerStatusCell.m in Sources */,
 				00520BB22462607B003BF540 /* MKLifeBLEAdopter.m in Sources */,
 				005A54DC2468F2F400C8F1D1 /* MKTabBarController.m in Sources */,
 			);

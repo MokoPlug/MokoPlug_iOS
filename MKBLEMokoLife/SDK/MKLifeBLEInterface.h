@@ -96,6 +96,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)readOverLoadStatusWithSucBlock:(void (^)(id returnData))sucBlock
                            failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// 读取脉冲常数
+/// @param sucBlock 成功回调
+/// @param failedBlock 失败回调
++ (void)readPulseConstantWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

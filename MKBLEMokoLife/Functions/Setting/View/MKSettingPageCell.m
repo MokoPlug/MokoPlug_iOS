@@ -55,7 +55,7 @@
     }];
     [self.valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.msgLabel.mas_right).mas_offset(5.f);
-        make.right.mas_equalTo(self.valueLabel.mas_left).mas_offset(-5.f);
+        make.right.mas_equalTo(self.rightIcon.mas_left).mas_offset(-5.f);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.height.mas_equalTo(MKFont(12.f).lineHeight);
     }];

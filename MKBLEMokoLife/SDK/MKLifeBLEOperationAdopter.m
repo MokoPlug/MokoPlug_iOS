@@ -127,6 +127,7 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
         };
         operationID = mk_readFirmwareVersionOperation;
     }else if ([function isEqualToString:@"0b"] && content.length == 18) {
+        //读取mac地址
         NSString *tempMac = [[content substringWithRange:NSMakeRange(6, 12)] uppercaseString];
         NSString *macAddress = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[tempMac substringWithRange:NSMakeRange(0, 2)],[tempMac substringWithRange:NSMakeRange(2, 2)],[tempMac substringWithRange:NSMakeRange(4, 2)],[tempMac substringWithRange:NSMakeRange(6, 2)],[tempMac substringWithRange:NSMakeRange(8, 2)],[tempMac substringWithRange:NSMakeRange(10, 2)]];
         returnDic = @{
@@ -194,6 +195,13 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
             @"overLoadValue":value
         };
         operationID = mk_readOverLoadStatusOperation;
+    }else if ([function isEqualToString:@"13"] && content.length == 10) {
+        //读取脉冲常数
+        NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
+        returnDic = @{
+            @"pulseConstant":value,
+        };
+        operationID = mk_readPulseConstantOperation;
     }
     
     return [self dataParserGetDataSuccess:returnDic operationID:operationID];
