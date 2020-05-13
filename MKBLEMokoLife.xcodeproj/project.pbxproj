@@ -18,6 +18,14 @@
 		00520BB22462607B003BF540 /* MKLifeBLEAdopter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BB12462607B003BF540 /* MKLifeBLEAdopter.m */; };
 		00520BB824626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BB724626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m */; };
 		00520BBB24628C2A003BF540 /* MKScanPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BBA24628C2A003BF540 /* MKScanPageCell.m */; };
+		0059BCD0246B85BE00E969AE /* MKSettingPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */; };
+		0059BCD3246B91E900E969AE /* MKSettingPageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCD2246B91E900E969AE /* MKSettingPageCellModel.m */; };
+		0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCD5246B973A00E969AE /* MKSettingButtonCell.m */; };
+		0059BCD9246B9DBF00E969AE /* goto_next_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCD7246B9DBF00E969AE /* goto_next_button@3x.png */; };
+		0059BCDA246B9DBF00E969AE /* goto_next_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCD8246B9DBF00E969AE /* goto_next_button@2x.png */; };
+		0059BCE1246BA05700E969AE /* MKDeviceInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCE0246BA05700E969AE /* MKDeviceInfoController.m */; };
+		0059BCE4246BA79900E969AE /* detailIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCE2246BA79900E969AE /* detailIcon@2x.png */; };
+		0059BCE5246BA79900E969AE /* detailIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0059BCE3246BA79900E969AE /* detailIcon@3x.png */; };
 		005A54AD2468DFBA00C8F1D1 /* about_telIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005A54A32468DFBA00C8F1D1 /* about_telIcon@2x.png */; };
 		005A54AE2468DFBA00C8F1D1 /* about_telIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005A54A42468DFBA00C8F1D1 /* about_telIcon@3x.png */; };
 		005A54AF2468DFBA00C8F1D1 /* about_shouceIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005A54A52468DFBA00C8F1D1 /* about_shouceIcon@2x.png */; };
@@ -98,6 +106,18 @@
 		00520BB724626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKLifeBLEDeviceModel+MKScanPage.m"; sourceTree = "<group>"; };
 		00520BB924628C2A003BF540 /* MKScanPageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKScanPageCell.h; sourceTree = "<group>"; };
 		00520BBA24628C2A003BF540 /* MKScanPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKScanPageCell.m; sourceTree = "<group>"; };
+		0059BCCE246B85BE00E969AE /* MKSettingPageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingPageCell.h; sourceTree = "<group>"; };
+		0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSettingPageCell.m; sourceTree = "<group>"; };
+		0059BCD1246B91E900E969AE /* MKSettingPageCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingPageCellModel.h; sourceTree = "<group>"; };
+		0059BCD2246B91E900E969AE /* MKSettingPageCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSettingPageCellModel.m; sourceTree = "<group>"; };
+		0059BCD4246B973A00E969AE /* MKSettingButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingButtonCell.h; sourceTree = "<group>"; };
+		0059BCD5246B973A00E969AE /* MKSettingButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSettingButtonCell.m; sourceTree = "<group>"; };
+		0059BCD7246B9DBF00E969AE /* goto_next_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goto_next_button@3x.png"; sourceTree = "<group>"; };
+		0059BCD8246B9DBF00E969AE /* goto_next_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goto_next_button@2x.png"; sourceTree = "<group>"; };
+		0059BCDF246BA05700E969AE /* MKDeviceInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDeviceInfoController.h; sourceTree = "<group>"; };
+		0059BCE0246BA05700E969AE /* MKDeviceInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKDeviceInfoController.m; sourceTree = "<group>"; };
+		0059BCE2246BA79900E969AE /* detailIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detailIcon@2x.png"; sourceTree = "<group>"; };
+		0059BCE3246BA79900E969AE /* detailIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detailIcon@3x.png"; sourceTree = "<group>"; };
 		005A54A32468DFBA00C8F1D1 /* about_telIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_telIcon@2x.png"; sourceTree = "<group>"; };
 		005A54A42468DFBA00C8F1D1 /* about_telIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_telIcon@3x.png"; sourceTree = "<group>"; };
 		005A54A52468DFBA00C8F1D1 /* about_shouceIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_shouceIcon@2x.png"; sourceTree = "<group>"; };
@@ -244,6 +264,10 @@
 		00520BA424624ED3003BF540 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0059BCE2246BA79900E969AE /* detailIcon@2x.png */,
+				0059BCE3246BA79900E969AE /* detailIcon@3x.png */,
+				0059BCD8246B9DBF00E969AE /* goto_next_button@2x.png */,
+				0059BCD7246B9DBF00E969AE /* goto_next_button@3x.png */,
 				005A54DD2468F8F100C8F1D1 /* tabBar */,
 				005A54A22468DFBA00C8F1D1 /* aboutPage */,
 				008B6E6E2466AEB1008FC199 /* clearButtonIcon@2x.png */,
@@ -254,6 +278,39 @@
 				00520BA824624ED3003BF540 /* scanRightAboutIcon@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0059BCDB246BA03F00E969AE /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0059BCDC246BA03F00E969AE /* Controller */,
+				0059BCDD246BA03F00E969AE /* Model */,
+				0059BCDE246BA03F00E969AE /* View */,
+			);
+			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		0059BCDC246BA03F00E969AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0059BCDF246BA05700E969AE /* MKDeviceInfoController.h */,
+				0059BCE0246BA05700E969AE /* MKDeviceInfoController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0059BCDD246BA03F00E969AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0059BCDE246BA03F00E969AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		005A54A22468DFBA00C8F1D1 /* aboutPage */ = {
@@ -361,6 +418,8 @@
 		005A54C72468EFB400C8F1D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0059BCD1246B91E900E969AE /* MKSettingPageCellModel.h */,
+				0059BCD2246B91E900E969AE /* MKSettingPageCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +427,10 @@
 		005A54C82468EFB400C8F1D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0059BCCE246B85BE00E969AE /* MKSettingPageCell.h */,
+				0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */,
+				0059BCD4246B973A00E969AE /* MKSettingButtonCell.h */,
+				0059BCD5246B973A00E969AE /* MKSettingButtonCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -556,6 +619,7 @@
 		00633C3D2461645F00D4BCA3 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				0059BCDB246BA03F00E969AE /* DeviceInfo */,
 				005A54C12468EFB400C8F1D1 /* EnergyPage */,
 				005A54BD2468EFB400C8F1D1 /* PowerPage */,
 				005A54C52468EFB400C8F1D1 /* Setting */,
@@ -724,6 +788,7 @@
 				00520BA924624ED3003BF540 /* scanRefresh@2x.png in Resources */,
 				005A54B02468DFBA00C8F1D1 /* about_addIcon@3x.png in Resources */,
 				00633C412461645F00D4BCA3 /* sliderThumbIcon@3x.png in Resources */,
+				0059BCDA246B9DBF00E969AE /* goto_next_button@2x.png in Resources */,
 				006246DA244EFA8D00A73CA8 /* LaunchScreen.storyboard in Resources */,
 				005A54F82468F8F100C8F1D1 /* energyTabBarItemSelected@3x.png in Resources */,
 				005A54AF2468DFBA00C8F1D1 /* about_shouceIcon@2x.png in Resources */,
@@ -746,7 +811,10 @@
 				005A54EF2468F8F100C8F1D1 /* settingTabBarItemUnselected@3x.png in Resources */,
 				005A54B12468DFBA00C8F1D1 /* about_addIcon@2x.png in Resources */,
 				005A54FA2468F8F100C8F1D1 /* powerTabBarItemSelected@2x.png in Resources */,
+				0059BCE5246BA79900E969AE /* detailIcon@3x.png in Resources */,
 				005A54F72468F8F100C8F1D1 /* settingTabBarItemSelected@3x.png in Resources */,
+				0059BCE4246BA79900E969AE /* detailIcon@2x.png in Resources */,
+				0059BCD9246B9DBF00E969AE /* goto_next_button@3x.png in Resources */,
 				00633C402461645F00D4BCA3 /* sliderMaximumTrackImage@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -802,13 +870,17 @@
 			files = (
 				005A550E246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m in Sources */,
 				005A54D32468F16F00C8F1D1 /* MKEnergyController.m in Sources */,
+				0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */,
 				005A54D02468F0DA00C8F1D1 /* MKPowerController.m in Sources */,
 				00633C482461645F00D4BCA3 /* MKBaseCell.m in Sources */,
 				005A550B2469527100C8F1D1 /* MKLifeBLEOperation.m in Sources */,
+				0059BCD0246B85BE00E969AE /* MKSettingPageCell.m in Sources */,
+				0059BCD3246B91E900E969AE /* MKSettingPageCellModel.m in Sources */,
 				008B6E7D2466B570008FC199 /* MKAboutCellModel.m in Sources */,
 				00520BBB24628C2A003BF540 /* MKScanPageCell.m in Sources */,
 				005A54D92468F22C00C8F1D1 /* MKTimerController.m in Sources */,
 				00520BAF246254ED003BF540 /* MKLifeBLEDeviceModel.m in Sources */,
+				0059BCE1246BA05700E969AE /* MKDeviceInfoController.m in Sources */,
 				0026B29224616E9C00791264 /* MKScanPageController.m in Sources */,
 				008B6E7C2466B570008FC199 /* MKAboutController.m in Sources */,
 				00633C442461645F00D4BCA3 /* MKSlider.m in Sources */,

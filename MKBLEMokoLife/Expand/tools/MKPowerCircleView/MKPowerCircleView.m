@@ -218,7 +218,7 @@ static CGFloat const circleLabelViewOffset = 35.f;
 #pragma mark - private method
 - (CABasicAnimation *)circleAnimationWithEndValue:(CGFloat)endValue{
     CABasicAnimation * circleAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    circleAnimation.duration = 1;
+    circleAnimation.duration = 0.2f;
     circleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     circleAnimation.fromValue = @(0);
     circleAnimation.toValue = @(endValue);

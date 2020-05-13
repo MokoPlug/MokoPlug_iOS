@@ -8,6 +8,8 @@
 
 #import "MKEnergyController.h"
 
+#import "MKDeviceInfoController.h"
+
 @interface MKEnergyController ()
 
 @end
@@ -28,11 +30,18 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MKPopToRootViewControllerNotification" object:nil];
 }
 
+- (void)rightButtonMethod {
+    MKDeviceInfoController *vc = [[MKDeviceInfoController alloc] init];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 #pragma mark - UI
 - (void)loadSubViews {
     self.custom_naviBarColor = COLOR_NAVIBAR_CUSTOM;
     self.titleLabel.textColor = COLOR_WHITE_MACROS;
-    [self.rightButton setHidden:YES];
+    [self.rightButton setImage:LOADIMAGE(@"detailIcon", @"png") forState:UIControlStateNormal];
     self.view.backgroundColor = RGBCOLOR(242, 242, 242);
 }
 

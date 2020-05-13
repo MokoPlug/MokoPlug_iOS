@@ -9,6 +9,8 @@
 #import "MKPowerController.h"
 #import "MKPowerCircleView.h"
 
+#import "MKDeviceInfoController.h"
+
 static CGFloat const circleView_offset_X = 40.f;
 static CGFloat const buttonWidth = 120.f;
 static CGFloat const buttonHeight = 32.f;
@@ -53,7 +55,10 @@ static CGFloat const buttonHeight = 32.f;
 }
 
 - (void)rightButtonMethod {
-   
+    MKDeviceInfoController *vc = [[MKDeviceInfoController alloc] init];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 #pragma mark - event method
@@ -203,7 +208,7 @@ static CGFloat const buttonHeight = 32.f;
     self.custom_naviBarColor = COLOR_NAVIBAR_CUSTOM;
     self.titleLabel.textColor = COLOR_WHITE_MACROS;
     self.view.backgroundColor = RGBCOLOR(242, 242, 242);
-    [self.rightButton setHidden:YES];
+    [self.rightButton setImage:LOADIMAGE(@"detailIcon", @"png") forState:UIControlStateNormal];
     [self.view addSubview:self.circleView];
     [self.view addSubview:self.statusButton];
     [self.view addSubview:self.overLoadLabel];

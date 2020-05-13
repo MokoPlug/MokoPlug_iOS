@@ -51,9 +51,9 @@
     }];
     [self.rightIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-15.f);
-        make.width.mas_equalTo(8.f);
+        make.width.mas_equalTo(6.f);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
-        make.height.mas_equalTo(14.f);
+        make.height.mas_equalTo(10.f);
     }];
     [self.detailMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView.mas_centerX).mas_offset(1.f);
