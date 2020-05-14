@@ -42,11 +42,15 @@ static CGFloat const buttonHeight = 32.f;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self startReadDatas];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSubViews];
     [self addNotifications];
-    [self startReadDatas];
 }
 
 #pragma mark - super method
@@ -103,6 +107,14 @@ static CGFloat const buttonHeight = 32.f;
 - (void)startReadDatas {
     [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
     dispatch_async(self.readQueue, ^{
+        NSString *deviceName = [self readDeviceName];
+        if (!deviceName) {
+            moko_dispatch_main_safe(^{
+                [[MKHudManager share] hide];
+                [self.view showCentralToast:@"Read deviceName error"];
+            });
+            return ;
+        }
         if (![self readSwitchStatus]) {
             moko_dispatch_main_safe(^{
                 [[MKHudManager share] hide];
@@ -126,11 +138,24 @@ static CGFloat const buttonHeight = 32.f;
         }
         moko_dispatch_main_safe(^{
             [[MKHudManager share] hide];
+            self.defaultTitle = deviceName;
             [self reloadStatus];
             [self reloadPowerValue];
         });
         
     });
+}
+
+- (NSString *)readDeviceName {
+    __block NSString *deviceName = nil;
+    [MKLifeBLEInterface readDeviceNameWithSucBlock:^(id  _Nonnull returnData) {
+        deviceName = returnData[@"result"][@"deviceName"];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return deviceName;
 }
 
 - (BOOL)readSwitchStatus {

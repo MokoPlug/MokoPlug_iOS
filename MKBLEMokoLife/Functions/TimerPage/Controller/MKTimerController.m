@@ -38,6 +38,11 @@ static CGFloat const buttonHeight = 32.f;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self readDeviceName];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSubViews];
@@ -45,7 +50,6 @@ static CGFloat const buttonHeight = 32.f;
                                              selector:@selector(receiveCountdownTimerData:)
                                                  name:mk_receiveCountdownNotification
                                                object:nil];
-    [self readDataFromDevice];
 }
 
 #pragma mark - super method
@@ -91,8 +95,18 @@ static CGFloat const buttonHeight = 32.f;
 }
 
 #pragma mark - interface
-- (void)readDataFromDevice {
+- (void)readDeviceName {
     [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface readDeviceNameWithSucBlock:^(id  _Nonnull returnData) {
+        self.defaultTitle = returnData[@"result"][@"deviceName"];
+        [self readDataFromDevice];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)readDataFromDevice {
     [MKLifeBLEInterface readCountdownValueWithSucBlock:^(id  _Nonnull returnData) {
         [[MKHudManager share] hide];
         [self reloadCircles:returnData[@"result"]];
