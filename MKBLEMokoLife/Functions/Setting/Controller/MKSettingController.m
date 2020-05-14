@@ -16,6 +16,7 @@
 
 #import "MKDeviceInfoController.h"
 #import "MKModifyPowerStatusController.h"
+#import "MKModifyNormalDatasController.h"
 
 @interface MKSettingController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -62,13 +63,63 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            
+            MKModifyNormalDatasController *vc = [[MKModifyNormalDatasController alloc] init];
+            vc.pageType = MKModifyDeviceNamePage;
+            vc.textFieldValue = self.dataModel.deviceName;
+            [self pushControllerWithHiddenBottom:vc];
+            return;
         }
         if (indexPath.row == 1) {
             MKModifyPowerStatusController *vc = [[MKModifyPowerStatusController alloc] init];
             [self pushControllerWithHiddenBottom:vc];
             return;
         }
+        return;
+    }
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            //广播间隔
+            MKModifyNormalDatasController *vc = [[MKModifyNormalDatasController alloc] init];
+            vc.pageType = MKModifyBroadcastFrequencyPage;
+            vc.textFieldValue = self.dataModel.advInterval;
+            [self pushControllerWithHiddenBottom:vc];
+            return;
+        }
+        if (indexPath.row == 1) {
+            //过载保护
+            MKModifyNormalDatasController *vc = [[MKModifyNormalDatasController alloc] init];
+            vc.pageType = MKModifyOverloadValuePage;
+            vc.textFieldValue = self.dataModel.overloadValue;
+            [self pushControllerWithHiddenBottom:vc];
+            return;
+        }
+        if (indexPath.row == 2) {
+            //电能存储间隔
+            MKModifyNormalDatasController *vc = [[MKModifyNormalDatasController alloc] init];
+            vc.pageType = MKModifyPowerReportIntervalPage;
+            vc.textFieldValue = self.dataModel.powerReInterval;
+            vc.powerValue = self.dataModel.powerChangeNoti;
+            [self pushControllerWithHiddenBottom:vc];
+            return;
+        }
+        if (indexPath.row == 3) {
+            //电能变化值
+            MKModifyNormalDatasController *vc = [[MKModifyNormalDatasController alloc] init];
+            vc.pageType = MKModifyPowerChangeNotificationPage;
+            vc.textFieldValue = self.dataModel.powerChangeNoti;
+            vc.powerValue = self.dataModel.powerReInterval;
+            [self pushControllerWithHiddenBottom:vc];
+            return;
+        }
+        if (indexPath.row == 4) {
+            //重置电能
+            [self resetEnergyConsumptionAlert];
+        }
+        return;
+    }
+    if (indexPath.section == 2) {
+        //恢复出厂设置
+        [self resetDeviceAlert];
         return;
     }
 }
@@ -164,7 +215,63 @@
     }];
 }
 
+- (void)resetEnergyConsumptionMethod {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface resetAccumulatedEnergyWithSucBlock:^{
+        [[MKHudManager share] hide];
+        [self readDatasFromDevice];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)resetDeviceMethod {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface resetFactoryWithSucBlock:^{
+        [[MKHudManager share] hide];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
 #pragma mark -
+- (void)resetEnergyConsumptionAlert {
+    NSString *msg = @"Please confirm again whether to reset the accumulated electricity?Value will be recounted after clearing.";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Reset Energy Consumption"
+                                                                             message:msg
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    WS(weakSelf);
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:cancelAction];
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf resetEnergyConsumptionMethod];
+    }];
+    [alertController addAction:moreAction];
+    
+    [kAppRootController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)resetDeviceAlert {
+    NSString *msg = @"After reset,the relevant data will be totally cleared,please confirm again.";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Reset Device"
+                                                                             message:msg
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    WS(weakSelf);
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:cancelAction];
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf resetDeviceMethod];
+    }];
+    [alertController addAction:moreAction];
+    
+    [kAppRootController presentViewController:alertController animated:YES completion:nil];
+}
 
 #pragma mark - private method
 - (void)reloadTableDatas {
@@ -233,7 +340,7 @@
     [self.section1List addObject:energyModel];
     
     [self.section2List addObject:@"Reset Device"];
-    [self.section2List addObject:@"Disconnect"];
+//    [self.section2List addObject:@"Disconnect"];
     
     [self.tableView reloadData];
 }

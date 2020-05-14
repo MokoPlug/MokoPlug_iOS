@@ -29,14 +29,73 @@
 
 #pragma mark - event method
 - (void)confirmButtonPressed {
-//    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
-//    [MKLifeBLEInterface configDeviceName:self.textField.text sucBlock:^{
-//        [[MKHudManager share] hide];
-//        [self.view showCentralToast:@"Success"];
-//    } failedBlock:^(NSError * _Nonnull error) {
-//        [[MKHudManager share] hide];
-//        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
-//    }];
+    if (!ValidStr(self.textField.text)) {
+        [self.view showCentralToast:@"Param cannot be empty"];
+        return;
+    }
+    if (self.pageType == MKModifyDeviceNamePage) {
+        [self configDeviceName];
+        return;
+    }
+    if (self.pageType == MKModifyBroadcastFrequencyPage) {
+        [self configAdvInterval];
+        return;
+    }
+    if (self.pageType == MKModifyOverloadValuePage) {
+        [self configOverloadValue];
+        return;
+    }
+    if (self.pageType == MKModifyPowerReportIntervalPage || self.pageType == MKModifyPowerChangeNotificationPage) {
+        [self configPowerValue];
+        return;
+    }
+}
+
+#pragma mark - interface
+- (void)configDeviceName {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface configDeviceName:self.textField.text sucBlock:^{
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)configAdvInterval {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface configAdvInterval:[self.textField.text integerValue] sucBlock:^{
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)configOverloadValue {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface configOverloadProtectionValue:[self.textField.text integerValue] sucBlock:^{
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)configPowerValue {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
+    NSInteger interval = (self.pageType == MKModifyPowerReportIntervalPage ? [self.textField.text integerValue] : [self.powerValue integerValue]);
+    NSInteger energy = (self.pageType == MKModifyPowerChangeNotificationPage ? [self.textField.text integerValue] : [self.powerValue integerValue]);
+    [MKLifeBLEInterface configEnergyStorageParameters:interval energyValue:energy sucBlock:^{
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - UI
@@ -44,6 +103,9 @@
     self.custom_naviBarColor = COLOR_NAVIBAR_CUSTOM;
     self.titleLabel.textColor = COLOR_WHITE_MACROS;
     self.view.backgroundColor = RGBCOLOR(242, 242, 242);
+    self.defaultTitle = [self fetchTitle];
+    self.textField = [self loadTextField];
+    self.textField.text = self.textFieldValue;
     
     UIView *textView = [self textView];
     [self.view addSubview:textView];
@@ -70,17 +132,6 @@
 }
 
 #pragma mark - getter
-- (UITextField *)textField {
-    if (!_textField) {
-        _textField = [[UITextField alloc] initWithTextFieldType:normalInput];
-        _textField.backgroundColor = RGBCOLOR(245, 245, 245);
-        _textField.textColor = RGBCOLOR(128, 128, 128);
-        _textField.font = MKFont(15.f);
-        _textField.textAlignment = NSTextAlignmentLeft;
-        _textField.borderStyle = UITextBorderStyleNone;
-    }
-    return _textField;
-}
 
 - (UIButton *)confirmButton {
     if (!_confirmButton) {
@@ -106,6 +157,35 @@
     textView.layer.borderWidth = 0.5f;
     textView.layer.cornerRadius = 20.f;
     return textView;
+}
+
+- (UITextField *)loadTextField {
+    mk_CustomTextFieldType type = normalInput;
+    if (self.pageType != MKModifyDeviceNamePage) {
+        type = realNumberOnly;
+    }
+    UITextField *textField = [[UITextField alloc] initWithTextFieldType:type];
+    textField.backgroundColor = RGBCOLOR(245, 245, 245);
+    textField.textColor = RGBCOLOR(128, 128, 128);
+    textField.font = MKFont(15.f);
+    textField.textAlignment = NSTextAlignmentLeft;
+    textField.borderStyle = UITextBorderStyleNone;
+    return textField;
+}
+
+- (NSString *)fetchTitle {
+    switch (self.pageType) {
+        case MKModifyDeviceNamePage:
+            return self.textFieldValue;
+        case MKModifyBroadcastFrequencyPage:
+            return @"Broadcast frequency";
+        case MKModifyOverloadValuePage:
+            return @"Overload value";
+        case MKModifyPowerReportIntervalPage:
+            return @"Power reporting Interval";
+        case MKModifyPowerChangeNotificationPage:
+            return @"Power change notification";
+    }
 }
 
 @end
