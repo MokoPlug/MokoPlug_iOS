@@ -73,6 +73,10 @@
 		005A55072469513A00C8F1D1 /* MKLifeBLEInterface+MKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A55062469513A00C8F1D1 /* MKLifeBLEInterface+MKConfig.m */; };
 		005A550B2469527100C8F1D1 /* MKLifeBLEOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A550A2469527100C8F1D1 /* MKLifeBLEOperation.m */; };
 		005A550E246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A550D246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m */; };
+		005E4C43246CF11200AB0705 /* MKTimerCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005E4C42246CF11200AB0705 /* MKTimerCircleView.m */; };
+		005E4C46246D289800AB0705 /* haloRing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005E4C44246D289700AB0705 /* haloRing@2x.png */; };
+		005E4C47246D289800AB0705 /* haloRing@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 005E4C45246D289700AB0705 /* haloRing@3x.png */; };
+		005E4C4D246D3A8700AB0705 /* MKConfigDeviceTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005E4C4C246D3A8700AB0705 /* MKConfigDeviceTimePickerView.m */; };
 		006246CC244EFA8B00A73CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 006246CB244EFA8B00A73CA8 /* AppDelegate.m */; };
 		006246D7244EFA8D00A73CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006246D6244EFA8D00A73CA8 /* Assets.xcassets */; };
 		006246DA244EFA8D00A73CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006246D8244EFA8D00A73CA8 /* LaunchScreen.storyboard */; };
@@ -192,6 +196,12 @@
 		005A550A2469527100C8F1D1 /* MKLifeBLEOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKLifeBLEOperation.m; sourceTree = "<group>"; };
 		005A550C246952D100C8F1D1 /* MKLifeBLEOperationAdopter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKLifeBLEOperationAdopter.h; sourceTree = "<group>"; };
 		005A550D246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKLifeBLEOperationAdopter.m; sourceTree = "<group>"; };
+		005E4C41246CF11200AB0705 /* MKTimerCircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKTimerCircleView.h; sourceTree = "<group>"; };
+		005E4C42246CF11200AB0705 /* MKTimerCircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKTimerCircleView.m; sourceTree = "<group>"; };
+		005E4C44246D289700AB0705 /* haloRing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "haloRing@2x.png"; sourceTree = "<group>"; };
+		005E4C45246D289700AB0705 /* haloRing@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "haloRing@3x.png"; sourceTree = "<group>"; };
+		005E4C4B246D3A8700AB0705 /* MKConfigDeviceTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKConfigDeviceTimePickerView.h; sourceTree = "<group>"; };
+		005E4C4C246D3A8700AB0705 /* MKConfigDeviceTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKConfigDeviceTimePickerView.m; sourceTree = "<group>"; };
 		006246C7244EFA8B00A73CA8 /* MokoPlug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MokoPlug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006246CA244EFA8B00A73CA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		006246CB244EFA8B00A73CA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -287,6 +297,8 @@
 		00520BA424624ED3003BF540 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				005E4C44246D289700AB0705 /* haloRing@2x.png */,
+				005E4C45246D289700AB0705 /* haloRing@3x.png */,
 				0059BCEC246BCEB500E969AE /* modify */,
 				0059BCE2246BA79900E969AE /* detailIcon@2x.png */,
 				0059BCE3246BA79900E969AE /* detailIcon@3x.png */,
@@ -518,6 +530,10 @@
 		005A54CD2468EFB400C8F1D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				005E4C4B246D3A8700AB0705 /* MKConfigDeviceTimePickerView.h */,
+				005E4C4C246D3A8700AB0705 /* MKConfigDeviceTimePickerView.m */,
+				005E4C41246CF11200AB0705 /* MKTimerCircleView.h */,
+				005E4C42246CF11200AB0705 /* MKTimerCircleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -838,8 +854,10 @@
 				0059BCDA246B9DBF00E969AE /* goto_next_button@2x.png in Resources */,
 				006246DA244EFA8D00A73CA8 /* LaunchScreen.storyboard in Resources */,
 				005A54F82468F8F100C8F1D1 /* energyTabBarItemSelected@3x.png in Resources */,
+				005E4C47246D289800AB0705 /* haloRing@3x.png in Resources */,
 				005A54AF2468DFBA00C8F1D1 /* about_shouceIcon@2x.png in Resources */,
 				005A54B42468DFBA00C8F1D1 /* about_faxIcon@2x.png in Resources */,
+				005E4C46246D289800AB0705 /* haloRing@2x.png in Resources */,
 				005A54FD2468F8F100C8F1D1 /* timerTabBarItemUnselected@3x.png in Resources */,
 				005A54F62468F8F100C8F1D1 /* settingTabBarItemSelected@2x.png in Resources */,
 				005A54AE2468DFBA00C8F1D1 /* about_telIcon@3x.png in Resources */,
@@ -932,6 +950,7 @@
 				00520BAF246254ED003BF540 /* MKLifeBLEDeviceModel.m in Sources */,
 				0059BCE1246BA05700E969AE /* MKDeviceInfoController.m in Sources */,
 				0059BCFD246BDD7B00E969AE /* MKSettingDatasModel.m in Sources */,
+				005E4C4D246D3A8700AB0705 /* MKConfigDeviceTimePickerView.m in Sources */,
 				0026B29224616E9C00791264 /* MKScanPageController.m in Sources */,
 				008B6E7C2466B570008FC199 /* MKAboutController.m in Sources */,
 				00633C442461645F00D4BCA3 /* MKSlider.m in Sources */,
@@ -955,6 +974,7 @@
 				0059BCF7246BD25A00E969AE /* MKModifyPowerStatusCell.m in Sources */,
 				00520BB22462607B003BF540 /* MKLifeBLEAdopter.m in Sources */,
 				005A54DC2468F2F400C8F1D1 /* MKTabBarController.m in Sources */,
+				005E4C43246CF11200AB0705 /* MKTimerCircleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

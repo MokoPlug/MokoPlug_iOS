@@ -11,7 +11,7 @@
 
 #import "MKDeviceInfoController.h"
 
-static CGFloat const circleView_offset_X = 40.f;
+static CGFloat const circleView_offset_X = 30.f;
 static CGFloat const buttonWidth = 120.f;
 static CGFloat const buttonHeight = 32.f;
 

@@ -8,9 +8,9 @@
 
 #import "MKPowerCircleView.h"
 
-static CGFloat const circleLabelViewOffset = 35.f;
+static CGFloat const circleLabelViewOffset = 25.f;
 
-@interface MKPowerCircleLabelView : UIView
+@interface MKPowerCircleLabelView : UIImageView
 
 @property (nonatomic, strong)UILabel *numberLabel1;
 
@@ -32,6 +32,7 @@ static CGFloat const circleLabelViewOffset = 35.f;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.userInteractionEnabled = YES;
         [self addSubview:self.valueLabel];
         [self addSubview:self.wattsLabel];
         [self addSubview:self.numberLabel1];
@@ -61,29 +62,29 @@ static CGFloat const circleLabelViewOffset = 35.f;
     [self.numberLabel3 mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
         make.width.mas_equalTo(50.f);
-        make.top.mas_equalTo(10.f);
+        make.top.mas_equalTo(30.f);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
     }];
     [self.numberLabel2 mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.valueLabel.mas_top).mas_offset(-3.f);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
-        make.left.mas_equalTo(15.f);
+        make.left.mas_equalTo(35.f);
         make.width.mas_equalTo(25.f);
     }];
     [self.numberLabel4 mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.valueLabel.mas_top).mas_offset(-3.f);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
-        make.right.mas_equalTo(-15.f);
+        make.right.mas_equalTo(-35.f);
         make.width.mas_equalTo(30.f);
     }];
     [self.numberLabel1 mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.numberLabel2.mas_right).mas_offset(5.f);
+        make.right.mas_equalTo(self.numberLabel2.mas_right).mas_offset(10.f);
         make.width.mas_equalTo(20.f);
         make.bottom.mas_equalTo(-(self.frame.size.height / 5));
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
     }];
     [self.numberLabel5 mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.numberLabel4.mas_centerX).mas_offset(-20.f);
+        make.centerX.mas_equalTo(self.numberLabel4.mas_centerX).mas_offset(-30.f);
         make.width.mas_equalTo(30.f);
         make.bottom.mas_equalTo(self.numberLabel1.mas_bottom);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
@@ -218,7 +219,7 @@ static CGFloat const circleLabelViewOffset = 35.f;
 #pragma mark - private method
 - (CABasicAnimation *)circleAnimationWithEndValue:(CGFloat)endValue{
     CABasicAnimation * circleAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    circleAnimation.duration = 0.2f;
+    circleAnimation.duration = 0.01f;
     circleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     circleAnimation.fromValue = @(0);
     circleAnimation.toValue = @(endValue);
@@ -232,11 +233,7 @@ static CGFloat const circleLabelViewOffset = 35.f;
 - (MKPowerCircleLabelView *)lableView {
     if (!_lableView) {
         _lableView = [[MKPowerCircleLabelView alloc] init];
-        
-        _lableView.layer.masksToBounds = YES;
-        _lableView.layer.borderColor = RGBCOLOR(213, 224, 243).CGColor;
-        _lableView.layer.borderWidth = 7.f;
-        _lableView.layer.cornerRadius = (self.frame.size.width - 2 * circleLabelViewOffset) / 2;
+        _lableView.image = LOADIMAGE(@"haloRing", @"png");
     }
     return _lableView;
 }
