@@ -37,8 +37,7 @@
             [self operationFailedBlockWithMsg:@"Read power data error" block:failedBlock];
             return ;
         }
-        NSString *pulseConstant = [self readPulseConstant];
-        if (!ValidStr(pulseConstant)) {
+        if (![self readPulseConstant]) {
             [self operationFailedBlockWithMsg:@"Read energy data error" block:failedBlock];
             return ;
         }
@@ -47,7 +46,7 @@
             [self operationFailedBlockWithMsg:@"Read historicalEnergy data error" block:failedBlock];
             return ;
         }
-        float tempValue = [historicalEnergy floatValue] / [pulseConstant floatValue];
+        float tempValue = [historicalEnergy floatValue] / [self.pulseConstant floatValue];
         self.energyConsumption = [NSString stringWithFormat:@"%.2f",tempValue];
         moko_dispatch_main_safe(^{
             sucBlock();
@@ -109,16 +108,17 @@
     return success;
 }
 
-- (NSString *)readPulseConstant {
-    __block NSString *pulseConstant = nil;
+- (BOOL)readPulseConstant {
+    __block BOOL success = NO;
     [MKLifeBLEInterface readPulseConstantWithSucBlock:^(id  _Nonnull returnData) {
-        pulseConstant = returnData[@"result"][@"pulseConstant"];
+        self.pulseConstant = returnData[@"result"][@"pulseConstant"];
         dispatch_semaphore_signal(self.semaphore);
+        success = YES;
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);
     }];
     dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
-    return pulseConstant;
+    return success;
 }
 
 - (NSString *)readHistoricalEnergy {

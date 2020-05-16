@@ -37,6 +37,7 @@
 
 - (void)dealloc {
     NSLog(@"MKEnergyController销毁");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -48,6 +49,10 @@
     [super viewDidLoad];
     [self loadSubViews];
     [self readEnergyDatas];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resetAccumulatedEnergy)
+                                                 name:@"resetAccumulatedEnergyNotification"
+                                               object:nil];
 }
 
 #pragma mark - super method
@@ -77,6 +82,13 @@
     }
     self.selectedIndex = 1;
     [self reloadSubViews];
+}
+
+#pragma mark - note
+- (void)resetAccumulatedEnergy {
+    //接收到了用户重置电能操作，把所有列表数据清0
+    [self.dailyTable resetAllDatas];
+    [self.monthTable resetAllDatas];
 }
 
 #pragma mark - read data

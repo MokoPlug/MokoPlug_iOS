@@ -18,6 +18,7 @@
 		00520BB22462607B003BF540 /* MKLifeBLEAdopter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BB12462607B003BF540 /* MKLifeBLEAdopter.m */; };
 		00520BB824626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BB724626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m */; };
 		00520BBB24628C2A003BF540 /* MKScanPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BBA24628C2A003BF540 /* MKScanPageCell.m */; };
+		0056606D246FA5B6008A9574 /* MKConfigDeviceDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056606C246FA5B6008A9574 /* MKConfigDeviceDateModel.m */; };
 		0059BCD0246B85BE00E969AE /* MKSettingPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */; };
 		0059BCD3246B91E900E969AE /* MKSettingPageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCD2246B91E900E969AE /* MKSettingPageCellModel.m */; };
 		0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCD5246B973A00E969AE /* MKSettingButtonCell.m */; };
@@ -125,6 +126,8 @@
 		00520BB724626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKLifeBLEDeviceModel+MKScanPage.m"; sourceTree = "<group>"; };
 		00520BB924628C2A003BF540 /* MKScanPageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKScanPageCell.h; sourceTree = "<group>"; };
 		00520BBA24628C2A003BF540 /* MKScanPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKScanPageCell.m; sourceTree = "<group>"; };
+		0056606B246FA5B6008A9574 /* MKConfigDeviceDateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKConfigDeviceDateModel.h; sourceTree = "<group>"; };
+		0056606C246FA5B6008A9574 /* MKConfigDeviceDateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKConfigDeviceDateModel.m; sourceTree = "<group>"; };
 		0059BCCE246B85BE00E969AE /* MKSettingPageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingPageCell.h; sourceTree = "<group>"; };
 		0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSettingPageCell.m; sourceTree = "<group>"; };
 		0059BCD1246B91E900E969AE /* MKSettingPageCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingPageCellModel.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 			children = (
 				00520BB624626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.h */,
 				00520BB724626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m */,
+				0056606B246FA5B6008A9574 /* MKConfigDeviceDateModel.h */,
+				0056606C246FA5B6008A9574 /* MKConfigDeviceDateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -973,6 +978,7 @@
 				005A54D02468F0DA00C8F1D1 /* MKPowerController.m in Sources */,
 				00633C482461645F00D4BCA3 /* MKBaseCell.m in Sources */,
 				005A550B2469527100C8F1D1 /* MKLifeBLEOperation.m in Sources */,
+				0056606D246FA5B6008A9574 /* MKConfigDeviceDateModel.m in Sources */,
 				0059BCD0246B85BE00E969AE /* MKSettingPageCell.m in Sources */,
 				0059BCD3246B91E900E969AE /* MKSettingPageCellModel.m in Sources */,
 				005E2595246E47A100243F07 /* MKEnergyValueCell.m in Sources */,

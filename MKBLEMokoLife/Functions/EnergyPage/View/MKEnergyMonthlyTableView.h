@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param pulseConstant 脉冲常数
 - (void)updateEnergyDatas:(NSArray *)energyList pulseConstant:(NSString *)pulseConstant;
 
+/// 用户重置了电能
+- (void)resetAllDatas;
+
 @end
 
 NS_ASSUME_NONNULL_END

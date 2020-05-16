@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *powerChangeNoti;
 
+@property (nonatomic, copy)NSString *pulseConstant;
+
 @property (nonatomic, copy)NSString *energyConsumption;
 
 - (void)startReadDatasFromDeviceWithSucBlock:(void (^)(void))sucBlock

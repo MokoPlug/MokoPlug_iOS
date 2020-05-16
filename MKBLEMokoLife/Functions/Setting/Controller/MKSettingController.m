@@ -36,6 +36,7 @@
 
 - (void)dealloc {
     NSLog(@"MKSettingController销毁");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -47,6 +48,10 @@
     [super viewDidLoad];
     [self loadSubViews];
     [self loadTableDatas];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveCurrentEnergyNotification:)
+                                                 name:mk_receiveCurrentEnergyNotification
+                                               object:nil];
 }
 
 #pragma mark - super method
@@ -200,6 +205,13 @@
     return cell;
 }
 
+#pragma mark - note
+- (void)receiveCurrentEnergyNotification:(NSNotification *)note {
+    float tempValue = [note.userInfo[@"totalValue"] floatValue] / [self.dataModel.pulseConstant floatValue];
+    MKSettingPageCellModel *energyModel = self.section1List[4];
+    energyModel.valueMsg = [NSString stringWithFormat:@"%.2f",tempValue];
+}
+
 #pragma mark - interface
 - (void)readDatasFromDevice {
     [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
@@ -219,6 +231,8 @@
     [[MKHudManager share] showHUDWithTitle:@"Setting..." inView:self.view isPenetration:NO];
     [MKLifeBLEInterface resetAccumulatedEnergyWithSucBlock:^{
         [[MKHudManager share] hide];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"resetAccumulatedEnergyNotification"
+                                                            object:nil];
         [self readDatasFromDevice];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];

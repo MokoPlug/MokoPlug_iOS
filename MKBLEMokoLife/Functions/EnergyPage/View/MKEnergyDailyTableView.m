@@ -27,9 +27,20 @@
 
 @implementation MKEnergyDailyTableView
 
+- (void)dealloc {
+    NSLog(@"MKEnergyDailyTableView销毁");
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:mk_receiveCurrentEnergyNotification
+                                                  object:nil];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.dailyTableView];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(receiveCurrentEnergyNotification:)
+                                                     name:mk_receiveCurrentEnergyNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -60,11 +71,40 @@
     return cell;
 }
 
+#pragma mark - note
+- (void)receiveCurrentEnergyNotification:(NSNotification *)note {
+    if (self.pulseConstant == 0) {
+        return;
+    }
+    NSString *hour = note.userInfo[@"date"][@"hour"];
+    if (self.dailyList.count == 0) {
+        //没有直接添加
+        MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
+        newModel.timeValue = hour;
+        newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentHourValue"] floatValue] / self.pulseConstant];
+        [self.dailyList addObject:newModel];
+    }else {
+        MKEnergyValueCellModel *model = self.dailyList.firstObject;
+        if ([model.timeValue isEqualToString:hour]) {
+            //存在，替换
+            model.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentHourValue"] floatValue] / self.pulseConstant];
+        }else {
+            //没有，添加
+            MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
+            newModel.timeValue = hour;
+            newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentHourValue"] floatValue] / self.pulseConstant];
+            [self.dailyList insertObject:newModel atIndex:0];
+        }
+    }
+    [self.dailyTableView reloadData];
+    [self reloadHeaderViewWithEnergy:[note.userInfo[@"currentDayValue"] floatValue]];
+}
+
 #pragma mark - public method
 
 - (void)updateEnergyDatas:(NSArray *)energyList pulseConstant:(NSString *)pulseConstant {
     self.pulseConstant = [pulseConstant floatValue];
-    if (self.pulseConstant == 0) {
+    if (self.pulseConstant == 0 || energyList.count == 0) {
         return;
     }
     [self.dailyList removeAllObjects];
@@ -79,7 +119,20 @@
         [self.dailyList addObject:model];
     }
     [self.dailyTableView reloadData];
-    self.dailyHeaderModel.energyValue = [NSString stringWithFormat:@"%2.f",(totalValue * 1.f) / self.pulseConstant];
+    [self reloadHeaderViewWithEnergy:(totalValue * 1.f)];
+}
+
+- (void)resetAllDatas {
+    [self.dailyList removeAllObjects];
+    [self.dailyTableView reloadData];
+    self.dailyHeaderModel.energyValue = @"0.0";
+    self.dailyHeaderModel.dateMsg = [NSString stringWithFormat:@"00:00 to 00:00,%@",[self fetchCurrentDate]];
+    [self.dailyTableHeader setViewModel:self.dailyHeaderModel];
+}
+
+#pragma mark - private method
+- (void)reloadHeaderViewWithEnergy:(float)energy {
+    self.dailyHeaderModel.energyValue = [NSString stringWithFormat:@"%2.f",energy / self.pulseConstant];
     NSString *date = [self fetchCurrentDate];
     NSString *tempHour = @"00";
     if (self.dailyList.count > 0) {

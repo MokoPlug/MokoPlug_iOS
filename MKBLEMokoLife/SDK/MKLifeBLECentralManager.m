@@ -342,6 +342,43 @@ static MKLifeBLECentralManager *manager = nil;
                                                           userInfo:dic];
         return;
     }
+    if ([function isEqualToString:@"06"]) {
+        //上报当前电能数据
+        NSString *year = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
+        NSString *month = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(10, 2)];
+        if (month.length == 1) {
+            month = [@"0" stringByAppendingString:month];
+        }
+        NSString *day = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(12, 2)];
+        if (day.length == 1) {
+            day = [@"0" stringByAppendingString:day];
+        }
+        NSString *hour = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(14, 2)];
+        if (hour.length == 1) {
+            hour = [@"0" stringByAppendingString:hour];
+        }
+        NSDictionary *dateDic = @{
+            @"year":year,
+            @"month":month,
+            @"day":day,
+            @"hour":hour,
+        };
+        NSString *totalValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(16, 8)];
+        NSString *monthlyValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(24, 6)];
+        NSString *currentDayValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(30, 6)];
+        NSString *currentHourValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(36, 4)];
+        NSDictionary *userInfo = @{
+            @"date":dateDic,
+            @"totalValue":totalValue,
+            @"monthlyValue":monthlyValue,
+            @"currentDayValue":currentDayValue,
+            @"currentHourValue":currentHourValue,
+        };
+        [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveCurrentEnergyNotification
+                                                            object:nil
+                                                          userInfo:userInfo];
+        return;
+    }
 }
 
 @end

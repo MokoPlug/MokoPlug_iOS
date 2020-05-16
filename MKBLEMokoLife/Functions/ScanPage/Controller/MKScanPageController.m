@@ -14,6 +14,8 @@
 
 #import "MKAboutController.h"
 
+#import "MKConfigDeviceDateModel.h"
+
 static CGFloat const offset_X = 15.f;
 static CGFloat const searchButtonHeight = 40.f;
 
@@ -144,8 +146,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
     MKLifeBLEDeviceModel *deviceModel = self.dataList[indexPath.row];
     [[MKHudManager share] showHUDWithTitle:@"Connecting..." inView:self.view isPenetration:NO];
     [[MKLifeBLECentralManager shared] connectPeripheral:deviceModel.peripheral sucBlock:^(CBPeripheral * _Nonnull peripheral) {
-        [[MKHudManager share] hide];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToTabBar" object:nil userInfo:@{}];
+        [self configDate];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
@@ -189,14 +190,6 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
         [self.circleIcon.layer removeAnimationForKey:MKLeftButtonAnimationKey];
         [self.leftButton setSelected:NO];
     }
-}
-
-#pragma mark - MKScanPageCellDelegate
-- (void)scanCellConnectButtonPressed:(NSInteger)index {
-    if (index >= self.dataList.count) {
-        return;
-    }
-//    [self connectDeviceWithModel:self.dataList[index]];
 }
 
 #pragma mark - notice method
@@ -366,6 +359,28 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
     transformAnima.repeatCount = MAXFLOAT;
     transformAnima.removedOnCompletion = NO;
     return transformAnima;
+}
+
+#pragma mark - 配置日期
+- (void)configDate {
+    MKConfigDeviceDateModel *dateModel = [[MKConfigDeviceDateModel alloc] init];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
+    NSString *dateString = [dateFormat stringFromDate:[NSDate date]];
+    NSArray *dateList = [dateString componentsSeparatedByString:@"-"];
+    dateModel.year = [dateList[0] integerValue];
+    dateModel.month = [dateList[1] integerValue];
+    dateModel.day = [dateList[2] integerValue];
+    dateModel.hour = [dateList[3] integerValue];
+    dateModel.minutes = [dateList[4] integerValue];
+    dateModel.second = [dateList[5] integerValue];
+    [MKLifeBLEInterface configDeviceTime:dateModel sucBlock:^{
+        [[MKHudManager share] hide];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToTabBar" object:nil userInfo:@{}];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - 扫描监听

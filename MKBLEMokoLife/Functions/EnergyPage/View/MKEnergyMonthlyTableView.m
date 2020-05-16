@@ -27,6 +27,23 @@
 
 @implementation MKEnergyMonthlyTableView
 
+- (void)dealloc {
+    NSLog(@"receiveCurrentEnergyNotification销毁");
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:mk_receiveCurrentEnergyNotification
+                                                  object:nil];
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(receiveCurrentEnergyNotification:)
+                                                     name:mk_receiveCurrentEnergyNotification
+                                                   object:nil];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.monthlyTableView];
@@ -60,10 +77,40 @@
     return cell;
 }
 
+#pragma mark - note
+- (void)receiveCurrentEnergyNotification:(NSNotification *)note {
+    if (self.pulseConstant == 0) {
+        return;
+    }
+    NSString *currentDate = [NSString stringWithFormat:@"%@-%@-%@",note.userInfo[@"date"][@"year"],note.userInfo[@"date"][@"month"],note.userInfo[@"date"][@"day"]];
+    if (self.monthlyList.count == 0) {
+        //没有数据直接添加
+        MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
+        newModel.timeValue = currentDate;
+        newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentDayValue"] floatValue] / self.pulseConstant];
+        [self.monthlyList addObject:newModel];
+    }else {
+        MKEnergyValueCellModel *startModel = self.monthlyList.firstObject;
+        if ([currentDate isEqualToString:startModel.timeValue]) {
+            //存在就替换
+            startModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentDayValue"] floatValue] / self.pulseConstant];
+        }else {
+            //不存在就插入
+            MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
+            newModel.timeValue = currentDate;
+            newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentDayValue"] floatValue] / self.pulseConstant];
+            [self.monthlyList insertObject:newModel atIndex:0];
+        }
+    }
+    
+    [self.monthlyTableView reloadData];
+    [self reloadHeaderDateInfoWithEnergy:[note.userInfo[@"monthlyValue"] floatValue]];
+}
+
 #pragma mark - public method
 - (void)updateEnergyDatas:(NSArray *)energyList pulseConstant:(NSString *)pulseConstant {
     self.pulseConstant = [pulseConstant floatValue];
-    if (self.pulseConstant == 0) {
+    if (self.pulseConstant == 0 || energyList.count == 0) {
         return;
     }
     [self.monthlyList removeAllObjects];
@@ -77,7 +124,23 @@
         [self.monthlyList addObject:model];
     }
     [self.monthlyTableView reloadData];
-    self.monthlyHeaderModel.energyValue = [NSString stringWithFormat:@"%2.f",(totalValue * 1.f) / self.pulseConstant];
+    [self reloadHeaderDateInfoWithEnergy:(totalValue * 1.f)];
+}
+
+- (void)resetAllDatas {
+    [self.monthlyList removeAllObjects];
+    [self.monthlyTableView reloadData];
+    self.monthlyHeaderModel.energyValue = @"0.0";
+    self.monthlyHeaderModel.dateMsg = [NSString stringWithFormat:@"%@ to %@",@"00-00-00",@"00-00-00"];
+    [self.monthlyHeader setViewModel:self.monthlyHeaderModel];
+}
+
+#pragma mark - private method
+- (void)reloadHeaderDateInfoWithEnergy:(float)energy {
+    self.monthlyHeaderModel.energyValue = [NSString stringWithFormat:@"%2.f",energy / self.pulseConstant];
+    if (self.monthlyList.count == 0) {
+        return;
+    }
     MKEnergyValueCellModel *startModel = self.monthlyList.firstObject;
     MKEnergyValueCellModel *endModel = self.monthlyList.lastObject;
     self.monthlyHeaderModel.dateMsg = [NSString stringWithFormat:@"%@ to %@",endModel.timeValue,startModel.timeValue];
