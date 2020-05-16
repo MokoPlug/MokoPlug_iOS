@@ -195,6 +195,25 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
             @"overLoadValue":value
         };
         operationID = mk_readOverLoadStatusOperation;
+    }else if ([function isEqualToString:@"11"]){
+        //当天电能总条数
+        NSString *energyPower = @"";
+        if (len == 4) {
+            energyPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(8, 6)];
+        }
+        returnDic = @{
+        mk_communicationDataNum:[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 2)],
+        @"energyPower":energyPower
+        };
+        operationID = mk_readEnergyDataOfTodayOperation;
+    }else if ([function isEqualToString:@"12"]) {
+        //当天每小时电能数据详情
+        NSString *subContent = [content substringFromIndex:6];
+        NSArray *dataList = [MKLifeBLEAdopter parseEnergyOfToday:subContent];
+        returnDic = @{
+            @"dataList":dataList
+        };
+        operationID = mk_readEnergyDataOfTodayOperation;
     }else if ([function isEqualToString:@"13"] && content.length == 10) {
         //读取脉冲常数
         NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];

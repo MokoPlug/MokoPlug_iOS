@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, mk_taskOperationID) {
     mk_readEnergyStorageParametersOperation,
     mk_readHistoricalEnergyOperation,
     mk_readOverLoadStatusOperation,
+    mk_readEnergyDataOfTodayOperation,
     mk_readPulseConstantOperation,
     
 #pragma mark - 设置

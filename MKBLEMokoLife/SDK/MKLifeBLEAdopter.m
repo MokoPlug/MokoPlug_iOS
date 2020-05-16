@@ -78,4 +78,20 @@
     return dataList;
 }
 
++ (NSArray *)parseEnergyOfToday:(NSString *)content {
+    NSInteger number = content.length / 6;
+    NSMutableArray *dataList = [NSMutableArray array];
+    for (NSInteger i = 0; i < number; i ++) {
+        NSString *subContent = [content substringWithRange:NSMakeRange(i * 6, 6)];
+        NSString *index = [MKBLEBaseSDKAdopter getDecimalStringWithHex:subContent range:NSMakeRange(0, 2)];
+        NSString *rotationsNumber = [MKBLEBaseSDKAdopter getDecimalStringWithHex:subContent range:NSMakeRange(2, 4)];
+        NSDictionary *dic = @{
+            @"index":index,
+            @"rotationsNumber":rotationsNumber
+        };
+        [dataList addObject:dic];
+    }
+    return dataList;
+}
+
 @end

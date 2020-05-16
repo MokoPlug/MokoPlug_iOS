@@ -307,7 +307,12 @@ NSString *const mk_dataStatusLev = @"mk_dataStatusLev";
     if (self.timeout) {
         return;
     }
-    [self.dataList addObject:returnData];
+    if (operationID == mk_readHistoricalEnergyOperation || operationID == mk_readEnergyDataOfTodayOperation) {
+        [self.dataList addObjectsFromArray:returnData[@"dataList"]];
+    }else {
+        [self.dataList addObject:returnData];
+    }
+    
     if (self.dataList.count == self.respondNumber) {
         [self communicationSuccess];
     }

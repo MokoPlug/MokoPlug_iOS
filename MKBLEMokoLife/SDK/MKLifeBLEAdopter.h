@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param content content
 + (NSArray *)parseHistoricalEnergy:(NSString *)content;
 
+/// 解析当天的电能数据
+/// @param content content
++ (NSArray *)parseEnergyOfToday:(NSString *)content;
+
 @end
 
 NS_ASSUME_NONNULL_END

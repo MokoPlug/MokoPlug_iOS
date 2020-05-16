@@ -228,7 +228,7 @@ static MKLifeBLECentralManager *manager = nil;
         //对于有附加信息的
         NSDictionary *resultDic = @{@"msg":@"success",
                                     @"code":@"1",
-                                    @"result":returnData[mk_dataInformation],
+                                    @"result":returnData,
                                     };
         MKBLEBase_main_safe(^{
             if (successBlock) {
