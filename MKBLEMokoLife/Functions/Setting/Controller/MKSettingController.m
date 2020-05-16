@@ -17,6 +17,7 @@
 #import "MKDeviceInfoController.h"
 #import "MKModifyPowerStatusController.h"
 #import "MKModifyNormalDatasController.h"
+#import "MKUpdateCheckController.h"
 
 @interface MKSettingController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -76,6 +77,11 @@
         }
         if (indexPath.row == 1) {
             MKModifyPowerStatusController *vc = [[MKModifyPowerStatusController alloc] init];
+            [self pushControllerWithHiddenBottom:vc];
+            return;
+        }
+        if (indexPath.row == 2) {
+            MKUpdateCheckController *vc = [[MKUpdateCheckController alloc] init];
             [self pushControllerWithHiddenBottom:vc];
             return;
         }

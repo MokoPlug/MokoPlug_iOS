@@ -19,6 +19,13 @@
 		00520BB824626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BB724626B76003BF540 /* MKLifeBLEDeviceModel+MKScanPage.m */; };
 		00520BBB24628C2A003BF540 /* MKScanPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00520BBA24628C2A003BF540 /* MKScanPageCell.m */; };
 		0056606D246FA5B6008A9574 /* MKConfigDeviceDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056606C246FA5B6008A9574 /* MKConfigDeviceDateModel.m */; };
+		00566074246FA7A6008A9574 /* MKUpdateCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566073246FA7A6008A9574 /* MKUpdateCheckController.m */; };
+		00566077246FAAFC008A9574 /* firmware_select_fileIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00566075246FAAFC008A9574 /* firmware_select_fileIcon@3x.png */; };
+		00566078246FAAFC008A9574 /* firmware_select_fileIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00566076246FAAFC008A9574 /* firmware_select_fileIcon@2x.png */; };
+		0056607B246FAE71008A9574 /* MKUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566079246FAE71008A9574 /* MKUpdateController.m */; };
+		00566080246FAE7D008A9574 /* MKDFUAdopter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056607C246FAE7D008A9574 /* MKDFUAdopter.m */; };
+		00566081246FAE7D008A9574 /* MKDFUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056607D246FAE7D008A9574 /* MKDFUModel.m */; };
+		00566085246FAE86008A9574 /* MKFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00566084246FAE86008A9574 /* MKFileManager.m */; };
 		0059BCD0246B85BE00E969AE /* MKSettingPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */; };
 		0059BCD3246B91E900E969AE /* MKSettingPageCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCD2246B91E900E969AE /* MKSettingPageCellModel.m */; };
 		0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059BCD5246B973A00E969AE /* MKSettingButtonCell.m */; };
@@ -128,6 +135,18 @@
 		00520BBA24628C2A003BF540 /* MKScanPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKScanPageCell.m; sourceTree = "<group>"; };
 		0056606B246FA5B6008A9574 /* MKConfigDeviceDateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKConfigDeviceDateModel.h; sourceTree = "<group>"; };
 		0056606C246FA5B6008A9574 /* MKConfigDeviceDateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKConfigDeviceDateModel.m; sourceTree = "<group>"; };
+		00566072246FA7A6008A9574 /* MKUpdateCheckController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKUpdateCheckController.h; sourceTree = "<group>"; };
+		00566073246FA7A6008A9574 /* MKUpdateCheckController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKUpdateCheckController.m; sourceTree = "<group>"; };
+		00566075246FAAFC008A9574 /* firmware_select_fileIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firmware_select_fileIcon@3x.png"; sourceTree = "<group>"; };
+		00566076246FAAFC008A9574 /* firmware_select_fileIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firmware_select_fileIcon@2x.png"; sourceTree = "<group>"; };
+		00566079246FAE71008A9574 /* MKUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUpdateController.m; sourceTree = "<group>"; };
+		0056607A246FAE71008A9574 /* MKUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUpdateController.h; sourceTree = "<group>"; };
+		0056607C246FAE7D008A9574 /* MKDFUAdopter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKDFUAdopter.m; sourceTree = "<group>"; };
+		0056607D246FAE7D008A9574 /* MKDFUModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKDFUModel.m; sourceTree = "<group>"; };
+		0056607E246FAE7D008A9574 /* MKDFUAdopter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKDFUAdopter.h; sourceTree = "<group>"; };
+		0056607F246FAE7D008A9574 /* MKDFUModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKDFUModel.h; sourceTree = "<group>"; };
+		00566083246FAE86008A9574 /* MKFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKFileManager.h; sourceTree = "<group>"; };
+		00566084246FAE86008A9574 /* MKFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKFileManager.m; sourceTree = "<group>"; };
 		0059BCCE246B85BE00E969AE /* MKSettingPageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingPageCell.h; sourceTree = "<group>"; };
 		0059BCCF246B85BE00E969AE /* MKSettingPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSettingPageCell.m; sourceTree = "<group>"; };
 		0059BCD1246B91E900E969AE /* MKSettingPageCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSettingPageCellModel.h; sourceTree = "<group>"; };
@@ -320,6 +339,8 @@
 		00520BA424624ED3003BF540 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00566076246FAAFC008A9574 /* firmware_select_fileIcon@2x.png */,
+				00566075246FAAFC008A9574 /* firmware_select_fileIcon@3x.png */,
 				005E4C44246D289700AB0705 /* haloRing@2x.png */,
 				005E4C45246D289700AB0705 /* haloRing@3x.png */,
 				0059BCEC246BCEB500E969AE /* modify */,
@@ -337,6 +358,55 @@
 				00520BA824624ED3003BF540 /* scanRightAboutIcon@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0056606E246FA793008A9574 /* UpdateCheck */ = {
+			isa = PBXGroup;
+			children = (
+				00566082246FAE86008A9574 /* Manager */,
+				0056606F246FA793008A9574 /* Controller */,
+				00566070246FA793008A9574 /* Model */,
+				00566071246FA793008A9574 /* View */,
+			);
+			path = UpdateCheck;
+			sourceTree = "<group>";
+		};
+		0056606F246FA793008A9574 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0056607A246FAE71008A9574 /* MKUpdateController.h */,
+				00566079246FAE71008A9574 /* MKUpdateController.m */,
+				00566072246FA7A6008A9574 /* MKUpdateCheckController.h */,
+				00566073246FA7A6008A9574 /* MKUpdateCheckController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00566070246FA793008A9574 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0056607E246FAE7D008A9574 /* MKDFUAdopter.h */,
+				0056607C246FAE7D008A9574 /* MKDFUAdopter.m */,
+				0056607F246FAE7D008A9574 /* MKDFUModel.h */,
+				0056607D246FAE7D008A9574 /* MKDFUModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00566071246FA793008A9574 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00566082246FAE86008A9574 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				00566083246FAE86008A9574 /* MKFileManager.h */,
+				00566084246FAE86008A9574 /* MKFileManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		0059BCDB246BA03F00E969AE /* DeviceInfo */ = {
@@ -715,6 +785,7 @@
 		00633C3D2461645F00D4BCA3 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				0056606E246FA793008A9574 /* UpdateCheck */,
 				0059BCDB246BA03F00E969AE /* DeviceInfo */,
 				005A54C12468EFB400C8F1D1 /* EnergyPage */,
 				005A54BD2468EFB400C8F1D1 /* PowerPage */,
@@ -868,6 +939,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00566078246FAAFC008A9574 /* firmware_select_fileIcon@2x.png in Resources */,
 				00633C462461645F00D4BCA3 /* sliderMinimumTrackIcon@3x.png in Resources */,
 				005A54F22468F8F100C8F1D1 /* energyTabBarItemUnselected@2x.png in Resources */,
 				00633C452461645F00D4BCA3 /* sliderMinimumTrackIcon@2x.png in Resources */,
@@ -887,6 +959,7 @@
 				005A54B02468DFBA00C8F1D1 /* about_addIcon@3x.png in Resources */,
 				00633C412461645F00D4BCA3 /* sliderThumbIcon@3x.png in Resources */,
 				0059BCDA246B9DBF00E969AE /* goto_next_button@2x.png in Resources */,
+				00566077246FAAFC008A9574 /* firmware_select_fileIcon@3x.png in Resources */,
 				006246DA244EFA8D00A73CA8 /* LaunchScreen.storyboard in Resources */,
 				005A54F82468F8F100C8F1D1 /* energyTabBarItemSelected@3x.png in Resources */,
 				005E4C47246D289800AB0705 /* haloRing@3x.png in Resources */,
@@ -972,6 +1045,7 @@
 			files = (
 				0059BCEB246BCDB300E969AE /* MKModifyPowerStatusController.m in Sources */,
 				005E259B246E6FFD00243F07 /* MKEnergyDataModel.m in Sources */,
+				0056607B246FAE71008A9574 /* MKUpdateController.m in Sources */,
 				005A550E246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m in Sources */,
 				005A54D32468F16F00C8F1D1 /* MKEnergyController.m in Sources */,
 				0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */,
@@ -984,9 +1058,13 @@
 				005E2595246E47A100243F07 /* MKEnergyValueCell.m in Sources */,
 				008B6E7D2466B570008FC199 /* MKAboutCellModel.m in Sources */,
 				00520BBB24628C2A003BF540 /* MKScanPageCell.m in Sources */,
+				00566080246FAE7D008A9574 /* MKDFUAdopter.m in Sources */,
 				005A54D92468F22C00C8F1D1 /* MKTimerController.m in Sources */,
+				00566085246FAE86008A9574 /* MKFileManager.m in Sources */,
 				00520BAF246254ED003BF540 /* MKLifeBLEDeviceModel.m in Sources */,
+				00566081246FAE7D008A9574 /* MKDFUModel.m in Sources */,
 				0059BCE1246BA05700E969AE /* MKDeviceInfoController.m in Sources */,
+				00566074246FA7A6008A9574 /* MKUpdateCheckController.m in Sources */,
 				0059BCFD246BDD7B00E969AE /* MKSettingDatasModel.m in Sources */,
 				005E4C4D246D3A8700AB0705 /* MKConfigDeviceTimePickerView.m in Sources */,
 				0026B29224616E9C00791264 /* MKScanPageController.m in Sources */,
