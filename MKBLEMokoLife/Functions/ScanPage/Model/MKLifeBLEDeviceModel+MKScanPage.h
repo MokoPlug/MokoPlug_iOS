@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign)NSInteger index;
 
-/// peripheral 的UUID
-@property (nonatomic, copy)NSString *identifier;
-
 @end
 
 NS_ASSUME_NONNULL_END

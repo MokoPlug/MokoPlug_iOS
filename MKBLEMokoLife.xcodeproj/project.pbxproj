@@ -276,6 +276,7 @@
 		008B6E782466B570008FC199 /* MKAboutCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKAboutCellModel.m; sourceTree = "<group>"; };
 		008B6E7A2466B570008FC199 /* MKAboutPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKAboutPageCell.h; sourceTree = "<group>"; };
 		008B6E7B2466B570008FC199 /* MKAboutPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKAboutPageCell.m; sourceTree = "<group>"; };
+		1216E45B861732E9C16C3449 /* Pods-MKBLEMokoLife.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKBLEMokoLife.adhoc.xcconfig"; path = "Target Support Files/Pods-MKBLEMokoLife/Pods-MKBLEMokoLife.adhoc.xcconfig"; sourceTree = "<group>"; };
 		14932A4AA7A59EC56DD8831B /* Pods_MKBLEMokoLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKBLEMokoLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFCFE1BA95D7AAB049B280D /* Pods-MKBLEMokoLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKBLEMokoLife.debug.xcconfig"; path = "Target Support Files/Pods-MKBLEMokoLife/Pods-MKBLEMokoLife.debug.xcconfig"; sourceTree = "<group>"; };
 		5E8BB548CDFF8C981DF6D602 /* Pods-MKBLEMokoLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKBLEMokoLife.release.xcconfig"; path = "Target Support Files/Pods-MKBLEMokoLife/Pods-MKBLEMokoLife.release.xcconfig"; sourceTree = "<group>"; };
@@ -867,6 +868,7 @@
 			children = (
 				3CFCFE1BA95D7AAB049B280D /* Pods-MKBLEMokoLife.debug.xcconfig */,
 				5E8BB548CDFF8C981DF6D602 /* Pods-MKBLEMokoLife.release.xcconfig */,
+				1216E45B861732E9C16C3449 /* Pods-MKBLEMokoLife.adhoc.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1112,6 +1114,87 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0053F91C24721BA30094BDE0 /* adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = adhoc;
+		};
+		0053F91D24721BA30094BDE0 /* adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1216E45B861732E9C16C3449 /* Pods-MKBLEMokoLife.adhoc.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2020042101;
+				DEVELOPMENT_TEAM = R558LEUW2T;
+				GCC_PREFIX_HEADER = "/Users/aa/Desktop/公司项目/MKBLEMokoLife/MKBLEMokoLife/PrefixHeader.pch";
+				INFOPLIST_FILE = MKBLEMokoLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
+				PRODUCT_NAME = MokoPlug;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = adhoc;
+		};
 		006246DE244EFA8D00A73CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1275,6 +1358,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				006246DE244EFA8D00A73CA8 /* Debug */,
+				0053F91C24721BA30094BDE0 /* adhoc */,
 				006246DF244EFA8D00A73CA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1284,6 +1368,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				006246E1244EFA8D00A73CA8 /* Debug */,
+				0053F91D24721BA30094BDE0 /* adhoc */,
 				006246E2244EFA8D00A73CA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

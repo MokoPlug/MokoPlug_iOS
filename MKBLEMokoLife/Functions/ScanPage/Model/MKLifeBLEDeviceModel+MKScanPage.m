@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 
 static const char *indexKey = "indexKey";
-static const char *IdentifierKey = "IdentifierKey";
 
 @implementation MKLifeBLEDeviceModel (MKScanPage)
 
@@ -20,14 +19,6 @@ static const char *IdentifierKey = "IdentifierKey";
 
 - (NSInteger)index {
     return [objc_getAssociatedObject(self, &indexKey) integerValue];
-}
-
-- (void)setIdentifier:(NSString *)identifier {
-    objc_setAssociatedObject(self, &IdentifierKey, identifier, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString *)identifier {
-    return objc_getAssociatedObject(self, &IdentifierKey);
 }
 
 @end

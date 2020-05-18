@@ -75,6 +75,8 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
 /// 当左侧按钮停止扫描的时候,currentScanStatus = NO,开始扫描的时候currentScanStatus=YES
 @property (nonatomic, assign)BOOL currentScanStatus;
 
+@property (nonatomic, strong)NSMutableDictionary *identifyCache;
+
 @end
 
 @implementation MKScanPageController
@@ -123,6 +125,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
         }
         return;
     }
+    [self.identifyCache removeAllObjects];
     [self.dataList removeAllObjects];
     [self.tableView reloadData];
     [self addAnimationForLeftButton];
@@ -286,9 +289,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
 - (void)processPlugData:(MKLifeBLEDeviceModel *)deviceModel{
     //查看数据源中是否已经存在相关设备
     NSString *identy = deviceModel.peripheral.identifier.UUIDString;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier == %@", identy];
-    NSArray *array = [self.dataList filteredArrayUsingPredicate:predicate];
-    BOOL contain = ValidArray(array);
+    BOOL contain = [self.identifyCache[identy] boolValue];
     if (contain) {
         //如果是已经存在了，替换
         [self dataExistDataSource:deviceModel];
@@ -307,7 +308,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
     moko_dispatch_main_safe(^{
         [self.dataList addObject:deviceModel];
         deviceModel.index = (self.dataList.count - 1);
-        deviceModel.identifier = deviceModel.peripheral.identifier.UUIDString;
+        [self.identifyCache setValue:@(YES) forKey:deviceModel.peripheral.identifier.UUIDString];
         [UIView performWithoutAnimation:^{
             [self.tableView insertRow:(self.dataList.count - 1) inSection:0 withRowAnimation:UITableViewRowAnimationNone];
         }];
@@ -406,7 +407,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
 - (void)loadSubViews {
     self.custom_naviBarColor = COLOR_NAVIBAR_CUSTOM;
     self.titleLabel.textColor = COLOR_WHITE_MACROS;
-    self.defaultTitle = @"Bluetooth Plug";
+    self.defaultTitle = @"Moko Plug";
     [self.leftButton setImage:nil forState:UIControlStateNormal];
     [self.leftButton addSubview:self.circleIcon];
     [self.circleIcon mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -514,6 +515,13 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
         _semaphore = dispatch_semaphore_create(1);
     }
     return _semaphore;
+}
+
+- (NSMutableDictionary *)identifyCache {
+    if (!_identifyCache) {
+        _identifyCache = [NSMutableDictionary dictionary];
+    }
+    return _identifyCache;
 }
 
 @end
