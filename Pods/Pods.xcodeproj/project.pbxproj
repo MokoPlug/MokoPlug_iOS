@@ -635,14 +635,14 @@
 		1F516D53DD625FD3B2F22FB23FFD8E8D /* NSObject+YYAddForARC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYAddForARC.m"; path = "YYKit/Base/Foundation/NSObject+YYAddForARC.m"; sourceTree = "<group>"; };
 		1F579553767F8899A220DA95C374E640 /* YYCGUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYCGUtilities.h; path = YYKit/Base/Quartz/YYCGUtilities.h; sourceTree = "<group>"; };
 		1FDB3C654295B007B95108D70745B90C /* NSData+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+YYAdd.h"; path = "YYKit/Base/Foundation/NSData+YYAdd.h"; sourceTree = "<group>"; };
-		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20075422415A67FDF57B81EDAFEFFB48 /* YYKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYKit-dummy.m"; sourceTree = "<group>"; };
 		200AF6EADD923FD76D367577EC0FCACC /* YYLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYLabel.h; path = YYKit/Text/YYLabel.h; sourceTree = "<group>"; };
 		20B1F55C862EB7BDE48C6FD395484399 /* YYTextDebugOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTextDebugOption.h; path = YYKit/Text/Component/YYTextDebugOption.h; sourceTree = "<group>"; };
 		2110B731FCDC8F1C1E0F09675420D0B4 /* crc32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = crc32.swift; path = iOSDFULibrary/Classes/Utilities/crc32.swift; sourceTree = "<group>"; };
 		2191DEAC551C4ACAA7A1E754B8703334 /* YYTextRunDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTextRunDelegate.h; path = YYKit/Text/String/YYTextRunDelegate.h; sourceTree = "<group>"; };
 		21A52C1860FC9025CFFC7CD7730DC819 /* keyboardDelIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "keyboardDelIcon@3x.png"; path = "mokoLibrary/Assets/keyboardDelIcon@3x.png"; sourceTree = "<group>"; };
-		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSDFULibrary.framework; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2213DF1D19FAF625D2A1C639840DBB59 /* LegacyDFUService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUService.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Services/LegacyDFUService.swift; sourceTree = "<group>"; };
 		22F1CC8F0181971512C92BE8D0D1A782 /* Toast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-dummy.m"; sourceTree = "<group>"; };
 		23F348842AB765A2937AD70BCD1C9D52 /* NSTimer+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTimer+YYAdd.h"; path = "YYKit/Base/Foundation/NSTimer+YYAdd.h"; sourceTree = "<group>"; };
@@ -712,7 +712,7 @@
 		46EFCC0BA165CB802875F7FB3DECCB7F /* DFUController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUController.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUController.swift; sourceTree = "<group>"; };
 		477C480600D390D6505C2943BE2D74F9 /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
 		48707357E288EE1592AA8162131C14FF /* MKProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKProgressView.h; path = mokoLibrary/Classes/customUI/MKProgressView/MKProgressView.h; sourceTree = "<group>"; };
-		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZIPFoundation.framework; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49614D45C26F3F91EA20CF32DB7A7B41 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		4A83379AC07310525D48D266DD902964 /* LegacyDFUServiceInitiator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUServiceInitiator.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/DFU/LegacyDFUServiceInitiator.swift; sourceTree = "<group>"; };
 		4B33B2AB739B47FB7BF003DFBA5644CD /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
@@ -741,7 +741,7 @@
 		5507B16F705F8BF3FA8E79E54710AD69 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
 		55195B84EABAC0A151EBAB3299A93BC3 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		557DDE8E668E967EC01F94E9BBA5F2F8 /* UIBezierPath+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+YYAdd.m"; path = "YYKit/Base/UIKit/UIBezierPath+YYAdd.m"; sourceTree = "<group>"; };
-		55E0AFD333353D71ACC2207149E879D6 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast.framework; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E0AFD333353D71ACC2207149E879D6 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A6A3CB00B8C3A4B539911899F1C515 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WRCustomNavigationBar.m; path = mokoLibrary/Classes/base/view/WRNavigationBar/WRCustomNavigationBar.m; sourceTree = "<group>"; };
 		57E4D951B1B3B9D42D8EF449C1A6F2C7 /* CircleProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CircleProgressBar-Info.plist"; sourceTree = "<group>"; };
 		5834648C868C4FD399A49510EFC36F7C /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
@@ -771,7 +771,7 @@
 		659ADE0B174745A00600821513D06E6D /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		65F2DE57428B103FF43A9E0BB67C4F79 /* MLInputDodger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLInputDodger-prefix.pch"; sourceTree = "<group>"; };
 		68EEC913877FC6CCA38A72CB27AE45EC /* ZIPFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZIPFoundation-dummy.m"; sourceTree = "<group>"; };
-		68F9690291DA848E1D07193D440DC5F7 /* mokoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = mokoLibrary.framework; path = mokoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F9690291DA848E1D07193D440DC5F7 /* mokoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mokoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A336E73600BFFAF0C602C349BB61E58 /* YYTextMagnifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTextMagnifier.h; path = YYKit/Text/Component/YYTextMagnifier.h; sourceTree = "<group>"; };
 		6AAF26103695C0D3461A5713237DC3E9 /* DFUPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPeripheral.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUPeripheral.swift; sourceTree = "<group>"; };
 		6AFAE673497D972EACB8A9B87B303A50 /* MJRefreshConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConfig.m; path = MJRefresh/MJRefreshConfig.m; sourceTree = "<group>"; };
@@ -805,7 +805,7 @@
 		78895D2F85132A2BD7EBAE06DB87F13D /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		791A43F74A24861B4C8790C855B0CDF7 /* NSKeyedUnarchiver+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSKeyedUnarchiver+YYAdd.m"; path = "YYKit/Base/Foundation/NSKeyedUnarchiver+YYAdd.m"; sourceTree = "<group>"; };
 		791DC2FE35B9499A9EBF8C407DE22D57 /* YYTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTextView.h; path = YYKit/Text/YYTextView.h; sourceTree = "<group>"; };
-		7948FA343D314AE2DEBBA7CA6076F151 /* CircleProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CircleProgressBar.framework; path = CircleProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7948FA343D314AE2DEBBA7CA6076F151 /* CircleProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircleProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		794C87E905D0C4BBABF72E92A4546F16 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
 		797AADD7907DE08CEA8CC3ECFEA9D274 /* YYTextKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextKeyboardManager.m; path = YYKit/Text/Component/YYTextKeyboardManager.m; sourceTree = "<group>"; };
 		79803EEEA098071D2CEA273292F6E7D0 /* YYTextLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTextLine.h; path = YYKit/Text/Component/YYTextLine.h; sourceTree = "<group>"; };
@@ -839,7 +839,7 @@
 		8730B9742270CEB0567D1EB74B25B6C3 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYKit/Model/NSObject+YYModel.h"; sourceTree = "<group>"; };
 		8838A36EC0C17D4E0706B64BB4B4ED46 /* Archive+Writing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Writing.swift"; path = "Sources/ZIPFoundation/Archive+Writing.swift"; sourceTree = "<group>"; };
 		88809F021F722284F1D36A8E9A9804F2 /* YYImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYImageCoder.h; path = YYKit/Image/YYImageCoder.h; sourceTree = "<group>"; };
-		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B963EC6C3DB285F07E5E3966EBD800E /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		8BD9200C014675B5EF3EAE68D094285C /* UIColor+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+YYAdd.h"; path = "YYKit/Base/UIKit/UIColor+YYAdd.h"; sourceTree = "<group>"; };
 		8C72637C30C190F02F03CA4D5C476698 /* YYTextLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextLayout.m; path = YYKit/Text/Component/YYTextLayout.m; sourceTree = "<group>"; };
@@ -873,7 +873,7 @@
 		9B1FC757F9A53CE3E19586F999D59E7E /* UIScreen+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+YYAdd.m"; path = "YYKit/Base/UIKit/UIScreen+YYAdd.m"; sourceTree = "<group>"; };
 		9BD6EF7AD405BF1313B1F367FBD806FE /* YYGestureRecognizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYGestureRecognizer.h; path = YYKit/Utility/YYGestureRecognizer.h; sourceTree = "<group>"; };
 		9D25409866959F2845845C71B12BD10D /* UIScreen+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScreen+YYAdd.h"; path = "YYKit/Base/UIKit/UIScreen+YYAdd.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA28470A3DCF6290426B9843DB83E1F /* Entry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Sources/ZIPFoundation/Entry.swift; sourceTree = "<group>"; };
 		9E40C30F57BA4AF83CA1DA98644B824D /* UIButton+YYWebImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+YYWebImage.m"; path = "YYKit/Image/Categories/UIButton+YYWebImage.m"; sourceTree = "<group>"; };
 		9E8BD72E025967DD8C7D23BC2132DDA4 /* Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Data.swift; path = iOSDFULibrary/Classes/Utilities/Data.swift; sourceTree = "<group>"; };
@@ -955,14 +955,14 @@
 		C185A143D4D356E8E10B2DCD85B2EE67 /* NSDictionary+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+YYAdd.m"; path = "YYKit/Base/Foundation/NSDictionary+YYAdd.m"; sourceTree = "<group>"; };
 		C1E6BE4160EED0051B812AA26EA617ED /* MKBaseCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKBaseCollectionView.h; path = mokoLibrary/Classes/base/view/collectionView/MKBaseCollectionView.h; sourceTree = "<group>"; };
 		C201BDBA1173606BDB86E5B7A8908F20 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
-		C291AC0DBEA2986CD250F2466A26691D /* MLInputDodger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MLInputDodger.framework; path = MLInputDodger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C291AC0DBEA2986CD250F2466A26691D /* MLInputDodger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MLInputDodger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F28F6065D9B151DA98C9C6CDBA1843 /* MKBLEBaseModule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MKBLEBaseModule-Info.plist"; sourceTree = "<group>"; };
 		C3B61EBC480D26E096C6C287A914569C /* YYClassInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYClassInfo.h; path = YYKit/Model/YYClassInfo.h; sourceTree = "<group>"; };
 		C421FBBA2FB67385F107E48EE0906965 /* ZIPFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZIPFoundation.modulemap; sourceTree = "<group>"; };
 		C50A581CFF47121C42ECF6A6CE4A05F1 /* UITableView+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+YYAdd.h"; path = "YYKit/Base/UIKit/UITableView+YYAdd.h"; sourceTree = "<group>"; };
 		C65893B4AD119F78A1B86CE223551C75 /* iOSDFULibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSDFULibrary.xcconfig; sourceTree = "<group>"; };
 		C6A64ACA71EC0CE9945DE9165B152636 /* SecureDFUPeripheralDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureDFUPeripheralDelegate.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Peripheral/SecureDFUPeripheralDelegate.swift; sourceTree = "<group>"; };
-		C6E346B1057289E5ACBCA4CAF04B4C36 /* Pods_MKBLEMokoLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MKBLEMokoLife.framework; path = "Pods-MKBLEMokoLife.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E346B1057289E5ACBCA4CAF04B4C36 /* Pods_MKBLEMokoLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKBLEMokoLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7514A2406949A01174FAD8A947ACB0F /* NSArray+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+YYAdd.m"; path = "YYKit/Base/Foundation/NSArray+YYAdd.m"; sourceTree = "<group>"; };
 		C7A519F8410BFD43082B5D17D971AE4E /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		C7BA9FAD48069636EA7D785A5165E5B8 /* YYTextInput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTextInput.h; path = YYKit/Text/Component/YYTextInput.h; sourceTree = "<group>"; };
@@ -977,7 +977,7 @@
 		D162C1A9E6EC89841B5718E07712A0BD /* MKTimePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTimePickerView.h; path = mokoLibrary/Classes/customUI/MKTimePicker/MKTimePickerView.h; sourceTree = "<group>"; };
 		D1CA66917E78665864EEDBE7A147AA09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		D1F1BED707A43A685DA9E0BEC71FB73C /* YYImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYImage.m; path = YYKit/Image/YYImage.m; sourceTree = "<group>"; };
-		D39D6FFEF9FD11A2225BA2D8BA67BB61 /* mokoLibrary.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = mokoLibrary.bundle; path = "mokoLibrary-mokoLibrary.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39D6FFEF9FD11A2225BA2D8BA67BB61 /* mokoLibrary.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mokoLibrary.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B2BD13F8DC8BD7DC55A8B3CB501EB1 /* UIView+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+YYAdd.h"; path = "YYKit/Base/UIKit/UIView+YYAdd.h"; sourceTree = "<group>"; };
 		D43D0031DA0FB0559C3159CFAEADB1A8 /* UIScrollView+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+YYAdd.m"; path = "YYKit/Base/UIKit/UIScrollView+YYAdd.m"; sourceTree = "<group>"; };
 		D44A4A34BD70F5E74CC6A6BF131E960C /* YYWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYWebImageManager.m; path = YYKit/Image/YYWebImageManager.m; sourceTree = "<group>"; };
@@ -995,7 +995,7 @@
 		DB3CAA18A183EF62ACD9C014D2B176B3 /* Toast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Toast.h; path = "Toast-Framework/Toast.h"; sourceTree = "<group>"; };
 		DB6EA2D295D794B81B2B5456847274A3 /* CircleProgressBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CircleProgressBar.m; path = CircleProgressBarDemo/CircleProgressBar/CircleProgressBar.m; sourceTree = "<group>"; };
 		DB6FCEF70BD0933A9A6CBCC4B4618CA4 /* NSDate+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+YYAdd.m"; path = "YYKit/Base/Foundation/NSDate+YYAdd.m"; sourceTree = "<group>"; };
-		DB82A75124D70D9F69E1C2F7ED13F2CC /* MKBLEBaseModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKBLEBaseModule.framework; path = MKBLEBaseModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB82A75124D70D9F69E1C2F7ED13F2CC /* MKBLEBaseModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKBLEBaseModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD4282EA4FACEC1D21021D83C199AFE /* ResourceBundle-mokoLibrary-mokoLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-mokoLibrary-mokoLibrary-Info.plist"; sourceTree = "<group>"; };
 		DC1BDC2E8BACF02DAFC263079648D175 /* YYAsyncLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYAsyncLayer.h; path = YYKit/Utility/YYAsyncLayer.h; sourceTree = "<group>"; };
 		DC1DE8F70946E71DB79208F248EC639E /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
@@ -1016,13 +1016,13 @@
 		E192BA6C53AA18D79BB4A3579870ECEF /* YYCGUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYCGUtilities.m; path = YYKit/Base/Quartz/YYCGUtilities.m; sourceTree = "<group>"; };
 		E1CB47945046778D3A493CFC3EEA1980 /* UIApplication+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+YYAdd.m"; path = "YYKit/Base/UIKit/UIApplication+YYAdd.m"; sourceTree = "<group>"; };
 		E28F3660ED8A0F0CD6B34EA16F02A4BA /* Toast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-prefix.pch"; sourceTree = "<group>"; };
-		E325DCCD357AF9DF2F7C506424659D7E /* YYKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYKit.framework; path = YYKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E325DCCD357AF9DF2F7C506424659D7E /* YYKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E328598ECAB2443E655DBAC8904401F2 /* DFUStreamHex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStreamHex.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStreamHex.swift; sourceTree = "<group>"; };
 		E361EEDB1419B4272BAACF4583CFC662 /* YYTextInput.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextInput.m; path = YYKit/Text/Component/YYTextInput.m; sourceTree = "<group>"; };
 		E3B0D6E35CB92B401406098AF96C1159 /* UIApplication+MKCategoryModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+MKCategoryModule.m"; path = "mokoLibrary/Classes/category/UIApplication+MKCategoryModule.m"; sourceTree = "<group>"; };
 		E45657314DE19F624DA5410729C3026A /* MKPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPageControl.h; path = mokoLibrary/Classes/customUI/MKPageControl/MKPageControl.h; sourceTree = "<group>"; };
 		E4912FA5FE6A544983E894D6DFD44A89 /* YYThreadSafeArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYThreadSafeArray.h; path = YYKit/Utility/YYThreadSafeArray.h; sourceTree = "<group>"; };
-		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E29E151BB207357B5F52ED1920109A /* MKBLEBaseModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKBLEBaseModule-dummy.m"; sourceTree = "<group>"; };
 		E513B93EC71A45AE10DE4A66B75C2078 /* YYFrameImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYFrameImage.m; path = YYKit/Image/YYFrameImage.m; sourceTree = "<group>"; };
 		E5C713209C5639792A1B1B2D5DF9C7D2 /* UIView+MLInputDodger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MLInputDodger.m"; path = "Classes/UIView+MLInputDodger.m"; sourceTree = "<group>"; };
@@ -1250,7 +1250,6 @@
 				7863DD8B0E3AB5136364B3B42C86B86E /* MKBLEBaseSDKDefines.h */,
 				628FC2C7430823A748D37E12D4D65B60 /* Support Files */,
 			);
-			name = MKBLEBaseModule;
 			path = MKBLEBaseModule;
 			sourceTree = "<group>";
 		};
@@ -1280,7 +1279,6 @@
 				9E9940CA86E8F69792CC2F3AC957BE2F /* FileManager+ZIP.swift */,
 				CA14D093166FCD6A77E8CBB0AD9A166D /* Support Files */,
 			);
-			name = ZIPFoundation;
 			path = ZIPFoundation;
 			sourceTree = "<group>";
 		};
@@ -1383,7 +1381,6 @@
 				0E8FE3954AD172BD2F27D756B2585038 /* Resources */,
 				7BB378CF3FCF29D685579D59B42D43FB /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -1527,7 +1524,6 @@
 				DB6EA2D295D794B81B2B5456847274A3 /* CircleProgressBar.m */,
 				E66214C7699E3BCE585B421DD640AA69 /* Support Files */,
 			);
-			name = CircleProgressBar;
 			path = CircleProgressBar;
 			sourceTree = "<group>";
 		};
@@ -1543,7 +1539,6 @@
 				6BF20F3F704898E4FEF8530288BF7367 /* Support Files */,
 				4A681ECB25DCB662ECF9940AD00B3ECA /* tools */,
 			);
-			name = mokoLibrary;
 			path = mokoLibrary;
 			sourceTree = "<group>";
 		};
@@ -1578,7 +1573,6 @@
 				F1DF772F0A72C62EE71B4A38B3DA48FA /* MBProgressHUD.m */,
 				DA1891C7EA4A2E43F968261662045B13 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1643,7 +1637,6 @@
 				CEE517FFA47A46AC41D3638F963D2809 /* ViewController+MASAdditions.m */,
 				20CA2732A92211043D74580CD8A1B4FF /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -1914,7 +1907,6 @@
 				34DEB9E9F2AB3EBFA1D25B82219F5E5D /* no-arc */,
 				5D34AE38A749A11DCFA18EE8639011BC /* Support Files */,
 			);
-			name = YYKit;
 			path = YYKit;
 			sourceTree = "<group>";
 		};
@@ -1932,7 +1924,6 @@
 				D848AD7D1B6067D7FF34E638B5030192 /* Resources */,
 				C07DFB250FAD6E4F02A68D477675375F /* Support Files */,
 			);
-			name = MLInputDodger;
 			path = MLInputDodger;
 			sourceTree = "<group>";
 		};
@@ -1967,7 +1958,6 @@
 				5109D225FCA900F54A3515977ECF0C39 /* UIView+Toast.m */,
 				AB1D7FA3C97224A400B021A1488BA6AB /* Support Files */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -2109,7 +2099,6 @@
 				19BC69B7507C5E0FD9242769E6033F68 /* ZipArchive.swift */,
 				800225C5537C6CF25580D0D622C1C780 /* Support Files */,
 			);
-			name = iOSDFULibrary;
 			path = iOSDFULibrary;
 			sourceTree = "<group>";
 		};
@@ -2668,7 +2657,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1110;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -3265,7 +3254,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FAD4350D3DC0F9FF4418943B797BA3F /* Pods-MKBLEMokoLife.adhoc.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3652,7 +3641,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 738219C2E1AB85431D541FA9EDA7822B /* Pods-MKBLEMokoLife.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3760,7 +3749,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B34E15D7053C43D1952586E841A2346 /* Pods-MKBLEMokoLife.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

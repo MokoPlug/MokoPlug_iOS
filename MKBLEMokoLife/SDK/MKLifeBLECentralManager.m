@@ -265,7 +265,7 @@ static MKLifeBLECentralManager *manager = nil;
     deviceModel.electronA = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(8, 6)];
     deviceModel.electronP = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(14, 4)] * 0.1;
     
-    NSString *state = [MKLifeBLEAdopter getBinaryByhex:[content substringWithRange:NSMakeRange(24, 2)]];
+    NSString *state = [MKBLEBaseSDKAdopter binaryByhex:[content substringWithRange:NSMakeRange(24, 2)]];
     deviceModel.loadDetection = [[state substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"];
     deviceModel.overloadState = [[state substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"1"];
     deviceModel.switchStatus = [[state substringWithRange:NSMakeRange(2, 1)] isEqualToString:@"1"];
