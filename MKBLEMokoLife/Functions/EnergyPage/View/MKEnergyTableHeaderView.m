@@ -183,7 +183,7 @@
         _energyUnitLabel.textColor = DEFAULT_TEXT_COLOR;
         _energyUnitLabel.textAlignment = NSTextAlignmentRight;
         _energyUnitLabel.font = MKFont(16.f);
-        _energyUnitLabel.text = @"KWh/EC";
+        _energyUnitLabel.text = @"KWh·EC";
     }
     return _energyUnitLabel;
 }

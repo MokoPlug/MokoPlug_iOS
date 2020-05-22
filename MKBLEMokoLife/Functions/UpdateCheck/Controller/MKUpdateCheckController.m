@@ -53,6 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSubViews];
+    [self readFirmwareVersion];
 }
 
 #pragma mark - MKUpdateControllerDelegate
@@ -78,6 +79,18 @@
     WS(weakSelf);
     self.leftButton.enabled = NO;
     [self.adopter dfuUpdateWithFileName:self.fileName target:weakSelf];
+}
+
+#pragma mark - interface
+- (void)readFirmwareVersion {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    [MKLifeBLEInterface readFirmwareVersionWithSucBlock:^(id  _Nonnull returnData) {
+        [[MKHudManager share] hide];
+        self.versionLabel.text = returnData[@"result"][@"firmware"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - UI
@@ -151,7 +164,6 @@
         _versionLabel.textColor = RGBCOLOR(51, 51, 51);
         _versionLabel.textAlignment = NSTextAlignmentCenter;
         _versionLabel.font = MKFont(14.f);
-        _versionLabel.text = kAppVersion;
     }
     return _versionLabel;
 }

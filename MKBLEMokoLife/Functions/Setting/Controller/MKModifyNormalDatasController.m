@@ -57,6 +57,7 @@
     [MKLifeBLEInterface configDeviceName:self.textField.text sucBlock:^{
         [[MKHudManager share] hide];
         [self.view showCentralToast:@"Success"];
+        [self performSelector:@selector(leftButtonMethod) afterDelay:0.5f];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
@@ -68,6 +69,7 @@
     [MKLifeBLEInterface configAdvInterval:[self.textField.text integerValue] sucBlock:^{
         [[MKHudManager share] hide];
         [self.view showCentralToast:@"Success"];
+        [self performSelector:@selector(leftButtonMethod) afterDelay:0.5f];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
@@ -79,6 +81,7 @@
     [MKLifeBLEInterface configOverloadProtectionValue:[self.textField.text integerValue] sucBlock:^{
         [[MKHudManager share] hide];
         [self.view showCentralToast:@"Success"];
+        [self performSelector:@selector(leftButtonMethod) afterDelay:0.5f];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
@@ -92,6 +95,7 @@
     [MKLifeBLEInterface configEnergyStorageParameters:interval energyValue:energy sucBlock:^{
         [[MKHudManager share] hide];
         [self.view showCentralToast:@"Success"];
+        [self performSelector:@selector(leftButtonMethod) afterDelay:0.5f];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
