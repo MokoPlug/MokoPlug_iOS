@@ -213,6 +213,17 @@
     return YES;
 }
 
++ (BOOL)isUUIDString:(NSString *)uuid{
+    NSString *uuidPatternString = @"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:uuidPatternString
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:nil];
+    NSInteger numberOfMatches = [regex numberOfMatchesInString:uuid
+                                                       options:kNilOptions
+                                                         range:NSMakeRange(0, uuid.length)];
+    return (numberOfMatches > 0);
+}
+
 #pragma mark - private method
 
 // 16进制转10进制

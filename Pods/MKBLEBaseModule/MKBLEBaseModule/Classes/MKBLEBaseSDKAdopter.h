@@ -67,6 +67,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param content content
 + (BOOL)asciiString:(NSString *)content;
 
+/// 判断某个字符串是不是uuid
+/// @param uuid [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
++ (BOOL)isUUIDString:(NSString *)uuid;
+
 @end
 
 NS_ASSUME_NONNULL_END
