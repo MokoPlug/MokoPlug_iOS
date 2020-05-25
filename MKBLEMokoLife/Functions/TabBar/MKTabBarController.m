@@ -46,7 +46,20 @@
 #pragma mark - Notification
 
 - (void)gotoRootViewController{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToScanPage" object:nil userInfo:nil];
+    NSString *msg = @"Please confirm again whether to disconnect the device";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
+                                                                             message:msg
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:cancelAction];
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToScanPage" object:nil userInfo:nil];
+    }];
+    [alertController addAction:moreAction];
+    
+    [kAppRootController presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)disconnectAlert{

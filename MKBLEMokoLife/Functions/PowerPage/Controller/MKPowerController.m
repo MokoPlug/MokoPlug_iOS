@@ -213,6 +213,10 @@ static CGFloat const buttonHeight = 32.f;
     [self reloadPowerValue];
 }
 
+- (void)overloadStatusChanged:(NSNotification *)note {
+    [self.view showCentralToast:@"LOAD INSERTION"];
+}
+
 - (void)addNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(switchStatusChanged:)
@@ -225,6 +229,10 @@ static CGFloat const buttonHeight = 32.f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(energyVCPNotification:)
                                                  name:mk_receiveEnergyVCPNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(overloadStatusChanged:)
+                                                 name:mk_receiveLoadStatusChangedNotification
                                                object:nil];
 }
 

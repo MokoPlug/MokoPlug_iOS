@@ -13,6 +13,8 @@
 static CGFloat const aboutIconWidth = 110.f;
 static CGFloat const aboutIconHeight = 110.f;
 
+static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1&page_id=208";
+
 @interface MKAboutController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong)UIImageView *aboutIcon;
@@ -53,7 +55,7 @@ static CGFloat const aboutIconHeight = 110.f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 3) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://doc.mokotechnology.com/index.php?s=/1&page_id=152"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kLinkUrl]];
     }
 }
 
@@ -110,7 +112,7 @@ static CGFloat const aboutIconHeight = 110.f;
     MKAboutCellModel *linkModel = [[MKAboutCellModel alloc] init];
     linkModel.iconName = @"about_shouceIcon";
     linkModel.typeMessage = @"Manual";
-    linkModel.value = @"http://doc.mokotechnology.com/index.php?s=/1&page_id=152";
+    linkModel.value = kLinkUrl;
     linkModel.canAdit = YES;
     [self.dataList addObject:linkModel];
     
