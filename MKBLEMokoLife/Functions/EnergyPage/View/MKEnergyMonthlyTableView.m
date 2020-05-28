@@ -79,26 +79,29 @@
 
 #pragma mark - note
 - (void)receiveCurrentEnergyNotification:(NSNotification *)note {
-    if (self.pulseConstant == 0) {
-        return;
-    }
     NSString *currentDate = [NSString stringWithFormat:@"%@-%@-%@",note.userInfo[@"date"][@"year"],note.userInfo[@"date"][@"month"],note.userInfo[@"date"][@"day"]];
     if (self.monthlyList.count == 0) {
         //没有数据直接添加
         MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
         newModel.timeValue = currentDate;
-        newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentDayValue"] floatValue] / self.pulseConstant];
+        newModel.energyValue = note.userInfo[@"currentDayValue"];
         [self.monthlyList addObject:newModel];
     }else {
-        MKEnergyValueCellModel *startModel = self.monthlyList.firstObject;
-        if ([currentDate isEqualToString:startModel.timeValue]) {
-            //存在就替换
-            startModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentDayValue"] floatValue] / self.pulseConstant];
-        }else {
+        BOOL contain = NO;
+        for (NSInteger i = 0; i < self.monthlyList.count; i ++) {
+            MKEnergyValueCellModel *model = self.monthlyList[i];
+            if ([currentDate isEqualToString:model.timeValue]) {
+                //存在就替换
+                model.energyValue = note.userInfo[@"currentDayValue"];
+                contain = YES;
+                break;
+            }
+        }
+        if (!contain) {
             //不存在就插入
             MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
             newModel.timeValue = currentDate;
-            newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentDayValue"] floatValue] / self.pulseConstant];
+            newModel.energyValue = note.userInfo[@"currentDayValue"];
             [self.monthlyList insertObject:newModel atIndex:0];
         }
     }
@@ -137,7 +140,7 @@
 
 #pragma mark - private method
 - (void)reloadHeaderDateInfoWithEnergy:(float)energy {
-    self.monthlyHeaderModel.energyValue = [NSString stringWithFormat:@"%2.f",energy / self.pulseConstant];
+    self.monthlyHeaderModel.energyValue = [NSString stringWithFormat:@"%.2f",energy / self.pulseConstant];
     if (self.monthlyList.count == 0) {
         return;
     }

@@ -109,7 +109,7 @@ static CGFloat const circleLabelViewOffset = 25.f;
         _numberLabel2.textColor = RGBCOLOR(128, 128, 128);
         _numberLabel2.textAlignment = NSTextAlignmentRight;
         _numberLabel2.font = MKFont(11.f);
-        _numberLabel2.text = @"300";
+        _numberLabel2.text = @"900";
     }
     return _numberLabel2;
 }
@@ -120,7 +120,7 @@ static CGFloat const circleLabelViewOffset = 25.f;
         _numberLabel3.textAlignment = NSTextAlignmentCenter;
         _numberLabel3.textColor = RGBCOLOR(128, 128, 128);
         _numberLabel3.font = MKFont(11.f);
-        _numberLabel3.text = @"800";
+        _numberLabel3.text = @"1800";
     }
     return _numberLabel3;
 }
@@ -131,7 +131,7 @@ static CGFloat const circleLabelViewOffset = 25.f;
         _numberLabel4.textColor = RGBCOLOR(128, 128, 128);
         _numberLabel4.textAlignment = NSTextAlignmentLeft;
         _numberLabel4.font = MKFont(11.f);
-        _numberLabel4.text = @"1500";
+        _numberLabel4.text = @"2700";
     }
     return _numberLabel4;
 }

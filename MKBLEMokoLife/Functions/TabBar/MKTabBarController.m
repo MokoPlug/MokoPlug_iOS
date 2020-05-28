@@ -45,7 +45,7 @@
 
 #pragma mark - Notification
 
-- (void)gotoRootViewController{
+- (void)leftButtonMethod {
     NSString *msg = @"Please confirm again whether to disconnect the device";
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
                                                                              message:msg
@@ -60,6 +60,10 @@
     [alertController addAction:moreAction];
     
     [kAppRootController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)gotoRootViewController{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToScanPage" object:nil userInfo:nil];
 }
 
 - (void)disconnectAlert{
@@ -82,7 +86,7 @@
                                                  name:@"MKCentralDeallocNotification"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(gotoRootViewController)
+                                             selector:@selector(leftButtonMethod)
                                                  name:@"MKPopToRootViewControllerNotification"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self

@@ -73,26 +73,29 @@
 
 #pragma mark - note
 - (void)receiveCurrentEnergyNotification:(NSNotification *)note {
-    if (self.pulseConstant == 0) {
-        return;
-    }
     NSString *hour = note.userInfo[@"date"][@"hour"];
     if (self.dailyList.count == 0) {
         //没有直接添加
         MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
         newModel.timeValue = hour;
-        newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentHourValue"] floatValue] / self.pulseConstant];
+        newModel.energyValue = note.userInfo[@"currentHourValue"];
         [self.dailyList addObject:newModel];
     }else {
-        MKEnergyValueCellModel *model = self.dailyList.firstObject;
-        if ([model.timeValue isEqualToString:hour]) {
-            //存在，替换
-            model.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentHourValue"] floatValue] / self.pulseConstant];
-        }else {
+        BOOL contain = NO;
+        for (NSInteger i = 0; i < self.dailyList.count; i ++) {
+            MKEnergyValueCellModel *model = self.dailyList[i];
+            if ([model.timeValue isEqualToString:hour]) {
+                //存在，替换
+                model.energyValue = note.userInfo[@"currentHourValue"];
+                contain = YES;
+                break;
+            }
+        }
+        if (!contain) {
             //没有，添加
             MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
             newModel.timeValue = hour;
-            newModel.energyValue = [NSString stringWithFormat:@"%2.f",[note.userInfo[@"currentHourValue"] floatValue] / self.pulseConstant];
+            newModel.energyValue = note.userInfo[@"currentHourValue"];
             [self.dailyList insertObject:newModel atIndex:0];
         }
     }
@@ -112,7 +115,7 @@
     for (NSInteger i = energyList.count - 1; i >= 0; i --) {
         NSDictionary *dic = energyList[i];
         MKEnergyValueCellModel *model = [[MKEnergyValueCellModel alloc] init];
-        NSString *timeValue = [NSString stringWithFormat:@"%ld",[dic[@"index"] integerValue] + 1];
+        NSString *timeValue = dic[@"index"];
         model.timeValue = (timeValue.length == 1 ? [@"0" stringByAppendingString:timeValue] : timeValue);
         model.energyValue = dic[@"rotationsNumber"];
         totalValue += [dic[@"rotationsNumber"] integerValue];
@@ -132,7 +135,7 @@
 
 #pragma mark - private method
 - (void)reloadHeaderViewWithEnergy:(float)energy {
-    self.dailyHeaderModel.energyValue = [NSString stringWithFormat:@"%2.f",energy / self.pulseConstant];
+    self.dailyHeaderModel.energyValue = [NSString stringWithFormat:@"%.2f",energy / self.pulseConstant];
     NSString *date = [self fetchCurrentDate];
     NSString *tempHour = @"00";
     if (self.dailyList.count > 0) {
