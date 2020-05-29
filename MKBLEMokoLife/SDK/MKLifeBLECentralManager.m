@@ -100,8 +100,7 @@ static MKLifeBLECentralManager *manager = nil;
         NSLog(@"+++++++++++++++++接收数据出错");
         return;
     }
-    NSLog(@"+++++++++++++++当前设备返回值:%@",characteristic.value);
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FFB2"]]) {
+    if ([characteristic.UUID.UUIDString isEqualToString:@"FFB2"]) {
         //通知
         [self parseFFB2Datas:characteristic];
         return;
@@ -286,6 +285,7 @@ static MKLifeBLECentralManager *manager = nil;
 
 - (void)parseFFB2Datas:(CBCharacteristic *)characteristic {
     NSString *content = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
+    NSLog(@"+++++++++++++++当前设备返回值:%@",content);
     if (content.length < 8) {
         return;
     }
@@ -329,6 +329,7 @@ static MKLifeBLECentralManager *manager = nil;
                 @"configValue":configValue,
                 @"remainingTime":remainingTime,
             };
+        NSLog(@"==============================>当前接收到倒计时:%@",dic);
         [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveCountdownNotification
                                                             object:nil
                                                           userInfo:dic];

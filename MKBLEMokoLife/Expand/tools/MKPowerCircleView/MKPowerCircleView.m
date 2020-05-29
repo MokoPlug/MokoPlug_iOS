@@ -65,14 +65,15 @@ static CGFloat const circleLabelViewOffset = 25.f;
         make.top.mas_equalTo(30.f);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
     }];
+    CGFloat offset = ((self.frame.size.height * 4 / 5) - 30.f - 2 * MKFont(11.f).lineHeight) / 2;
     [self.numberLabel2 mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.valueLabel.mas_top).mas_offset(-3.f);
+        make.top.mas_equalTo(self.numberLabel3.mas_bottom).mas_offset(offset);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
         make.left.mas_equalTo(35.f);
         make.width.mas_equalTo(25.f);
     }];
     [self.numberLabel4 mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.valueLabel.mas_top).mas_offset(-3.f);
+        make.centerY.mas_equalTo(self.numberLabel2.mas_centerY);
         make.height.mas_equalTo(MKFont(11.f).lineHeight);
         make.right.mas_equalTo(-35.f);
         make.width.mas_equalTo(30.f);
@@ -211,7 +212,7 @@ static CGFloat const circleLabelViewOffset = 25.f;
     if (progress >= 1) {
         progress = 1;
     }
-    self.lableView.valueLabel.text = [NSString stringWithFormat:@"%.f",powerValue];
+    self.lableView.valueLabel.text = [NSString stringWithFormat:@"%.1f",powerValue];
     [self.topCircleLayer removeAnimationForKey:@"mk_progressAnimationKey"];
     [self.topCircleLayer addAnimation:[self circleAnimationWithEndValue:progress] forKey:@"mk_progressAnimationKey"];
 }

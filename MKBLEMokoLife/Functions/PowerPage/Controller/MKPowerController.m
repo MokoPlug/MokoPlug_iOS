@@ -214,7 +214,10 @@ static CGFloat const buttonHeight = 32.f;
 }
 
 - (void)overloadStatusChanged:(NSNotification *)note {
-    [self.view showCentralToast:@"LOAD INSERTION"];
+    BOOL isOverload = [note.userInfo[@"loadStatus"] boolValue];
+    if (isOverload) {
+        [self.view showCentralToast:@"LOAD INSERTION"];
+    }
 }
 
 - (void)addNotifications {
