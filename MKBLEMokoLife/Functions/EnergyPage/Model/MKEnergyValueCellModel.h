@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *timeValue;
 
+@property (nonatomic, copy)NSString *dateValue;
+
 @property (nonatomic, copy)NSString *energyValue;
 
 @end

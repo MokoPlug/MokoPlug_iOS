@@ -83,14 +83,15 @@
     if (self.monthlyList.count == 0) {
         //没有数据直接添加
         MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
-        newModel.timeValue = currentDate;
+        newModel.timeValue = [NSString stringWithFormat:@"%@-%@",note.userInfo[@"date"][@"month"],note.userInfo[@"date"][@"day"]];
+        newModel.dateValue = currentDate;
         newModel.energyValue = note.userInfo[@"currentDayValue"];
         [self.monthlyList addObject:newModel];
     }else {
         BOOL contain = NO;
         for (NSInteger i = 0; i < self.monthlyList.count; i ++) {
             MKEnergyValueCellModel *model = self.monthlyList[i];
-            if ([currentDate isEqualToString:model.timeValue]) {
+            if ([currentDate isEqualToString:model.dateValue]) {
                 //存在就替换
                 model.energyValue = note.userInfo[@"currentDayValue"];
                 contain = YES;
@@ -100,7 +101,8 @@
         if (!contain) {
             //不存在就插入
             MKEnergyValueCellModel *newModel = [[MKEnergyValueCellModel alloc] init];
-            newModel.timeValue = currentDate;
+            newModel.timeValue = [NSString stringWithFormat:@"%@-%@",note.userInfo[@"date"][@"month"],note.userInfo[@"date"][@"day"]];
+            newModel.dateValue = currentDate;
             newModel.energyValue = note.userInfo[@"currentDayValue"];
             [self.monthlyList insertObject:newModel atIndex:0];
         }
@@ -121,7 +123,10 @@
     for (NSInteger i = energyList.count - 1; i >= 0; i --) {
         NSDictionary *dic = energyList[i];
         MKEnergyValueCellModel *model = [[MKEnergyValueCellModel alloc] init];
-        model.timeValue = dic[@"date"];
+        NSString *date = dic[@"date"];
+        NSArray *dateList = [date componentsSeparatedByString:@"-"];
+        model.timeValue = [NSString stringWithFormat:@"%@-%@",dateList[1],dateList[2]];
+        model.dateValue = date;
         model.energyValue = dic[@"rotationsNumber"];
         totalValue += [dic[@"rotationsNumber"] integerValue];
         [self.monthlyList addObject:model];
@@ -146,7 +151,7 @@
     }
     MKEnergyValueCellModel *startModel = self.monthlyList.firstObject;
     MKEnergyValueCellModel *endModel = self.monthlyList.lastObject;
-    self.monthlyHeaderModel.dateMsg = [NSString stringWithFormat:@"%@ to %@",endModel.timeValue,startModel.timeValue];
+    self.monthlyHeaderModel.dateMsg = [NSString stringWithFormat:@"%@ to %@",endModel.dateValue,startModel.dateValue];
     [self.monthlyHeader setViewModel:self.monthlyHeaderModel];
 }
 
