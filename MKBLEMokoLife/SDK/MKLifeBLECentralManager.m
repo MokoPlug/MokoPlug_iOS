@@ -16,6 +16,8 @@
 #import "MKLifeBLEPeripheral.h"
 #import "MKLifeBLEOperation.h"
 
+#import "MKBLELogManager.h"
+
 NSString *const mk_peripheralConnectStateChangedNotification = @"mk_peripheralConnectStateChangedNotification";
 NSString *const mk_centralManagerStateChangedNotification = @"mk_centralManagerStateChangedNotification";
 
@@ -100,6 +102,8 @@ static MKLifeBLECentralManager *manager = nil;
         NSLog(@"+++++++++++++++++接收数据出错");
         return;
     }
+    NSString *tempData = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
+    [MKBLELogManager saveDataWithFileName:@"/BLELog" dataList:@[[tempData mutableCopy]]];
     if ([characteristic.UUID.UUIDString isEqualToString:@"FFB2"]) {
         //通知
         [self parseFFB2Datas:characteristic];
@@ -285,7 +289,6 @@ static MKLifeBLECentralManager *manager = nil;
 
 - (void)parseFFB2Datas:(CBCharacteristic *)characteristic {
     NSString *content = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
-    NSLog(@"+++++++++++++++当前设备返回值:%@",content);
     if (content.length < 8) {
         return;
     }
@@ -329,7 +332,6 @@ static MKLifeBLECentralManager *manager = nil;
                 @"configValue":configValue,
                 @"remainingTime":remainingTime,
             };
-        NSLog(@"==============================>当前接收到倒计时:%@",dic);
         [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveCountdownNotification
                                                             object:nil
                                                           userInfo:dic];

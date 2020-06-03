@@ -81,6 +81,7 @@
 		005A55072469513A00C8F1D1 /* MKLifeBLEInterface+MKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A55062469513A00C8F1D1 /* MKLifeBLEInterface+MKConfig.m */; };
 		005A550B2469527100C8F1D1 /* MKLifeBLEOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A550A2469527100C8F1D1 /* MKLifeBLEOperation.m */; };
 		005A550E246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m in Sources */ = {isa = PBXBuildFile; fileRef = 005A550D246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m */; };
+		005DFC9424848D0E009A0274 /* MKBLELogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 005DFC9324848D0E009A0274 /* MKBLELogManager.m */; };
 		005E258C246E31C300243F07 /* MKEnergyTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005E258B246E31C300243F07 /* MKEnergyTableHeaderView.m */; };
 		005E258F246E3B5400243F07 /* MKEnergyDailyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005E258E246E3B5400243F07 /* MKEnergyDailyTableView.m */; };
 		005E2592246E3B6E00243F07 /* MKEnergyMonthlyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005E2591246E3B6E00243F07 /* MKEnergyMonthlyTableView.m */; };
@@ -224,6 +225,8 @@
 		005A550A2469527100C8F1D1 /* MKLifeBLEOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKLifeBLEOperation.m; sourceTree = "<group>"; };
 		005A550C246952D100C8F1D1 /* MKLifeBLEOperationAdopter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKLifeBLEOperationAdopter.h; sourceTree = "<group>"; };
 		005A550D246952D100C8F1D1 /* MKLifeBLEOperationAdopter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKLifeBLEOperationAdopter.m; sourceTree = "<group>"; };
+		005DFC9224848D0E009A0274 /* MKBLELogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBLELogManager.h; sourceTree = "<group>"; };
+		005DFC9324848D0E009A0274 /* MKBLELogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKBLELogManager.m; sourceTree = "<group>"; };
 		005E258A246E31C300243F07 /* MKEnergyTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKEnergyTableHeaderView.h; sourceTree = "<group>"; };
 		005E258B246E31C300243F07 /* MKEnergyTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKEnergyTableHeaderView.m; sourceTree = "<group>"; };
 		005E258D246E3B5400243F07 /* MKEnergyDailyTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKEnergyDailyTableView.h; sourceTree = "<group>"; };
@@ -803,6 +806,8 @@
 			isa = PBXGroup;
 			children = (
 				00633C4C2461654400D4BCA3 /* MokoLifeBLESDK.h */,
+				005DFC9224848D0E009A0274 /* MKBLELogManager.h */,
+				005DFC9324848D0E009A0274 /* MKBLELogManager.m */,
 				00633C49246164B600D4BCA3 /* MKLifeBLECentralManager.h */,
 				00633C4A246164B600D4BCA3 /* MKLifeBLECentralManager.m */,
 				00520BAD246254ED003BF540 /* MKLifeBLEDeviceModel.h */,
@@ -1096,6 +1101,7 @@
 				00520BB22462607B003BF540 /* MKLifeBLEAdopter.m in Sources */,
 				005A54DC2468F2F400C8F1D1 /* MKTabBarController.m in Sources */,
 				005E4C43246CF11200AB0705 /* MKTimerCircleView.m in Sources */,
+				005DFC9424848D0E009A0274 /* MKBLELogManager.m in Sources */,
 				005E2592246E3B6E00243F07 /* MKEnergyMonthlyTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,7 +1194,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0.3;
+				MARKETING_VERSION = 1.0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
 				PRODUCT_NAME = MokoPlug;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1321,7 +1327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0.3;
+				MARKETING_VERSION = 1.0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
 				PRODUCT_NAME = MokoPlug;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1344,7 +1350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0.3;
+				MARKETING_VERSION = 1.0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
 				PRODUCT_NAME = MokoPlug;
 				TARGETED_DEVICE_FAMILY = 1;
