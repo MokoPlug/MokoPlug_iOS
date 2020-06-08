@@ -84,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)readEnergyStorageParametersWithSucBlock:(void (^)(id returnData))sucBlock
                                     failedBlock:(void (^)(NSError *error))failedBlock;
 
-/// 读取历史累计电能
+/// 读取历史累计电能,最多30天数据
 /// @param sucBlock 成功回调
 /// @param failedBlock 失败回调
 + (void)readHistoricalEnergyWithSucBlock:(void (^)(id returnData))sucBlock
@@ -95,6 +95,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param failedBlock 失败回调
 + (void)readOverLoadStatusWithSucBlock:(void (^)(id returnData))sucBlock
                            failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// 读取当天每小时数据
+/// @param sucBlock 成功回调
+/// @param failedBlock 失败回调
++ (void)readEnergyDataOfTodayWithSucBlock:(void (^)(id returnData))sucBlock
+                              failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// 读取脉冲常数
+/// @param sucBlock 成功回调
+/// @param failedBlock 失败回调
++ (void)readPulseConstantWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

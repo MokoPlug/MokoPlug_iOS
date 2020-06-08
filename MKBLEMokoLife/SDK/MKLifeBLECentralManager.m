@@ -16,6 +16,8 @@
 #import "MKLifeBLEPeripheral.h"
 #import "MKLifeBLEOperation.h"
 
+#import "MKBLELogManager.h"
+
 NSString *const mk_peripheralConnectStateChangedNotification = @"mk_peripheralConnectStateChangedNotification";
 NSString *const mk_centralManagerStateChangedNotification = @"mk_centralManagerStateChangedNotification";
 
@@ -100,7 +102,9 @@ static MKLifeBLECentralManager *manager = nil;
         NSLog(@"+++++++++++++++++接收数据出错");
         return;
     }
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FFB2"]]) {
+    NSString *tempData = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
+    [MKBLELogManager saveDataWithFileName:@"/BLELog" dataList:@[[tempData mutableCopy]]];
+    if ([characteristic.UUID.UUIDString isEqualToString:@"FFB2"]) {
         //通知
         [self parseFFB2Datas:characteristic];
         return;
@@ -227,7 +231,7 @@ static MKLifeBLECentralManager *manager = nil;
         //对于有附加信息的
         NSDictionary *resultDic = @{@"msg":@"success",
                                     @"code":@"1",
-                                    @"result":returnData[mk_dataInformation],
+                                    @"result":returnData,
                                     };
         MKBLEBase_main_safe(^{
             if (successBlock) {
@@ -264,7 +268,7 @@ static MKLifeBLECentralManager *manager = nil;
     deviceModel.electronA = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(8, 6)];
     deviceModel.electronP = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(14, 4)] * 0.1;
     
-    NSString *state = [MKLifeBLEAdopter getBinaryByhex:[content substringWithRange:NSMakeRange(24, 2)]];
+    NSString *state = [MKBLEBaseSDKAdopter binaryByhex:[content substringWithRange:NSMakeRange(24, 2)]];
     deviceModel.loadDetection = [[state substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"];
     deviceModel.overloadState = [[state substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"1"];
     deviceModel.switchStatus = [[state substringWithRange:NSMakeRange(2, 1)] isEqualToString:@"1"];
@@ -292,10 +296,6 @@ static MKLifeBLECentralManager *manager = nil;
     if (![header isEqualToString:@"b4"]) {
         return;
     }
-    NSInteger len = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(6, 2)];
-    if (content.length != 2 * len + 8) {
-        return;
-    }
     NSString *function = [content substringWithRange:NSMakeRange(2, 2)];
     if ([function isEqualToString:@"01"]) {
         //开关状态
@@ -315,7 +315,7 @@ static MKLifeBLECentralManager *manager = nil;
     }
     if ([function isEqualToString:@"03"]) {
         //过载保护
-        NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 2 * len)];
+        NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
         [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveOverloadProtectionValueChangedNotification
                                                             object:nil
                                                           userInfo:@{@"value":value}];
@@ -343,6 +343,43 @@ static MKLifeBLECentralManager *manager = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveEnergyVCPNotification
                                                             object:nil
                                                           userInfo:dic];
+        return;
+    }
+    if ([function isEqualToString:@"06"]) {
+        //上报当前电能数据
+        NSString *year = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
+        NSString *month = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(10, 2)];
+        if (month.length == 1) {
+            month = [@"0" stringByAppendingString:month];
+        }
+        NSString *day = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(12, 2)];
+        if (day.length == 1) {
+            day = [@"0" stringByAppendingString:day];
+        }
+        NSString *hour = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(14, 2)];
+        if (hour.length == 1) {
+            hour = [@"0" stringByAppendingString:hour];
+        }
+        NSDictionary *dateDic = @{
+            @"year":year,
+            @"month":month,
+            @"day":day,
+            @"hour":hour,
+        };
+        NSString *totalValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(16, 8)];
+        NSString *monthlyValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(24, 6)];
+        NSString *currentDayValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(30, 6)];
+        NSString *currentHourValue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(36, 4)];
+        NSDictionary *userInfo = @{
+            @"date":dateDic,
+            @"totalValue":totalValue,
+            @"monthlyValue":monthlyValue,
+            @"currentDayValue":currentDayValue,
+            @"currentHourValue":currentHourValue,
+        };
+        [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveCurrentEnergyNotification
+                                                            object:nil
+                                                          userInfo:userInfo];
         return;
     }
 }

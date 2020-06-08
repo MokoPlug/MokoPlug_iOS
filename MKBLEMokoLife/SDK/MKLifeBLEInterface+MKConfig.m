@@ -20,7 +20,7 @@
                 sucBlock:(void (^)(void))sucBlock
              failedBlock:(void (^)(NSError *error))failedBlock {
     if (!MKValidStr(deviceName) || deviceName.length < 1 || deviceName.length > 11
-        || ![MKLifeBLEAdopter asciiString:deviceName]) {
+        || ![MKBLEBaseSDKAdopter asciiString:deviceName]) {
         [self operationParamsErrorBlock:failedBlock];
         return;
     }

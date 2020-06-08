@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKPowerCircleView : UIView
 
-- (void)updateProgress:(float)progress;
+///最大3600，超过3600表示进度为1
+/// @param powerValue powerValue
+- (void)updatePowerValues:(CGFloat)powerValue;
 
 @end
 

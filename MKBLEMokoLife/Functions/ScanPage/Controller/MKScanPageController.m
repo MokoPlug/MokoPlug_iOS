@@ -14,6 +14,8 @@
 
 #import "MKAboutController.h"
 
+#import "MKConfigDeviceDateModel.h"
+
 static CGFloat const offset_X = 15.f;
 static CGFloat const searchButtonHeight = 40.f;
 
@@ -73,6 +75,8 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
 /// 当左侧按钮停止扫描的时候,currentScanStatus = NO,开始扫描的时候currentScanStatus=YES
 @property (nonatomic, assign)BOOL currentScanStatus;
 
+@property (nonatomic, strong)NSMutableDictionary *identifyCache;
+
 @end
 
 @implementation MKScanPageController
@@ -121,6 +125,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
         }
         return;
     }
+    [self.identifyCache removeAllObjects];
     [self.dataList removeAllObjects];
     [self.tableView reloadData];
     [self addAnimationForLeftButton];
@@ -144,8 +149,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
     MKLifeBLEDeviceModel *deviceModel = self.dataList[indexPath.row];
     [[MKHudManager share] showHUDWithTitle:@"Connecting..." inView:self.view isPenetration:NO];
     [[MKLifeBLECentralManager shared] connectPeripheral:deviceModel.peripheral sucBlock:^(CBPeripheral * _Nonnull peripheral) {
-        [[MKHudManager share] hide];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToTabBar" object:nil userInfo:@{}];
+        [self configDate];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
@@ -189,14 +193,6 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
         [self.circleIcon.layer removeAnimationForKey:MKLeftButtonAnimationKey];
         [self.leftButton setSelected:NO];
     }
-}
-
-#pragma mark - MKScanPageCellDelegate
-- (void)scanCellConnectButtonPressed:(NSInteger)index {
-    if (index >= self.dataList.count) {
-        return;
-    }
-//    [self connectDeviceWithModel:self.dataList[index]];
 }
 
 #pragma mark - notice method
@@ -293,9 +289,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
 - (void)processPlugData:(MKLifeBLEDeviceModel *)deviceModel{
     //查看数据源中是否已经存在相关设备
     NSString *identy = deviceModel.peripheral.identifier.UUIDString;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier == %@", identy];
-    NSArray *array = [self.dataList filteredArrayUsingPredicate:predicate];
-    BOOL contain = ValidArray(array);
+    BOOL contain = [self.identifyCache[identy] boolValue];
     if (contain) {
         //如果是已经存在了，替换
         [self dataExistDataSource:deviceModel];
@@ -314,7 +308,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
     moko_dispatch_main_safe(^{
         [self.dataList addObject:deviceModel];
         deviceModel.index = (self.dataList.count - 1);
-        deviceModel.identifier = deviceModel.peripheral.identifier.UUIDString;
+        [self.identifyCache setValue:@(YES) forKey:deviceModel.peripheral.identifier.UUIDString];
         [UIView performWithoutAnimation:^{
             [self.tableView insertRow:(self.dataList.count - 1) inSection:0 withRowAnimation:UITableViewRowAnimationNone];
         }];
@@ -368,6 +362,28 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
     return transformAnima;
 }
 
+#pragma mark - 配置日期
+- (void)configDate {
+    MKConfigDeviceDateModel *dateModel = [[MKConfigDeviceDateModel alloc] init];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
+    NSString *dateString = [dateFormat stringFromDate:[NSDate date]];
+    NSArray *dateList = [dateString componentsSeparatedByString:@"-"];
+    dateModel.year = [dateList[0] integerValue];
+    dateModel.month = [dateList[1] integerValue];
+    dateModel.day = [dateList[2] integerValue];
+    dateModel.hour = [dateList[3] integerValue];
+    dateModel.minutes = [dateList[4] integerValue];
+    dateModel.second = [dateList[5] integerValue];
+    [MKLifeBLEInterface configDeviceTime:dateModel sucBlock:^{
+        [[MKHudManager share] hide];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MKNeedResetRootControllerToTabBar" object:nil userInfo:@{}];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
 #pragma mark - 扫描监听
 - (void)scanTimerRun{
     if (self.scanTimer) {
@@ -391,7 +407,7 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
 - (void)loadSubViews {
     self.custom_naviBarColor = COLOR_NAVIBAR_CUSTOM;
     self.titleLabel.textColor = COLOR_WHITE_MACROS;
-    self.defaultTitle = @"Bluetooth Plug";
+    self.defaultTitle = @"Moko Plug";
     [self.leftButton setImage:nil forState:UIControlStateNormal];
     [self.leftButton addSubview:self.circleIcon];
     [self.circleIcon mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -499,6 +515,13 @@ static NSString *const MKLeftButtonAnimationKey = @"MKLeftButtonAnimationKey";
         _semaphore = dispatch_semaphore_create(1);
     }
     return _semaphore;
+}
+
+- (NSMutableDictionary *)identifyCache {
+    if (!_identifyCache) {
+        _identifyCache = [NSMutableDictionary dictionary];
+    }
+    return _identifyCache;
 }
 
 @end

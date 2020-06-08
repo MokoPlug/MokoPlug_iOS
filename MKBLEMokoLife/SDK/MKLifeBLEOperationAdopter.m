@@ -27,6 +27,7 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
     }
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FFB1"]]) {
         //设置参数
+        return [self parseFFB1Datas:characteristic];
     }
     return @{};
 }
@@ -45,8 +46,8 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
     if (![header isEqualToString:@"b1"]) {
         return @{};
     }
-    NSInteger len = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(6, 2)];
-    if (content.length != 2 * len + 8) {
+    NSInteger len = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(4, 2)];
+    if (content.length != 2 * len + 6) {
         return @{};
     }
     NSString *function = [content substringWithRange:NSMakeRange(2, 2)];
@@ -126,6 +127,7 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
         };
         operationID = mk_readFirmwareVersionOperation;
     }else if ([function isEqualToString:@"0b"] && content.length == 18) {
+        //读取mac地址
         NSString *tempMac = [[content substringWithRange:NSMakeRange(6, 12)] uppercaseString];
         NSString *macAddress = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[tempMac substringWithRange:NSMakeRange(0, 2)],[tempMac substringWithRange:NSMakeRange(2, 2)],[tempMac substringWithRange:NSMakeRange(4, 2)],[tempMac substringWithRange:NSMakeRange(6, 2)],[tempMac substringWithRange:NSMakeRange(8, 2)],[tempMac substringWithRange:NSMakeRange(10, 2)]];
         returnDic = @{
@@ -193,6 +195,32 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
             @"overLoadValue":value
         };
         operationID = mk_readOverLoadStatusOperation;
+    }else if ([function isEqualToString:@"11"]){
+        //当天电能总条数
+        NSString *energyPower = @"";
+        if (len == 4) {
+            energyPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(8, 6)];
+        }
+        returnDic = @{
+        mk_communicationDataNum:[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 2)],
+        @"energyPower":energyPower
+        };
+        operationID = mk_readEnergyDataOfTodayOperation;
+    }else if ([function isEqualToString:@"12"]) {
+        //当天每小时电能数据详情
+        NSString *subContent = [content substringFromIndex:6];
+        NSArray *dataList = [MKLifeBLEAdopter parseEnergyOfToday:subContent];
+        returnDic = @{
+            @"dataList":dataList
+        };
+        operationID = mk_readEnergyDataOfTodayOperation;
+    }else if ([function isEqualToString:@"13"] && content.length == 10) {
+        //读取脉冲常数
+        NSString *value = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
+        returnDic = @{
+            @"pulseConstant":value,
+        };
+        operationID = mk_readPulseConstantOperation;
     }
     
     return [self dataParserGetDataSuccess:returnDic operationID:operationID];
@@ -205,10 +233,6 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
     }
     NSString *header = [content substringWithRange:NSMakeRange(0, 2)];
     if (![header isEqualToString:@"b3"]) {
-        return @{};
-    }
-    NSInteger len = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(6, 2)];
-    if (content.length != 2 * len + 8) {
         return @{};
     }
     NSString *function = [content substringWithRange:NSMakeRange(2, 2)];
