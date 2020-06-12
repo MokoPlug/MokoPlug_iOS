@@ -1,0 +1,63 @@
+PODS:
+  - CircleProgressBar (0.32)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - iOSDFULibrary (4.7.2):
+    - ZIPFoundation (= 0.9.11)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.4.3)
+  - MLInputDodger (1.5.2)
+  - MokoPlugSDK (0.1.0)
+  - Toast (4.0.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+  - ZIPFoundation (0.9.11)
+
+DEPENDENCIES:
+  - CircleProgressBar
+  - FMDB
+  - iOSDFULibrary
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - MLInputDodger
+  - MokoPlugSDK (from `../`)
+  - Toast
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CircleProgressBar
+    - FMDB
+    - iOSDFULibrary
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MLInputDodger
+    - Toast
+    - YYKit
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  MokoPlugSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  iOSDFULibrary: 213608bf93ace7f9d6582453a9498ec384642f97
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
+  MokoPlugSDK: de53aa2750a4f76ff02fbed88853838883f21ffa
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
+
+PODFILE CHECKSUM: 7813e8ebf579aa4c58d734c9776bcf7e66af64a4
+
+COCOAPODS: 1.8.4

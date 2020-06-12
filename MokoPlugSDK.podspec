@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint MokoPlugSDK.podspec' to ensure this is a
+# Be sure to run `pod lib lint MKTrackerSDK.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -21,22 +21,22 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/aadyx2007@163.com/MokoPlugSDK'
+  s.homepage         = 'https://github.com/MokoPlug/MokoPlug_iOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'aadyx2007@163.com' => 'aadyx2007@163.com' }
-  s.source           = { :git => 'https://github.com/aadyx2007@163.com/MokoPlugSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MokoPlug/MokoPlug_iOS.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.source_files = 'MokoPlugSDK/Classes/**/*'
+  s.source_files = 'MokoPlugSDK/Classes/MokoLifeBLESDK.h'
+  s.subspec 'MKBLEBaseSDK' do |ss|
+    ss.source_files = 'MokoPlugSDK/Classes/MKBLEBaseSDK/**'
+  end
+  s.subspec 'MKTrackerSDK' do |ss|
+    ss.source_files = 'MokoPlugSDK/Classes/MokoPlugSDK/**'
+    ss.dependency 'MokoPlugSDK/MKBLEBaseSDK'
+  end
   
-  # s.resource_bundles = {
-  #   'MokoPlugSDK' => ['MokoPlugSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

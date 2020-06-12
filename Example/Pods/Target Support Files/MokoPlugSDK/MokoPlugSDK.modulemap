@@ -1,0 +1,6 @@
+framework module MokoPlugSDK {
+  umbrella header "MokoPlugSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
