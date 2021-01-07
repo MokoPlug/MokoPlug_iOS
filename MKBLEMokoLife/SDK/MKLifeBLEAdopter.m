@@ -12,12 +12,19 @@
 @implementation MKLifeBLEAdopter
 
 + (NSDictionary *)parseVCPValue:(NSString *)value {
-    if (value.length != 14) {
+    if (value.length != 14 && value.length != 20) {
         return @{};
     }
     CGFloat v = [MKBLEBaseSDKAdopter getDecimalWithHex:value range:NSMakeRange(0, 4)] * 0.1;
-    CGFloat a = [MKBLEBaseSDKAdopter getDecimalWithHex:value range:NSMakeRange(4, 6)];
-    CGFloat p = [MKBLEBaseSDKAdopter getDecimalWithHex:value range:NSMakeRange(10, 4)] * 0.1;
+    NSInteger a = 0;
+    float p = 0;
+    if (value.length == 14) {
+        a = [MKBLEBaseSDKAdopter getDecimalWithHex:value range:NSMakeRange(4, 6)];
+        p = [MKBLEBaseSDKAdopter getDecimalWithHex:value range:NSMakeRange(10, 4)] * 0.1;
+    }else if (value.length == 20) {
+        a = [[MKBLEBaseSDKAdopter signedHexTurnString:[value substringWithRange:NSMakeRange(4, 8)]] integerValue];
+        p = [[MKBLEBaseSDKAdopter signedHexTurnString:[value substringWithRange:NSMakeRange(12, 8)]] integerValue] * 0.1;
+    }
     return @{
         @"v":@(v),
         @"a":@(a),

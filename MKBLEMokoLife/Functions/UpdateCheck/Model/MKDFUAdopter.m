@@ -117,10 +117,10 @@
     [self.dfuModel dfuUpdateWithFileUrl:url progressBlock:^(CGFloat progress) {
     } sucBlock:^{
         [[MKHudManager share] showHUDWithTitle:@"DFU Successfully!" inView:controller.view isPenetration:NO];
-        [weakSelf updateComplete:controller];
+        [weakSelf performSelector:@selector(updateComplete:) withObject:controller afterDelay:1.f];
     } failedBlock:^(NSError *error) {
         [[MKHudManager share] showHUDWithTitle:@"Opps!DFU Failed. Please try again!" inView:controller.view isPenetration:NO];
-        [weakSelf updateComplete:controller];
+        [weakSelf performSelector:@selector(updateComplete:) withObject:controller afterDelay:1.f];
     }];
 }
 

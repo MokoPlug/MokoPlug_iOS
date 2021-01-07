@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///最大3600，超过3600表示进度为1
 /// @param powerValue powerValue
-- (void)updatePowerValues:(CGFloat)powerValue;
+- (void)updatePowerValues:(float)powerValue;
 
 @end
 

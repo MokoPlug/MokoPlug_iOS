@@ -27,7 +27,7 @@ static CGFloat const buttonHeight = 32.f;
 @property (nonatomic, assign)BOOL overLoad;
 
 /// 当前功率值
-@property (nonatomic, assign)CGFloat energyPower;
+@property (nonatomic, assign)float energyPower;
 
 @property (nonatomic, strong)dispatch_queue_t readQueue;
 
