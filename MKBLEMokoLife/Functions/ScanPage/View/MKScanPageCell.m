@@ -97,7 +97,7 @@
     NSString *electronV = [NSString stringWithFormat:@"%.1f",_dataModel.electronV];
     NSString *electronA = [NSString stringWithFormat:@"%.3f",(_dataModel.electronA * 0.001)];
     NSString *electronP = [NSString stringWithFormat:@"%.1f",_dataModel.electronP];
-    NSString *valueInfo = [NSString stringWithFormat:@"ON-%@W-%@V-%@A",electronP,electronV,electronA];
+    NSString *valueInfo = [NSString stringWithFormat:@"ON,%@W,%@V,%@A",electronP,electronV,electronA];
     self.stateValueLabel.text = valueInfo;
 }
 

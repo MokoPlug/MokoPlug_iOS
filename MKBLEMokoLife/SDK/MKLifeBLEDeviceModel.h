@@ -25,10 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)CGFloat electronV;
 
 /// 电流 mA
-@property (nonatomic, assign)CGFloat electronA;
+@property (nonatomic, assign)NSInteger electronA;
 
 /// 功率 W
-@property (nonatomic, assign)CGFloat electronP;
+@property (nonatomic, assign)float electronP;
 
 /// 负载检测
 @property (nonatomic, assign)BOOL loadDetection;

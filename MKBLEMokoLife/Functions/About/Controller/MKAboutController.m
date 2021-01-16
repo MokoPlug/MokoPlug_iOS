@@ -55,7 +55,7 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 3) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kLinkUrl]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kLinkUrl] options:@{} completionHandler:nil];
     }
 }
 
@@ -121,7 +121,7 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
 
 #pragma mark - Private method
 - (void)openWebBrowser{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.mokosmart.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.mokosmart.com"] options:@{} completionHandler:nil];
 }
 
 #pragma mark - setter & getter

@@ -69,11 +69,12 @@ static CGFloat const circleLabelViewOffset = 23.f;
 }
 
 #pragma mark - public method
-- (void)updatePowerValues:(CGFloat)powerValue {
+- (void)updatePowerValues:(float)powerValue {
     if (powerValue >= 3600) {
         powerValue = 3600;
     }
     float progress = (powerValue / 3600);
+    progress = fabsf(progress);
     if (progress >= 1) {
         progress = 1;
     }

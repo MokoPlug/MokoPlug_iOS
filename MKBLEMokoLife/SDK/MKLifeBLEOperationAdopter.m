@@ -96,9 +96,9 @@ NSString *const mk_historicalEnergyRecordDate = @"mk_historicalEnergyRecordDate"
             @"value":value
         };
         operationID = mk_readOverloadProtectionValueOperation;
-    }else if ([function isEqualToString:@"07"] && content.length == 20) {
+    }else if ([function isEqualToString:@"07"]) {
         //读取设备实时电压、电流、功率
-        returnDic = [MKLifeBLEAdopter parseVCPValue:[content substringWithRange:NSMakeRange(6, 14)]];
+        returnDic = [MKLifeBLEAdopter parseVCPValue:[content substringWithRange:NSMakeRange(6, len * 2)]];
         operationID = mk_readVCPValueOperation;
     }else if ([function isEqualToString:@"08"] && content.length == 14) {
         //总的累计电能转数，实际电能为转数/脉冲常数 kwh

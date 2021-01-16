@@ -247,31 +247,44 @@ static MKLifeBLECentralManager *manager = nil;
 - (MKLifeBLEDeviceModel *)parseDeviceDataWithPeripheral:(CBPeripheral *)peripheral
                                                 advData:(NSDictionary *)advertisementData
                                                    rssi:(NSNumber *)rssi {
-    if ([rssi integerValue] == 127 || !ValidDict(advertisementData) || !peripheral) {
+    if ([rssi integerValue] == 127 || !MKValidDict(advertisementData) || !peripheral) {
         return nil;
     }
     NSData *manufacturerData = advertisementData[CBAdvertisementDataManufacturerDataKey];
-    if (manufacturerData.length != 15) {
+    if (manufacturerData.length != 15 && manufacturerData.length != 18) {
         return nil;
     }
     NSString *header = [[MKBLEBaseSDKAdopter hexStringFromData:manufacturerData] substringWithRange:NSMakeRange(0, 4)];
+    NSLog(@"接收到的数据头:%@",header);
     if (![[header uppercaseString] isEqualToString:@"FF20"]) {
         return nil;
     }
-    NSString *content = [[MKBLEBaseSDKAdopter hexStringFromData:manufacturerData] substringWithRange:NSMakeRange(4, 26)];
+    NSString *content = [[MKBLEBaseSDKAdopter hexStringFromData:manufacturerData] substringFromIndex:4];
     MKLifeBLEDeviceModel *deviceModel = [[MKLifeBLEDeviceModel alloc] init];
     deviceModel.deviceName = advertisementData[CBAdvertisementDataLocalNameKey];
     deviceModel.rssi = [rssi integerValue];
     deviceModel.peripheral = peripheral;
     deviceModel.macAddress = [content substringWithRange:NSMakeRange(0, 4)];
     deviceModel.electronV = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(4, 4)] * 0.1;
-    deviceModel.electronA = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(8, 6)];
-    deviceModel.electronP = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(14, 4)] * 0.1;
     
-    NSString *state = [MKBLEBaseSDKAdopter binaryByhex:[content substringWithRange:NSMakeRange(24, 2)]];
-    deviceModel.loadDetection = [[state substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"];
-    deviceModel.overloadState = [[state substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"1"];
-    deviceModel.switchStatus = [[state substringWithRange:NSMakeRange(2, 1)] isEqualToString:@"1"];
+    if (manufacturerData.length == 15) {
+        deviceModel.electronA = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(8, 6)];
+        deviceModel.electronP = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(14, 4)] * 0.1;
+        
+        NSString *state = [MKBLEBaseSDKAdopter binaryByhex:[content substringWithRange:NSMakeRange(24, 2)]];
+        deviceModel.loadDetection = [[state substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"];
+        deviceModel.overloadState = [[state substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"1"];
+        deviceModel.switchStatus = [[state substringWithRange:NSMakeRange(2, 1)] isEqualToString:@"1"];
+    }else if (manufacturerData.length == 18) {
+        deviceModel.electronA = [[MKBLEBaseSDKAdopter signedHexTurnString:[content substringWithRange:NSMakeRange(8, 8)]] integerValue];
+        deviceModel.electronP = [[MKBLEBaseSDKAdopter signedHexTurnString:[content substringWithRange:NSMakeRange(16, 8)]] integerValue] * 0.1;
+        
+        NSString *state = [MKBLEBaseSDKAdopter binaryByhex:[content substringWithRange:NSMakeRange(30, 2)]];
+        deviceModel.loadDetection = [[state substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"];
+        deviceModel.overloadState = [[state substringWithRange:NSMakeRange(1, 1)] isEqualToString:@"1"];
+        deviceModel.switchStatus = [[state substringWithRange:NSMakeRange(2, 1)] isEqualToString:@"1"];
+    }
+    
     
     return deviceModel;
 }
@@ -339,7 +352,8 @@ static MKLifeBLECentralManager *manager = nil;
     }
     if ([function isEqualToString:@"05"]) {
         //上报当前电压、电流、功率
-        NSDictionary *dic = [MKLifeBLEAdopter parseVCPValue:[content substringWithRange:NSMakeRange(6, 14)]];
+        NSInteger len = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(4, 2)];
+        NSDictionary *dic = [MKLifeBLEAdopter parseVCPValue:[content substringWithRange:NSMakeRange(6, len * 2)]];
         [[NSNotificationCenter defaultCenter] postNotificationName:mk_receiveEnergyVCPNotification
                                                             object:nil
                                                           userInfo:dic];

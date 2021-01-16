@@ -96,7 +96,6 @@
 		006246D7244EFA8D00A73CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006246D6244EFA8D00A73CA8 /* Assets.xcassets */; };
 		006246DA244EFA8D00A73CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006246D8244EFA8D00A73CA8 /* LaunchScreen.storyboard */; };
 		006246DD244EFA8D00A73CA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 006246DC244EFA8D00A73CA8 /* main.m */; };
-		00633C3F2461645F00D4BCA3 /* MKSlotConfigPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00633C2A2461645F00D4BCA3 /* MKSlotConfigPickView.m */; };
 		00633C402461645F00D4BCA3 /* sliderMaximumTrackImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00633C2D2461645F00D4BCA3 /* sliderMaximumTrackImage@3x.png */; };
 		00633C412461645F00D4BCA3 /* sliderThumbIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00633C2E2461645F00D4BCA3 /* sliderThumbIcon@3x.png */; };
 		00633C422461645F00D4BCA3 /* sliderThumbIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00633C2F2461645F00D4BCA3 /* sliderThumbIcon@2x.png */; };
@@ -105,7 +104,6 @@
 		00633C452461645F00D4BCA3 /* sliderMinimumTrackIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00633C322461645F00D4BCA3 /* sliderMinimumTrackIcon@2x.png */; };
 		00633C462461645F00D4BCA3 /* sliderMinimumTrackIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00633C332461645F00D4BCA3 /* sliderMinimumTrackIcon@3x.png */; };
 		00633C472461645F00D4BCA3 /* MKContactTrackerTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00633C392461645F00D4BCA3 /* MKContactTrackerTextCell.m */; };
-		00633C482461645F00D4BCA3 /* MKBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00633C3A2461645F00D4BCA3 /* MKBaseCell.m */; };
 		00633C4B246164B600D4BCA3 /* MKLifeBLECentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00633C4A246164B600D4BCA3 /* MKLifeBLECentralManager.m */; };
 		008B6E702466AEB1008FC199 /* clearButtonIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008B6E6E2466AEB1008FC199 /* clearButtonIcon@2x.png */; };
 		008B6E712466AEB1008FC199 /* clearButtonIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008B6E6F2466AEB1008FC199 /* clearButtonIcon@3x.png */; };
@@ -253,8 +251,6 @@
 		006246DB244EFA8D00A73CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006246DC244EFA8D00A73CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		006246E3244EFBB300A73CA8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		00633C2A2461645F00D4BCA3 /* MKSlotConfigPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSlotConfigPickView.m; sourceTree = "<group>"; };
-		00633C2B2461645F00D4BCA3 /* MKSlotConfigPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSlotConfigPickView.h; sourceTree = "<group>"; };
 		00633C2D2461645F00D4BCA3 /* sliderMaximumTrackImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderMaximumTrackImage@3x.png"; sourceTree = "<group>"; };
 		00633C2E2461645F00D4BCA3 /* sliderThumbIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderThumbIcon@3x.png"; sourceTree = "<group>"; };
 		00633C2F2461645F00D4BCA3 /* sliderThumbIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderThumbIcon@2x.png"; sourceTree = "<group>"; };
@@ -265,9 +261,7 @@
 		00633C342461645F00D4BCA3 /* MKSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSlider.h; sourceTree = "<group>"; };
 		00633C362461645F00D4BCA3 /* MKNormalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNormalDefines.h; sourceTree = "<group>"; };
 		00633C392461645F00D4BCA3 /* MKContactTrackerTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKContactTrackerTextCell.m; sourceTree = "<group>"; };
-		00633C3A2461645F00D4BCA3 /* MKBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKBaseCell.m; sourceTree = "<group>"; };
 		00633C3B2461645F00D4BCA3 /* MKContactTrackerTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKContactTrackerTextCell.h; sourceTree = "<group>"; };
-		00633C3C2461645F00D4BCA3 /* MKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBaseCell.h; sourceTree = "<group>"; };
 		00633C49246164B600D4BCA3 /* MKLifeBLECentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKLifeBLECentralManager.h; sourceTree = "<group>"; };
 		00633C4A246164B600D4BCA3 /* MKLifeBLECentralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKLifeBLECentralManager.m; sourceTree = "<group>"; };
 		00633C4C2461654400D4BCA3 /* MokoLifeBLESDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MokoLifeBLESDK.h; sourceTree = "<group>"; };
@@ -729,19 +723,9 @@
 			isa = PBXGroup;
 			children = (
 				005A54FE246904ED00C8F1D1 /* MKPowerCircleView */,
-				00633C292461645F00D4BCA3 /* MKPickerView */,
 				00633C2C2461645F00D4BCA3 /* MKSlider */,
 			);
 			path = tools;
-			sourceTree = "<group>";
-		};
-		00633C292461645F00D4BCA3 /* MKPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				00633C2B2461645F00D4BCA3 /* MKSlotConfigPickView.h */,
-				00633C2A2461645F00D4BCA3 /* MKSlotConfigPickView.m */,
-			);
-			path = MKPickerView;
 			sourceTree = "<group>";
 		};
 		00633C2C2461645F00D4BCA3 /* MKSlider */ = {
@@ -778,8 +762,6 @@
 		00633C382461645F00D4BCA3 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				00633C3C2461645F00D4BCA3 /* MKBaseCell.h */,
-				00633C3A2461645F00D4BCA3 /* MKBaseCell.m */,
 				00633C3B2461645F00D4BCA3 /* MKContactTrackerTextCell.h */,
 				00633C392461645F00D4BCA3 /* MKContactTrackerTextCell.m */,
 			);
@@ -915,7 +897,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MK;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = MK;
 				TargetAttributes = {
 					006246C6244EFA8B00A73CA8 = {
@@ -1057,7 +1039,6 @@
 				005A54D32468F16F00C8F1D1 /* MKEnergyController.m in Sources */,
 				0059BCD6246B973A00E969AE /* MKSettingButtonCell.m in Sources */,
 				005A54D02468F0DA00C8F1D1 /* MKPowerController.m in Sources */,
-				00633C482461645F00D4BCA3 /* MKBaseCell.m in Sources */,
 				005A550B2469527100C8F1D1 /* MKLifeBLEOperation.m in Sources */,
 				0056606D246FA5B6008A9574 /* MKConfigDeviceDateModel.m in Sources */,
 				0059BCD0246B85BE00E969AE /* MKSettingPageCell.m in Sources */,
@@ -1088,7 +1069,6 @@
 				00633C4B246164B600D4BCA3 /* MKLifeBLECentralManager.m in Sources */,
 				0059BCFA246BD44B00E969AE /* MKModifyPowerStatusCellModel.m in Sources */,
 				005A5501246923F800C8F1D1 /* MKPowerCircleView.m in Sources */,
-				00633C3F2461645F00D4BCA3 /* MKSlotConfigPickView.m in Sources */,
 				006246DD244EFA8D00A73CA8 /* main.m in Sources */,
 				005A54D62468F1AF00C8F1D1 /* MKSettingController.m in Sources */,
 				005E258C246E31C300243F07 /* MKEnergyTableHeaderView.m in Sources */,
@@ -1146,6 +1126,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1189,12 +1170,12 @@
 				DEVELOPMENT_TEAM = R558LEUW2T;
 				GCC_PREFIX_HEADER = "/Users/aa/Desktop/公司项目/MKBLEMokoLife/MKBLEMokoLife/PrefixHeader.pch";
 				INFOPLIST_FILE = MKBLEMokoLife/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
 				PRODUCT_NAME = MokoPlug;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1227,6 +1208,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1285,6 +1267,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1322,12 +1305,12 @@
 				DEVELOPMENT_TEAM = R558LEUW2T;
 				GCC_PREFIX_HEADER = "/Users/aa/Desktop/公司项目/MKBLEMokoLife/MKBLEMokoLife/PrefixHeader.pch";
 				INFOPLIST_FILE = MKBLEMokoLife/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
 				PRODUCT_NAME = MokoPlug;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1345,12 +1328,12 @@
 				DEVELOPMENT_TEAM = R558LEUW2T;
 				GCC_PREFIX_HEADER = "/Users/aa/Desktop/公司项目/MKBLEMokoLife/MKBLEMokoLife/PrefixHeader.pch";
 				INFOPLIST_FILE = MKBLEMokoLife/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moko.MKBLEMokoLife;
 				PRODUCT_NAME = MokoPlug;
 				TARGETED_DEVICE_FAMILY = 1;
