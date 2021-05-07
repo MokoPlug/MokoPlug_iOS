@@ -20,17 +20,17 @@ extern NSString *const mk_bml_peripheralConnectStateChangedNotification;
 //Notification of changes in the status of the Bluetooth Center.
 extern NSString *const mk_bml_centralManagerStateChangedNotification;
 
-//开关状态发生改变的通知
+//Notification of switch status changes.
 extern NSString *const mk_bml_receiveSwitchStatusChangedNotification;
-//负载检测通知
+//The device status changes to overload.
 extern NSString *const mk_bml_receiveLoadStatusChangedNotification;
-//过载保护通知
+//Overload protection notice.
 extern NSString *const mk_bml_receiveOverloadProtectionValueChangedNotification;
-//倒计时通知
+//Countdown notification of device switch status.
 extern NSString *const mk_bml_receiveCountdownNotification;
-//当前电压、电流、功率通知
+//Notification of changes in voltage, electron current, and work and power.
 extern NSString *const mk_bml_receiveEnergyVCPNotification;
-//当前电能数据
+//Current energy data of the device.
 extern NSString *const mk_bml_receiveCurrentEnergyNotification;
 
 @class CBCentralManager,CBPeripheral;

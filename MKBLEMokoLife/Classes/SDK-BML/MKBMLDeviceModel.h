@@ -21,22 +21,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *macAddress;
 
-/// 电压，单位V
+/// Voltage(V)
 @property (nonatomic, assign)CGFloat electronV;
 
-/// 电流 mA
+/// electron current(mA)
 @property (nonatomic, assign)NSInteger electronA;
 
-/// 功率 W
+/// work and power(W)
 @property (nonatomic, assign)float electronP;
 
-/// 负载检测
+/// Load detection.
 @property (nonatomic, assign)BOOL loadDetection;
 
-/// 过载状态
+/// Whether the device is overloaded.
 @property (nonatomic, assign)BOOL overloadState;
 
-/// 插座开关状态
+/// The switch state of the plug.
 @property (nonatomic, assign)BOOL switchStatus;
 
 @end
