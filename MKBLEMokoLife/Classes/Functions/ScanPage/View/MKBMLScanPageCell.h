@@ -8,9 +8,10 @@
 
 #import <MKBaseModuleLibrary/MKBaseCell.h>
 
+#import "MKBMLDeviceModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@class MKBMLDeviceModel;
 @interface MKBMLScanPageCell : MKBaseCell
 
 @property (nonatomic, strong)MKBMLDeviceModel *dataModel;

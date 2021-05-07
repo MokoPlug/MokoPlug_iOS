@@ -13,8 +13,6 @@
 #import "MKMacroDefines.h"
 #import "NSString+MKAdd.h"
 
-#import "MKBMLDeviceModel.h"
-
 @interface MKBMLScanPageCell ()
 
 @property (nonatomic, strong)UIView *backColorView;
