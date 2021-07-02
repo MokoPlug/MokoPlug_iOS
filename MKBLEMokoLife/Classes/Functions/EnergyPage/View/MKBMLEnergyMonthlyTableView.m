@@ -79,16 +79,6 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self.monthlyTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
-    }];
-}
-
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.f;
@@ -187,6 +177,7 @@
 - (MKBaseTableView *)monthlyTableView {
     if (!_monthlyTableView) {
         _monthlyTableView = [[MKBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _monthlyTableView.frame = CGRectMake(0, 0, kViewWidth, self.frame.size.height);
         _monthlyTableView.backgroundColor = COLOR_WHITE_MACROS;
         _monthlyTableView.delegate = self;
         _monthlyTableView.dataSource = self;

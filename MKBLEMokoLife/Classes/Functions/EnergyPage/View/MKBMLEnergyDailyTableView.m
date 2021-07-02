@@ -53,16 +53,6 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self.dailyTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
-    }];
-}
-
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.f;
@@ -164,6 +154,7 @@
 - (MKBaseTableView *)dailyTableView {
     if (!_dailyTableView) {
         _dailyTableView = [[MKBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _dailyTableView.frame = CGRectMake(0, 0, kViewWidth, self.frame.size.height);
         _dailyTableView.backgroundColor = COLOR_WHITE_MACROS;
         _dailyTableView.delegate = self;
         _dailyTableView.dataSource = self;

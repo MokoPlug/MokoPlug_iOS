@@ -1,9 +1,9 @@
 {
   "name": "MKBLEMokoLife",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "A short description of MKBLEMokoLife.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/aadyx2007@163.com/MKBLEMokoLife",
+  "homepage": "https://github.com/MokoPlug/MokoPlug_iOS",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,13 +12,12 @@
     "aadyx2007@163.com": "aadyx2007@163.com"
   },
   "source": {
-    "git": "https://github.com/aadyx2007@163.com/MKBLEMokoLife.git",
-    "tag": "1.0.0"
+    "git": "https://github.com/MokoPlug/MokoPlug_iOS.git",
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "12.0"
   },
-  "source_files": "MKBLEMokoLife/Classes/**/*",
   "resource_bundles": {
     "MKBLEMokoLife": [
       "MKBLEMokoLife/Assets/*.png"
@@ -337,7 +336,7 @@
             },
             {
               "name": "Model",
-              "source_files": "MKBLEMokoLife/Classes/Functions/TimerPage/Model/**"
+              "source_files": "MKBLEMokoLife/Classes/Functions/UpdatePage/Model/**"
             }
           ]
         }

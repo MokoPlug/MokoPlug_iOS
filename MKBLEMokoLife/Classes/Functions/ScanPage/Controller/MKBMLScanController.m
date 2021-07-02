@@ -21,6 +21,7 @@
 
 #import "MKHudManager.h"
 #import "MKCustomUIAdopter.h"
+#import "MKAlertController.h"
 
 #import "MKBMLSDK.h"
 
@@ -200,7 +201,7 @@ MKBMLTabBarControllerDelegate>
 - (void)showCentralStatus{
     if ([MKBMLCentralManager shared].centralStatus != mk_bml_centralManagerStatusEnable) {
         NSString *msg = @"The current system of bluetooth is not available!";
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Dismiss"
+        MKAlertController *alertController = [MKAlertController alertControllerWithTitle:@"Dismiss"
                                                                                  message:msg
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];

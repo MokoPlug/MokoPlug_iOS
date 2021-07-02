@@ -11,6 +11,8 @@
 #import "MKMacroDefines.h"
 #import "MKBaseNavigationController.h"
 
+#import "MKAlertController.h"
+
 #import "MKBMLPowerController.h"
 #import "MKBMLEnergyController.h"
 #import "MKBMLTimerController.h"
@@ -20,7 +22,7 @@
 
 @interface MKBMLTabBarController ()
 
-@property (nonatomic, strong)UIAlertController *alertController;
+@property (nonatomic, strong)MKAlertController *alertController;
 
 @end
 
@@ -66,7 +68,7 @@
 #pragma mark - notes
 - (void)leftButtonMethod {
     NSString *msg = @"Please confirm again whether to disconnect the device";
-    self.alertController = [UIAlertController alertControllerWithTitle:@""
+    self.alertController = [MKAlertController alertControllerWithTitle:@""
                                                                message:msg
                                                         preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -119,7 +121,7 @@
     if (self.alertController && (self.presentedViewController == self.alertController)) {
         [self.alertController dismissViewControllerAnimated:NO completion:nil];
     }
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+    MKAlertController *alertController = [MKAlertController alertControllerWithTitle:title
                                                                              message:msg
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     @weakify(self);
@@ -130,7 +132,7 @@
     [alertController addAction:moreAction];
     
     //让setting页面推出的alert消失
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_bml_settingPageNeedDismissAlert" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_bml_needDismissAlert" object:nil];
     //让所有MKPickView消失
     [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_customUIModule_dismissPickView" object:nil];
     [self performSelector:@selector(presentAlert:) withObject:alertController afterDelay:1.2f];

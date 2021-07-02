@@ -156,15 +156,6 @@
     }];
     [self.view addSubview:self.monthTable];
     [self.view addSubview:self.dailyTable];
-    [self.monthTable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.segment.mas_bottom);
-        make.bottom.mas_equalTo(-VirtualHomeHeight - 49.f);
-    }];
-    [self.dailyTable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.monthTable);
-    }];
 }
 
 #pragma mark - getter
@@ -195,7 +186,8 @@
 
 - (MKBMLEnergyDailyTableView *)dailyTable {
     if (!_dailyTable) {
-        _dailyTable = [[MKBMLEnergyDailyTableView alloc] init];
+        _dailyTable = [[MKBMLEnergyDailyTableView alloc] initWithFrame:CGRectMake(0, (defaultTopInset + 42.f), kViewWidth, kViewHeight - (defaultTopInset + 42.f + VirtualHomeHeight + 49.f))];
+        _dailyTable.backgroundColor = [UIColor redColor];
     }
     return _dailyTable;
 }
@@ -216,7 +208,7 @@
 
 - (MKBMLEnergyMonthlyTableView *)monthTable {
     if (!_monthTable) {
-        _monthTable = [[MKBMLEnergyMonthlyTableView alloc] init];
+        _monthTable = [[MKBMLEnergyMonthlyTableView alloc] initWithFrame:CGRectMake(0, (defaultTopInset + 42.f), kViewWidth, kViewHeight - (defaultTopInset + 42.f + VirtualHomeHeight + 49.f))];
     }
     return _monthTable;
 }

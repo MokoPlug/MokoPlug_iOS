@@ -16,6 +16,7 @@
 
 #import "MKHudManager.h"
 #import "MKTableSectionLineHeader.h"
+#import "MKAlertController.h"
 
 #import "MKBMLCentralManager.h"
 #import "MKBMLInterface+MKBMLConfig.h"
@@ -41,15 +42,13 @@
 
 @property (nonatomic, strong)MKBMLSettingDataModel *dataModel;
 
-/// 当前present的alert
-@property (nonatomic, strong)UIAlertController *currentAlert;
-
 @end
 
 @implementation MKBMLSettingsController
 
 - (void)dealloc {
     NSLog(@"MKBMLSettingsController销毁");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -136,30 +135,25 @@
     energyModel.rightMsg = [NSString stringWithFormat:@"%.2f",tempValue];
 }
 
-- (void)dismissAlert {
-    if (self.currentAlert && (self.presentedViewController == self.currentAlert)) {
-        [self.currentAlert dismissViewControllerAnimated:NO completion:nil];
-    }
-}
-
 #pragma mark - event method
 - (void)resetDeviceAlert {
     NSString *msg = @"After reset,the relevant data will be totally cleared,please confirm again.";
-    self.currentAlert = [UIAlertController alertControllerWithTitle:@"Reset Device"
-                                                            message:msg
-                                                     preferredStyle:UIAlertControllerStyleAlert];
+    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Reset Device"
+                                                                       message:msg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    alertView.notificationName = @"mk_bml_needDismissAlert";
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
     }];
-    [self.currentAlert addAction:cancelAction];
+    [alertView addAction:cancelAction];
     @weakify(self);
     UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         @strongify(self);
         [self resetDeviceMethod];
     }];
-    [self.currentAlert addAction:moreAction];
+    [alertView addAction:moreAction];
     
-    [self presentViewController:self.currentAlert animated:YES completion:nil];
+    [self presentViewController:alertView animated:YES completion:nil];
 }
 
 #pragma mark - interface
@@ -260,22 +254,23 @@
 
 - (void)resetEnergyConsumptionAlert {
     NSString *msg = @"Please confirm again whether to reset the accumulated electricity?Value will be recounted after clearing.";
-    self.currentAlert = [UIAlertController alertControllerWithTitle:@"Reset Energy Consumption"
-                                                            message:msg
-                                                     preferredStyle:UIAlertControllerStyleAlert];
+    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Reset Energy Consumption"
+                                                                       message:msg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    alertView.notificationName = @"mk_bml_needDismissAlert";
     WS(weakSelf);
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
     }];
-    [self.currentAlert addAction:cancelAction];
+    [alertView addAction:cancelAction];
     @weakify(self);
     UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         @strongify(self);
         [self resetEnergyConsumptionMethod];
     }];
-    [self.currentAlert addAction:moreAction];
+    [alertView addAction:moreAction];
     
-    [self presentViewController:self.currentAlert animated:YES completion:nil];
+    [self presentViewController:alertView animated:YES completion:nil];
 }
 
 #pragma mark - loadSectionDatas
@@ -374,10 +369,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveCurrentEnergyNotification:)
                                                  name:mk_bml_receiveCurrentEnergyNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dismissAlert)
-                                                 name:@"mk_bml_settingPageNeedDismissAlert"
                                                object:nil];
 }
 

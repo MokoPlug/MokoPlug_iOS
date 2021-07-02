@@ -83,7 +83,7 @@ NSString *const mk_bml_dataStatusLev = @"mk_bml_dataStatusLev";
 #pragma mark - life circle
 
 - (void)dealloc{
-    NSLog(@"BML任务销毁");
+//    NSLog(@"BML任务销毁");
 }
 
 - (instancetype)initOperationWithID:(mk_bml_taskOperationID)operationID

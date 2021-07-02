@@ -34,10 +34,7 @@
         int asciiCode = [deviceName characterAtIndex:i];
         tempString = [tempString stringByAppendingString:[NSString stringWithFormat:@"%1lx",(unsigned long)asciiCode]];
     }
-    NSString *len = [NSString stringWithFormat:@"%1lx",(unsigned long)deviceName.length];
-    if (len.length == 1) {
-        len = [@"0" stringByAppendingString:len];
-    }
+    NSString *len = [MKBLEBaseSDKAdopter fetchHexValue:deviceName.length byteLen:1];
     NSString *commandString = [NSString stringWithFormat:@"b201%@%@",len,tempString];
     [self addTaskWithOperationID:mk_bml_taskConfigDeviceNameOperation
                      commandData:commandString
@@ -52,10 +49,7 @@
         [self operationParamsErrorBlock:failedBlock];
         return;
     }
-    NSString *intervalString = [NSString stringWithFormat:@"%1lx",(unsigned long)interval];
-    if (intervalString.length == 1) {
-        intervalString = [@"0" stringByAppendingString:intervalString];
-    }
+    NSString *intervalString = [MKBLEBaseSDKAdopter fetchHexValue:interval byteLen:1];
     NSString *commandString = [@"b20201" stringByAppendingString:intervalString];
     [self addTaskWithOperationID:mk_bml_taskConfigAdvIntervalOperation
                      commandData:commandString
@@ -96,14 +90,7 @@
         [self operationParamsErrorBlock:failedBlock];
         return;
     }
-    NSString *valueString = [NSString stringWithFormat:@"%1lx",(unsigned long)value];
-    if (valueString.length == 1) {
-        valueString = [@"000" stringByAppendingString:valueString];
-    }else if (valueString.length == 2) {
-        valueString = [@"00" stringByAppendingString:valueString];
-    }else if (valueString.length == 3) {
-        valueString = [@"0" stringByAppendingString:valueString];
-    }
+    NSString *valueString = [MKBLEBaseSDKAdopter fetchHexValue:value byteLen:2];
     NSString *commandString = [@"b20502" stringByAppendingString:valueString];
     [self addTaskWithOperationID:mk_bml_taskConfigOverloadProtectionValueOperation
                      commandData:commandString
@@ -127,22 +114,7 @@
         [self operationParamsErrorBlock:failedBlock];
         return;
     }
-    NSString *valueString = [NSString stringWithFormat:@"%1lx",(unsigned long)seconds];
-    if (valueString.length == 1) {
-        valueString = [@"0000000" stringByAppendingString:valueString];
-    }else if (valueString.length == 2) {
-        valueString = [@"000000" stringByAppendingString:valueString];
-    }else if (valueString.length == 3) {
-        valueString = [@"00000" stringByAppendingString:valueString];
-    }else if (valueString.length == 4) {
-        valueString = [@"0000" stringByAppendingString:valueString];
-    }else if (valueString.length == 5) {
-        valueString = [@"000" stringByAppendingString:valueString];
-    }else if (valueString.length == 6) {
-        valueString = [@"00" stringByAppendingString:valueString];
-    }else if (valueString.length == 7) {
-        valueString = [@"0" stringByAppendingString:valueString];
-    }
+    NSString *valueString = [MKBLEBaseSDKAdopter fetchHexValue:seconds byteLen:4];
     NSString *commandString = [@"b20704" stringByAppendingString:valueString];
     [self addTaskWithOperationID:mk_bml_taskConfigCountdownValueOperation
                      commandData:commandString
@@ -167,14 +139,8 @@
         [self operationParamsErrorBlock:failedBlock];
         return;
     }
-    NSString *intervalString = [NSString stringWithFormat:@"%1lx",(unsigned long)interval];
-    if (intervalString.length == 1) {
-        intervalString = [@"0" stringByAppendingString:intervalString];
-    }
-    NSString *energyValueString = [NSString stringWithFormat:@"%1lx",(unsigned long)energyValue];
-    if (energyValueString.length == 1) {
-        energyValueString = [@"0" stringByAppendingString:energyValueString];
-    }
+    NSString *intervalString = [MKBLEBaseSDKAdopter fetchHexValue:interval byteLen:1];
+    NSString *energyValueString = [MKBLEBaseSDKAdopter fetchHexValue:energyValue byteLen:1];
     NSString *commandString = [NSString stringWithFormat:@"%@%@%@",@"b20902",intervalString,energyValueString];
     [self addTaskWithOperationID:mk_bml_taskConfigEnergyStorageParametersOperation
                      commandData:commandString
@@ -242,34 +208,12 @@
 + (NSString *)getTimeString:(id <MKBMLDeviceTimeProtocol>)protocol{
     
     unsigned long yearValue = protocol.year;
-    NSString *yearString = [NSString stringWithFormat:@"%1lx",yearValue];
-    if (yearString.length == 1) {
-        yearString = [@"000" stringByAppendingString:yearString];
-    }else if (yearString.length == 2) {
-        yearString = [@"00" stringByAppendingString:yearString];
-    }else if (yearString.length == 3) {
-        yearString = [@"0" stringByAppendingString:yearString];
-    }
-    NSString *monthString = [NSString stringWithFormat:@"%1lx",(long)protocol.month];
-    if (monthString.length == 1) {
-        monthString = [@"0" stringByAppendingString:monthString];
-    }
-    NSString *dayString = [NSString stringWithFormat:@"%1lx",(long)protocol.day];
-    if (dayString.length == 1) {
-        dayString = [@"0" stringByAppendingString:dayString];
-    }
-    NSString *hourString = [NSString stringWithFormat:@"%1lx",(long)protocol.hour];
-    if (hourString.length == 1) {
-        hourString = [@"0" stringByAppendingString:hourString];
-    }
-    NSString *minString = [NSString stringWithFormat:@"%1lx",(long)protocol.minutes];
-    if (minString.length == 1) {
-        minString = [@"0" stringByAppendingString:minString];
-    }
-    NSString *secString = [NSString stringWithFormat:@"%1lx",(long)protocol.second];
-    if (secString.length == 1) {
-        secString = [@"0" stringByAppendingString:secString];
-    }
+    NSString *yearString = [MKBLEBaseSDKAdopter fetchHexValue:yearValue byteLen:2];
+    NSString *monthString = [MKBLEBaseSDKAdopter fetchHexValue:protocol.month byteLen:1];
+    NSString *dayString = [MKBLEBaseSDKAdopter fetchHexValue:protocol.day byteLen:1];
+    NSString *hourString = [MKBLEBaseSDKAdopter fetchHexValue:protocol.hour byteLen:1];
+    NSString *minString = [MKBLEBaseSDKAdopter fetchHexValue:protocol.minutes byteLen:1];
+    NSString *secString = [MKBLEBaseSDKAdopter fetchHexValue:protocol.second byteLen:1];
     return [NSString stringWithFormat:@"%@%@%@%@%@%@",yearString,monthString,dayString,hourString,minString,secString];
 }
 
