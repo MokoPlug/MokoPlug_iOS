@@ -33,6 +33,18 @@ NSString *const mk_bml_receiveCurrentEnergyNotification = @"mk_bml_receiveCurren
 static MKBMLCentralManager *manager = nil;
 static dispatch_once_t onceToken;
 
+//@interface NSObject (MKBMLCentralManager)
+//
+//@end
+//
+//@implementation NSObject (MKBMLCentralManager)
+//
+//+ (void)load{
+//    [MKBMLCentralManager shared];
+//}
+//
+//@end
+
 @interface MKBMLCentralManager ()
 
 @property (nonatomic, assign)mk_bml_centralConnectStatus connectStatus;

@@ -2,95 +2,92 @@ PODS:
   - CircleProgressBar (0.32)
   - CTMediator (46)
   - HHTransition (3.0.2)
-  - iOSDFULibrary (4.10.4):
+  - iOSDFULibrary (4.11.1):
     - ZIPFoundation (= 0.9.11)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.6.1)
+  - MJRefresh (3.7.5)
   - MKBaseBleModule (1.1.1)
-  - MKBaseModuleLibrary (1.1.0):
-    - MKBaseModuleLibrary/Base (= 1.1.0)
-    - MKBaseModuleLibrary/Category (= 1.1.0)
-    - MKBaseModuleLibrary/Defines (= 1.1.0)
-    - MKBaseModuleLibrary/Tools (= 1.1.0)
-  - MKBaseModuleLibrary/Base (1.1.0):
-    - MKBaseModuleLibrary/Base/Cell (= 1.1.0)
-    - MKBaseModuleLibrary/Base/Controller (= 1.1.0)
-    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.0)
-    - MKBaseModuleLibrary/Base/View (= 1.1.0)
-  - MKBaseModuleLibrary/Base/Cell (1.1.0):
-    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.0)
-  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.0):
+  - MKBaseModuleLibrary (1.1.4):
+    - MKBaseModuleLibrary/Base (= 1.1.4)
+    - MKBaseModuleLibrary/Category (= 1.1.4)
+    - MKBaseModuleLibrary/Defines (= 1.1.4)
+    - MKBaseModuleLibrary/Tools (= 1.1.4)
+  - MKBaseModuleLibrary/Base (1.1.4):
+    - MKBaseModuleLibrary/Base/Cell (= 1.1.4)
+    - MKBaseModuleLibrary/Base/Controller (= 1.1.4)
+    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.4)
+    - MKBaseModuleLibrary/Base/View (= 1.1.4)
+  - MKBaseModuleLibrary/Base/Cell (1.1.4):
+    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.4)
+  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.4):
     - Masonry
     - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Base/Controller (1.1.0):
-    - MKBaseModuleLibrary/Base/View/WRNavigationBar
+  - MKBaseModuleLibrary/Base/Controller (1.1.4):
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Base/NavigationController (1.1.0)
-  - MKBaseModuleLibrary/Base/View (1.1.0):
-    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.0)
-    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.0)
-    - MKBaseModuleLibrary/Base/View/WRNavigationBar (= 1.1.0)
-  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.0)
-  - MKBaseModuleLibrary/Base/View/TableView (1.1.0)
-  - MKBaseModuleLibrary/Base/View/WRNavigationBar (1.1.0):
-    - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Category (1.1.0):
+    - WRNavigationBar
+  - MKBaseModuleLibrary/Base/NavigationController (1.1.4)
+  - MKBaseModuleLibrary/Base/View (1.1.4):
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.4)
+    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.4)
+  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.4)
+  - MKBaseModuleLibrary/Base/View/TableView (1.1.4)
+  - MKBaseModuleLibrary/Category (1.1.4):
     - MKBaseModuleLibrary/Defines
     - MKBaseModuleLibrary/Tools/MKClassInfo
     - Toast
-  - MKBaseModuleLibrary/Defines (1.1.0)
-  - MKBaseModuleLibrary/Tools (1.1.0):
-    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.0)
-    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.0)
-    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.0)
-  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.0)
-  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.0)
-  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.0)
-  - MKBLEMokoLife (1.0.1):
+  - MKBaseModuleLibrary/Defines (1.1.4)
+  - MKBaseModuleLibrary/Tools (1.1.4):
+    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.4)
+    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.4)
+    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.4)
+  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.4)
+  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.4)
+  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.4)
+  - MKBLEMokoLife (1.0.2):
     - CTMediator
-    - MKBLEMokoLife/ApplicationModule (= 1.0.1)
-    - MKBLEMokoLife/CTMediator (= 1.0.1)
-    - MKBLEMokoLife/Functions (= 1.0.1)
-    - MKBLEMokoLife/SDK-BML (= 1.0.1)
-    - MKBLEMokoLife/Target (= 1.0.1)
-  - MKBLEMokoLife/ApplicationModule (1.0.1):
+    - MKBLEMokoLife/ApplicationModule (= 1.0.2)
+    - MKBLEMokoLife/CTMediator (= 1.0.2)
+    - MKBLEMokoLife/Functions (= 1.0.2)
+    - MKBLEMokoLife/SDK-BML (= 1.0.2)
+    - MKBLEMokoLife/Target (= 1.0.2)
+  - MKBLEMokoLife/ApplicationModule (1.0.2):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKBLEMokoLife/CTMediator (1.0.1):
+  - MKBLEMokoLife/CTMediator (1.0.2):
     - CTMediator
-  - MKBLEMokoLife/Functions (1.0.1):
+  - MKBLEMokoLife/Functions (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/AboutPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/DeviceInfo (= 1.0.1)
-    - MKBLEMokoLife/Functions/EnergyPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/ModifyDataPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/ModifyPowerStatusPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/PowerPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/ScanPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/SettingPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/TabBarPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/TimerPage (= 1.0.1)
-    - MKBLEMokoLife/Functions/UpdatePage (= 1.0.1)
+    - MKBLEMokoLife/Functions/AboutPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/DeviceInfo (= 1.0.2)
+    - MKBLEMokoLife/Functions/EnergyPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/ModifyDataPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/ModifyPowerStatusPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/PowerPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/ScanPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/SettingPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/TabBarPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/TimerPage (= 1.0.2)
+    - MKBLEMokoLife/Functions/UpdatePage (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/AboutPage (1.0.1):
+  - MKBLEMokoLife/Functions/AboutPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/AboutPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/AboutPage/Model (= 1.0.1)
-    - MKBLEMokoLife/Functions/AboutPage/View (= 1.0.1)
+    - MKBLEMokoLife/Functions/AboutPage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/AboutPage/Model (= 1.0.2)
+    - MKBLEMokoLife/Functions/AboutPage/View (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/AboutPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/AboutPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -100,7 +97,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/AboutPage/Model (1.0.1):
+  - MKBLEMokoLife/Functions/AboutPage/Model (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -108,7 +105,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/AboutPage/View (1.0.1):
+  - MKBLEMokoLife/Functions/AboutPage/View (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -117,17 +114,17 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/DeviceInfo (1.0.1):
+  - MKBLEMokoLife/Functions/DeviceInfo (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/DeviceInfo/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/DeviceInfo/Model (= 1.0.1)
+    - MKBLEMokoLife/Functions/DeviceInfo/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/DeviceInfo/Model (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/DeviceInfo/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/DeviceInfo/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -136,7 +133,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/DeviceInfo/Model (1.0.1):
+  - MKBLEMokoLife/Functions/DeviceInfo/Model (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -144,18 +141,18 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/EnergyPage (1.0.1):
+  - MKBLEMokoLife/Functions/EnergyPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/EnergyPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/EnergyPage/Model (= 1.0.1)
-    - MKBLEMokoLife/Functions/EnergyPage/View (= 1.0.1)
+    - MKBLEMokoLife/Functions/EnergyPage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/EnergyPage/Model (= 1.0.2)
+    - MKBLEMokoLife/Functions/EnergyPage/View (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/EnergyPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/EnergyPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -166,7 +163,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/EnergyPage/Model (1.0.1):
+  - MKBLEMokoLife/Functions/EnergyPage/Model (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -174,7 +171,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/EnergyPage/View (1.0.1):
+  - MKBLEMokoLife/Functions/EnergyPage/View (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -182,33 +179,16 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/ModifyDataPage (1.0.1):
+  - MKBLEMokoLife/Functions/ModifyDataPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/ModifyDataPage/Controller (= 1.0.1)
+    - MKBLEMokoLife/Functions/ModifyDataPage/Controller (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/ModifyDataPage/Controller (1.0.1):
-    - CTMediator
-    - HHTransition
-    - MKBaseModuleLibrary
-    - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
-    - MKCustomUIModule
-    - MLInputDodger
-  - MKBLEMokoLife/Functions/ModifyPowerStatusPage (1.0.1):
-    - CTMediator
-    - HHTransition
-    - MKBaseModuleLibrary
-    - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/ModifyPowerStatusPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/SDK-BML
-    - MKCustomUIModule
-    - MLInputDodger
-  - MKBLEMokoLife/Functions/ModifyPowerStatusPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/ModifyDataPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -216,18 +196,35 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/PowerPage (1.0.1):
+  - MKBLEMokoLife/Functions/ModifyPowerStatusPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/PowerPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/PowerPage/Model (= 1.0.1)
-    - MKBLEMokoLife/Functions/PowerPage/View (= 1.0.1)
+    - MKBLEMokoLife/Functions/ModifyPowerStatusPage/Controller (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/PowerPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/ModifyPowerStatusPage/Controller (1.0.2):
+    - CTMediator
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKBLEMokoLife/CTMediator
+    - MKBLEMokoLife/SDK-BML
+    - MKCustomUIModule
+    - MLInputDodger
+  - MKBLEMokoLife/Functions/PowerPage (1.0.2):
+    - CTMediator
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKBLEMokoLife/CTMediator
+    - MKBLEMokoLife/Functions/PowerPage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/PowerPage/Model (= 1.0.2)
+    - MKBLEMokoLife/Functions/PowerPage/View (= 1.0.2)
+    - MKBLEMokoLife/SDK-BML
+    - MKCustomUIModule
+    - MLInputDodger
+  - MKBLEMokoLife/Functions/PowerPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -238,7 +235,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/PowerPage/Model (1.0.1):
+  - MKBLEMokoLife/Functions/PowerPage/Model (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -246,7 +243,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/PowerPage/View (1.0.1):
+  - MKBLEMokoLife/Functions/PowerPage/View (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -254,17 +251,17 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/ScanPage (1.0.1):
+  - MKBLEMokoLife/Functions/ScanPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/ScanPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/ScanPage/View (= 1.0.1)
+    - MKBLEMokoLife/Functions/ScanPage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/ScanPage/View (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/ScanPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/ScanPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -275,7 +272,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/ScanPage/View (1.0.1):
+  - MKBLEMokoLife/Functions/ScanPage/View (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -283,18 +280,18 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/SettingPage (1.0.1):
+  - MKBLEMokoLife/Functions/SettingPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/SettingPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/SettingPage/Model (= 1.0.1)
-    - MKBLEMokoLife/Functions/SettingPage/View (= 1.0.1)
+    - MKBLEMokoLife/Functions/SettingPage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/SettingPage/Model (= 1.0.2)
+    - MKBLEMokoLife/Functions/SettingPage/View (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/SettingPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/SettingPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -308,7 +305,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/SettingPage/Model (1.0.1):
+  - MKBLEMokoLife/Functions/SettingPage/Model (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -316,7 +313,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/SettingPage/View (1.0.1):
+  - MKBLEMokoLife/Functions/SettingPage/View (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -324,16 +321,16 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/TabBarPage (1.0.1):
+  - MKBLEMokoLife/Functions/TabBarPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/TabBarPage/Controller (= 1.0.1)
+    - MKBLEMokoLife/Functions/TabBarPage/Controller (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/TabBarPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/TabBarPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -345,18 +342,18 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/TimerPage (1.0.1):
+  - MKBLEMokoLife/Functions/TimerPage (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/TimerPage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/TimerPage/Model (= 1.0.1)
-    - MKBLEMokoLife/Functions/TimerPage/View (= 1.0.1)
+    - MKBLEMokoLife/Functions/TimerPage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/TimerPage/Model (= 1.0.2)
+    - MKBLEMokoLife/Functions/TimerPage/View (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/TimerPage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/TimerPage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -367,7 +364,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/TimerPage/Model (1.0.1):
+  - MKBLEMokoLife/Functions/TimerPage/Model (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -375,7 +372,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/TimerPage/View (1.0.1):
+  - MKBLEMokoLife/Functions/TimerPage/View (1.0.2):
     - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
@@ -383,18 +380,18 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/UpdatePage (1.0.1):
+  - MKBLEMokoLife/Functions/UpdatePage (1.0.2):
     - CTMediator
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/UpdatePage/Controller (= 1.0.1)
-    - MKBLEMokoLife/Functions/UpdatePage/Model (= 1.0.1)
+    - MKBLEMokoLife/Functions/UpdatePage/Controller (= 1.0.2)
+    - MKBLEMokoLife/Functions/UpdatePage/Model (= 1.0.2)
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/UpdatePage/Controller (1.0.1):
+  - MKBLEMokoLife/Functions/UpdatePage/Controller (1.0.2):
     - CTMediator
     - HHTransition
     - iOSDFULibrary
@@ -404,7 +401,7 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/Functions/UpdatePage/Model (1.0.1):
+  - MKBLEMokoLife/Functions/UpdatePage/Model (1.0.2):
     - CTMediator
     - HHTransition
     - iOSDFULibrary
@@ -413,78 +410,88 @@ PODS:
     - MKBLEMokoLife/SDK-BML
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/SDK-BML (1.0.1):
+  - MKBLEMokoLife/SDK-BML (1.0.2):
     - CTMediator
     - MKBaseBleModule
-  - MKBLEMokoLife/Target (1.0.1):
+  - MKBLEMokoLife/Target (1.0.2):
     - CTMediator
     - MKBLEMokoLife/Functions
-  - MKCustomUIModule (1.1.7):
+  - MKCustomUIModule (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell (= 1.1.7)
-    - MKCustomUIModule/Controller (= 1.1.7)
-    - MKCustomUIModule/UIAdopter (= 1.1.7)
-    - MKCustomUIModule/View (= 1.1.7)
-  - MKCustomUIModule/Cell (1.1.7):
+    - MKCustomUIModule/Cell (= 1.4.0)
+    - MKCustomUIModule/Controller (= 1.4.0)
+    - MKCustomUIModule/MQTTServerView (= 1.4.0)
+    - MKCustomUIModule/UIAdopter (= 1.4.0)
+    - MKCustomUIModule/View (= 1.4.0)
+  - MKCustomUIModule/Cell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/LoRaCell (= 1.1.7)
-    - MKCustomUIModule/Cell/NormalCell (= 1.1.7)
-  - MKCustomUIModule/Cell/LoRaCell (1.1.7):
+    - MKCustomUIModule/Cell/LoRaCell (= 1.4.0)
+    - MKCustomUIModule/Cell/NormalCell (= 1.4.0)
+  - MKCustomUIModule/Cell/LoRaCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (= 1.1.7)
-    - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (= 1.1.7)
-  - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (1.1.7):
+    - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterConditionCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (= 1.4.0)
+    - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (= 1.4.0)
+  - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterConditionCell (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/UIAdopter
+    - MKCustomUIModule/View/MKPickerView
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -492,30 +499,31 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (1.1.7):
+  - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell (1.1.7):
+  - MKCustomUIModule/Cell/NormalCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (= 1.1.7)
-    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (= 1.1.7)
-    - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (= 1.1.7)
-    - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (= 1.1.7)
-    - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (= 1.1.7)
-  - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (1.1.7):
+    - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (= 1.4.0)
+    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (= 1.4.0)
+    - MKCustomUIModule/Cell/NormalCell/MKSettingTextCell (= 1.4.0)
+    - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (= 1.4.0)
+    - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (= 1.4.0)
+    - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (= 1.4.0)
+  - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -523,166 +531,263 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (1.1.7):
+  - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (1.1.7):
+  - MKCustomUIModule/Cell/NormalCell/MKSettingTextCell (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (1.1.7):
+  - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (1.1.7):
+  - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller (1.1.7):
+  - MKCustomUIModule/Controller (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKAlertController (= 1.1.7)
-    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 1.1.7)
-    - MKCustomUIModule/Controller/MKTrackerLogPage (= 1.1.7)
-  - MKCustomUIModule/Controller/MKAlertController (1.1.7):
+    - MKCustomUIModule/Controller/CASelectPage (= 1.4.0)
+    - MKCustomUIModule/Controller/MKAboutPage (= 1.4.0)
+    - MKCustomUIModule/Controller/MKAlertController (= 1.4.0)
+    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 1.4.0)
+    - MKCustomUIModule/Controller/MKTrackerLogPage (= 1.4.0)
+  - MKCustomUIModule/Controller/CASelectPage (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller/MKTrackerAboutPage (1.1.7):
+    - MKCustomUIModule/Controller/CASelectPage/Controller (= 1.4.0)
+  - MKCustomUIModule/Controller/CASelectPage/Controller (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 1.1.7)
-  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (1.1.7):
+    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell
+  - MKCustomUIModule/Controller/MKAboutPage (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller/MKTrackerLogPage (1.1.7):
+    - MKCustomUIModule/Controller/MKAboutPage/Controller (= 1.4.0)
+    - MKCustomUIModule/Controller/MKAboutPage/Model (= 1.4.0)
+    - MKCustomUIModule/Controller/MKAboutPage/View (= 1.4.0)
+  - MKCustomUIModule/Controller/MKAboutPage/Controller (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (= 1.1.7)
-  - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (1.1.7):
+    - MKCustomUIModule/Controller/MKAboutPage/Model
+    - MKCustomUIModule/Controller/MKAboutPage/View
+  - MKCustomUIModule/Controller/MKAboutPage/Model (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/UIAdopter (1.1.7):
+  - MKCustomUIModule/Controller/MKAboutPage/View (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Controller/MKAboutPage/Model
+  - MKCustomUIModule/Controller/MKAlertController (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Controller/MKTrackerAboutPage (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 1.4.0)
+  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Controller/MKTrackerLogPage (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (= 1.4.0)
+  - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/MQTTServerView (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/MQTTServerView/GeneralParams (= 1.4.0)
+    - MKCustomUIModule/MQTTServerView/SSL (= 1.4.0)
+    - MKCustomUIModule/MQTTServerView/UserCredentials (= 1.4.0)
+  - MKCustomUIModule/MQTTServerView/GeneralParams (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/MKTextField
+  - MKCustomUIModule/MQTTServerView/SSL (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/MQTTServerView/UserCredentials (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/MKTextField
+  - MKCustomUIModule/UIAdopter (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View
-  - MKCustomUIModule/View (1.1.7):
+  - MKCustomUIModule/View (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/View/HaveRefreshView (= 1.1.7)
-    - MKCustomUIModule/View/MKHexKeyBoard (= 1.1.7)
-    - MKCustomUIModule/View/MKHudManager (= 1.1.7)
-    - MKCustomUIModule/View/MKPageControl (= 1.1.7)
-    - MKCustomUIModule/View/MKPickerView (= 1.1.7)
-    - MKCustomUIModule/View/MKProgressView (= 1.1.7)
-    - MKCustomUIModule/View/MKSearchButton (= 1.1.7)
-    - MKCustomUIModule/View/MKSearchConditionsView (= 1.1.7)
-    - MKCustomUIModule/View/MKSlider (= 1.1.7)
-    - MKCustomUIModule/View/MKTableSectionHeader (= 1.1.7)
-    - MKCustomUIModule/View/MKTextField (= 1.1.7)
-  - MKCustomUIModule/View/HaveRefreshView (1.1.7):
+    - MKCustomUIModule/View/HaveRefreshView (= 1.4.0)
+    - MKCustomUIModule/View/MKHexKeyBoard (= 1.4.0)
+    - MKCustomUIModule/View/MKHudManager (= 1.4.0)
+    - MKCustomUIModule/View/MKPageControl (= 1.4.0)
+    - MKCustomUIModule/View/MKPickerView (= 1.4.0)
+    - MKCustomUIModule/View/MKProgressView (= 1.4.0)
+    - MKCustomUIModule/View/MKSearchButton (= 1.4.0)
+    - MKCustomUIModule/View/MKSearchConditionsView (= 1.4.0)
+    - MKCustomUIModule/View/MKSlider (= 1.4.0)
+    - MKCustomUIModule/View/MKTableSectionHeader (= 1.4.0)
+    - MKCustomUIModule/View/MKTextField (= 1.4.0)
+    - MKCustomUIModule/View/NirKxMenu (= 1.4.0)
+    - MKCustomUIModule/View/WifiAlertView (= 1.4.0)
+  - MKCustomUIModule/View/HaveRefreshView (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKHexKeyBoard (1.1.7):
+  - MKCustomUIModule/View/MKHexKeyBoard (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKHudManager (1.1.7):
+  - MKCustomUIModule/View/MKHudManager (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKPageControl (1.1.7):
+  - MKCustomUIModule/View/MKPageControl (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKPickerView (1.1.7):
+  - MKCustomUIModule/View/MKPickerView (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKProgressView (1.1.7):
+  - MKCustomUIModule/View/MKProgressView (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKSearchButton (1.1.7):
+  - MKCustomUIModule/View/MKSearchButton (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKSearchConditionsView (1.1.7):
+  - MKCustomUIModule/View/MKSearchConditionsView (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/View/MKSlider (1.1.7):
+  - MKCustomUIModule/View/MKSlider (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKTableSectionHeader (1.1.7):
+  - MKCustomUIModule/View/MKTableSectionHeader (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKTextField (1.1.7):
+  - MKCustomUIModule/View/MKTextField (1.4.0):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
+  - MKCustomUIModule/View/NirKxMenu (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/WifiAlertView (1.4.0):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/MKTextField
   - MLInputDodger (1.5.2)
   - Toast (4.0.0)
+  - WRNavigationBar (1.4.0)
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
@@ -702,6 +807,7 @@ SPEC REPOS:
     - MKCustomUIModule
     - MLInputDodger
     - Toast
+    - WRNavigationBar
     - ZIPFoundation
 
 EXTERNAL SOURCES:
@@ -712,16 +818,17 @@ SPEC CHECKSUMS:
   CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   HHTransition: ca5035c126a6a2dc1eb9a90d084013784bf4bf0a
-  iOSDFULibrary: 5d41d0ac69418d63755195db5f46e99588ae7d48
+  iOSDFULibrary: 3500ac00451aa7d8ec48a752e91099669a2c1d27
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MKBaseBleModule: 6019b69cf3c5a220b1cfe18e71e1e5e63f4757da
-  MKBaseModuleLibrary: 3f6402005cd7aafb0a1564261b3ba798bd6b8ba9
-  MKBLEMokoLife: 7d58cb92cf78b7a5e574f42008726435b4526289
-  MKCustomUIModule: f4bb8abaab64f25224c886723ecaae75cacdca2d
+  MKBaseModuleLibrary: 859013194f81daa5f8a7a777ce88bf58cd3b5919
+  MKBLEMokoLife: a28a1d7c1c41ef37c21d009adca5eb6dc674ff66
+  MKCustomUIModule: 91646517fc7a90d94dd5578d119fec38d67d6a90
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
 PODFILE CHECKSUM: 5de68a24062d15b8e784de739495c3f17de767d6
